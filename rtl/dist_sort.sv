@@ -65,9 +65,6 @@ module dist_sort (
         end else begin
             // do the distance calculations explicitly
 
-            dist_0 <= (query_reg[3:0] - search_0_reg[3:0]) * (query_reg[3:0] - search_0_reg[3:0]) + (query_reg[7:4] - search_0_reg[7:4]) * (query_reg[7:4] - search_0_reg[7:4]) + ...
-            dist_1 <= ...
-
             dist_0 = (query_reg[3:0] - search_0_reg[3:0]) * (query_reg[3:0] - search_0_reg[3:0]) + 
                      (query_reg[7:4] - search_0_reg[7:4]) * (query_reg[7:4] - search_0_reg[7:4]) + 
                      (query_reg[11:8] - search_0_reg[11:8]) * (query_reg[11:8] - search_0_reg[11:8]) + 
