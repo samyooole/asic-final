@@ -74,7 +74,7 @@ endtask
 
 //-----------------Task to get golden outputs------------------//
 task get_golden_outputs();
-fp2 = $fopen("./golden_bin.txt","r");
+fp2 = $fopen("/home/sh2663/asap7_rundir/asic-final/rtl/golden_bin.txt","r");
 for(i=0;i<num_of_inputs;i++) begin
    q = $fscanf(fp2,"%b\t%b\n",addr_1st_gold[i],addr_2nd_gold[i]);   
 end
