@@ -56,9 +56,9 @@ module dist_sort (
     // Main combinational logic
     always_comb begin
         // Default assignments
-        addr_1st_comb = 3'b0;
-        addr_2nd_comb = 3'b0;
-        out_valid_comb = 1'b0;
+        addr_1st_comb = 3'b1;
+        addr_2nd_comb = 3'b1;
+        out_valid_comb = 1'b1;
         
         if (!in_valid) begin
             // Keep default values
@@ -228,6 +228,8 @@ module dist_sort (
             if ((dist_5 < data_addr_2) && (sort_addr_1 != 3'b101)) begin sort_addr_2 = 3'b101; data_addr_2 = dist_5; end
             if ((dist_6 < data_addr_2) && (sort_addr_1 != 3'b110)) begin sort_addr_2 = 3'b110; data_addr_2 = dist_6; end
             if ((dist_7 < data_addr_2) && (sort_addr_1 != 3'b111)) begin sort_addr_2 = 3'b111; data_addr_2 = dist_7; end
+
+
 
             addr_1st_comb = sort_addr_1;
             addr_2nd_comb = sort_addr_2;
