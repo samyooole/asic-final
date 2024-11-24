@@ -22,6 +22,7 @@ module dist_sort (
 
     // Internal signals
     logic [15:0] dist_0, dist_1, dist_2, dist_3, dist_4, dist_5, dist_6, dist_7;
+    logic signed [4:0] diff_0, diff_1, diff_2, diff_3, diff_4, diff_5, diff_6, diff_7;
     logic [2:0] sort_addr_1, sort_addr_2;
     logic [15:0] data_addr_1, data_addr_2;
     logic [2:0] addr_1st_comb;
@@ -56,157 +57,44 @@ module dist_sort (
     // Main combinational logic
     always_comb begin
         // Default assignments
-        addr_1st_comb = 3'b1;
-        addr_2nd_comb = 3'b1;
-        out_valid_comb = 1'b1;
+        addr_1st_comb = 3'b0;
+        addr_2nd_comb = 3'b0;
+        out_valid_comb = 1'b0;
         
         if (!in_valid) begin
             // Keep default values
         end else begin
             // do the distance calculations explicitly
 
-            dist_0 = (query_reg[3:0] - search_0_reg[3:0]) * (query_reg[3:0] - search_0_reg[3:0]) + 
-                     (query_reg[7:4] - search_0_reg[7:4]) * (query_reg[7:4] - search_0_reg[7:4]) + 
-                     (query_reg[11:8] - search_0_reg[11:8]) * (query_reg[11:8] - search_0_reg[11:8]) + 
-                     (query_reg[15:12] - search_0_reg[15:12]) * (query_reg[15:12] - search_0_reg[15:12]) + 
-                     (query_reg[19:16] - search_0_reg[19:16]) * (query_reg[19:16] - search_0_reg[19:16]) + 
-                     (query_reg[23:20] - search_0_reg[23:20]) * (query_reg[23:20] - search_0_reg[23:20]) + 
-                     (query_reg[27:24] - search_0_reg[27:24]) * (query_reg[27:24] - search_0_reg[27:24]) + 
-                     (query_reg[31:28] - search_0_reg[31:28]) * (query_reg[31:28] - search_0_reg[31:28]) + 
-                     (query_reg[35:32] - search_0_reg[35:32]) * (query_reg[35:32] - search_0_reg[35:32]) + 
-                     (query_reg[39:36] - search_0_reg[39:36]) * (query_reg[39:36] - search_0_reg[39:36]) + 
-                     (query_reg[43:40] - search_0_reg[43:40]) * (query_reg[43:40] - search_0_reg[43:40]) + 
-                     (query_reg[47:44] - search_0_reg[47:44]) * (query_reg[47:44] - search_0_reg[47:44]) + 
-                     (query_reg[51:48] - search_0_reg[51:48]) * (query_reg[51:48] - search_0_reg[51:48]) + 
-                     (query_reg[55:52] - search_0_reg[55:52]) * (query_reg[55:52] - search_0_reg[55:52]) + 
-                     (query_reg[59:56] - search_0_reg[59:56]) * (query_reg[59:56] - search_0_reg[59:56]) + 
-                     (query_reg[63:60] - search_0_reg[63:60]) * (query_reg[63:60] - search_0_reg[63:60]);
+            // Reset accumulators
+            dist_0 = '0; dist_1 = '0; dist_2 = '0; dist_3 = '0;
+            dist_4 = '0; dist_5 = '0; dist_6 = '0; dist_7 = '0;
 
-            dist_1 = (query_reg[3:0] - search_1_reg[3:0]) * (query_reg[3:0] - search_1_reg[3:0]) + 
-                        (query_reg[7:4] - search_1_reg[7:4]) * (query_reg[7:4] - search_1_reg[7:4]) + 
-                        (query_reg[11:8] - search_1_reg[11:8]) * (query_reg[11:8] - search_1_reg[11:8]) + 
-                        (query_reg[15:12] - search_1_reg[15:12]) * (query_reg[15:12] - search_1_reg[15:12]) + 
-                        (query_reg[19:16] - search_1_reg[19:16]) * (query_reg[19:16] - search_1_reg[19:16]) + 
-                        (query_reg[23:20] - search_1_reg[23:20]) * (query_reg[23:20] - search_1_reg[23:20]) + 
-                        (query_reg[27:24] - search_1_reg[27:24]) * (query_reg[27:24] - search_1_reg[27:24]) + 
-                        (query_reg[31:28] - search_1_reg[31:28]) * (query_reg[31:28] - search_1_reg[31:28]) + 
-                        (query_reg[35:32] - search_1_reg[35:32]) * (query_reg[35:32] - search_1_reg[35:32]) + 
-                        (query_reg[39:36] - search_1_reg[39:36]) * (query_reg[39:36] - search_1_reg[39:36]) + 
-                        (query_reg[43:40] - search_1_reg[43:40]) * (query_reg[43:40] - search_1_reg[43:40]) + 
-                        (query_reg[47:44] - search_1_reg[47:44]) * (query_reg[47:44] - search_1_reg[47:44]) + 
-                        (query_reg[51:48] - search_1_reg[51:48]) * (query_reg[51:48] - search_1_reg[51:48]) + 
-                        (query_reg[55:52] - search_1_reg[55:52]) * (query_reg[55:52] - search_1_reg[55:52]) + 
-                        (query_reg[59:56] - search_1_reg[59:56]) * (query_reg[59:56] - search_1_reg[59:56]) + 
-                        (query_reg[63:60] - search_1_reg[63:60]) * (query_reg[63:60] - search_1_reg[63:60]);
-                     
-            
-            dist_2 = (query_reg[3:0] - search_2_reg[3:0]) * (query_reg[3:0] - search_2_reg[3:0]) + 
-                     (query_reg[7:4] - search_2_reg[7:4]) * (query_reg[7:4] - search_2_reg[7:4]) + 
-                     (query_reg[11:8] - search_2_reg[11:8]) * (query_reg[11:8] - search_2_reg[11:8]) + 
-                     (query_reg[15:12] - search_2_reg[15:12]) * (query_reg[15:12] - search_2_reg[15:12]) + 
-                     (query_reg[19:16] - search_2_reg[19:16]) * (query_reg[19:16] - search_2_reg[19:16]) + 
-                     (query_reg[23:20] - search_2_reg[23:20]) * (query_reg[23:20] - search_2_reg[23:20]) + 
-                     (query_reg[27:24] - search_2_reg[27:24]) * (query_reg[27:24] - search_2_reg[27:24]) + 
-                     (query_reg[31:28] - search_2_reg[31:28]) * (query_reg[31:28] - search_2_reg[31:28]) + 
-                     (query_reg[35:32] - search_2_reg[35:32]) * (query_reg[35:32] - search_2_reg[35:32]) + 
-                     (query_reg[39:36] - search_2_reg[39:36]) * (query_reg[39:36] - search_2_reg[39:36]) + 
-                     (query_reg[43:40] - search_2_reg[43:40]) * (query_reg[43:40] - search_2_reg[43:40]) + 
-                     (query_reg[47:44] - search_2_reg[47:44]) * (query_reg[47:44] - search_2_reg[47:44]) + 
-                     (query_reg[51:48] - search_2_reg[51:48]) * (query_reg[51:48] - search_2_reg[51:48]) + 
-                     (query_reg[55:52] - search_2_reg[55:52]) * (query_reg[55:52] - search_2_reg[55:52]) + 
-                     (query_reg[59:56] - search_2_reg[59:56]) * (query_reg[59:56] - search_2_reg[59:56]) + 
-                     (query_reg[63:60] - search_2_reg[63:60]) * (query_reg[63:60] - search_2_reg[63:60]);
+            // Calculate distances
+            for (int i = 0; i < 16; i++) begin
+                diff_0 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_0_reg[i*4 +: 4]});
+                diff_1 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_1_reg[i*4 +: 4]});
+                diff_2 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_2_reg[i*4 +: 4]});
+                diff_3 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_3_reg[i*4 +: 4]});
+                diff_4 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_4_reg[i*4 +: 4]});
+                diff_5 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_5_reg[i*4 +: 4]});
+                diff_6 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_6_reg[i*4 +: 4]});
+                diff_7 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_7_reg[i*4 +: 4]});
 
-            dist_3 = (query_reg[3:0] - search_3_reg[3:0]) * (query_reg[3:0] - search_3_reg[3:0]) + 
-                     (query_reg[7:4] - search_3_reg[7:4]) * (query_reg[7:4] - search_3_reg[7:4]) + 
-                     (query_reg[11:8] - search_3_reg[11:8]) * (query_reg[11:8] - search_3_reg[11:8]) + 
-                     (query_reg[15:12] - search_3_reg[15:12]) * (query_reg[15:12] - search_3_reg[15:12]) + 
-                     (query_reg[19:16] - search_3_reg[19:16]) * (query_reg[19:16] - search_3_reg[19:16]) + 
-                     (query_reg[23:20] - search_3_reg[23:20]) * (query_reg[23:20] - search_3_reg[23:20]) + 
-                     (query_reg[27:24] - search_3_reg[27:24]) * (query_reg[27:24] - search_3_reg[27:24]) + 
-                     (query_reg[31:28] - search_3_reg[31:28]) * (query_reg[31:28] - search_3_reg[31:28]) + 
-                     (query_reg[35:32] - search_3_reg[35:32]) * (query_reg[35:32] - search_3_reg[35:32]) + 
-                     (query_reg[39:36] - search_3_reg[39:36]) * (query_reg[39:36] - search_3_reg[39:36]) + 
-                     (query_reg[43:40] - search_3_reg[43:40]) * (query_reg[43:40] - search_3_reg[43:40]) + 
-                     (query_reg[47:44] - search_3_reg[47:44]) * (query_reg[47:44] - search_3_reg[47:44]) + 
-                     (query_reg[51:48] - search_3_reg[51:48]) * (query_reg[51:48] - search_3_reg[51:48]) + 
-                     (query_reg[55:52] - search_3_reg[55:52]) * (query_reg[55:52] - search_3_reg[55:52]) + 
-                     (query_reg[59:56] - search_3_reg[59:56]) * (query_reg[59:56] - search_3_reg[59:56]) + 
-                     (query_reg[63:60] - search_3_reg[63:60]) * (query_reg[63:60] - search_3_reg[63:60]);
-
-            dist_4 = (query_reg[3:0] - search_4_reg[3:0]) * (query_reg[3:0] - search_4_reg[3:0]) + 
-                     (query_reg[7:4] - search_4_reg[7:4]) * (query_reg[7:4] - search_4_reg[7:4]) + 
-                     (query_reg[11:8] - search_4_reg[11:8]) * (query_reg[11:8] - search_4_reg[11:8]) + 
-                     (query_reg[15:12] - search_4_reg[15:12]) * (query_reg[15:12] - search_4_reg[15:12]) + 
-                     (query_reg[19:16] - search_4_reg[19:16]) * (query_reg[19:16] - search_4_reg[19:16]) + 
-                     (query_reg[23:20] - search_4_reg[23:20]) * (query_reg[23:20] - search_4_reg[23:20]) + 
-                     (query_reg[27:24] - search_4_reg[27:24]) * (query_reg[27:24] - search_4_reg[27:24]) + 
-                     (query_reg[31:28] - search_4_reg[31:28]) * (query_reg[31:28] - search_4_reg[31:28]) + 
-                     (query_reg[35:32] - search_4_reg[35:32]) * (query_reg[35:32] - search_4_reg[35:32]) + 
-                     (query_reg[39:36] - search_4_reg[39:36]) * (query_reg[39:36] - search_4_reg[39:36]) + 
-                     (query_reg[43:40] - search_4_reg[43:40]) * (query_reg[43:40] - search_4_reg[43:40]) + 
-                     (query_reg[47:44] - search_4_reg[47:44]) * (query_reg[47:44] - search_4_reg[47:44]) + 
-                     (query_reg[51:48] - search_4_reg[51:48]) * (query_reg[51:48] - search_4_reg[51:48]) + 
-                     (query_reg[55:52] - search_4_reg[55:52]) * (query_reg[55:52] - search_4_reg[55:52]) + 
-                     (query_reg[59:56] - search_4_reg[59:56]) * (query_reg[59:56] - search_4_reg[59:56]) + 
-                     (query_reg[63:60] - search_4_reg[63:60]) * (query_reg[63:60] - search_4_reg[63:60]);
-
-            dist_5 = (query_reg[3:0] - search_5_reg[3:0]) * (query_reg[3:0] - search_5_reg[3:0]) + 
-                     (query_reg[7:4] - search_5_reg[7:4]) * (query_reg[7:4] - search_5_reg[7:4]) + 
-                     (query_reg[11:8] - search_5_reg[11:8]) * (query_reg[11:8] - search_5_reg[11:8]) + 
-                     (query_reg[15:12] - search_5_reg[15:12]) * (query_reg[15:12] - search_5_reg[15:12]) + 
-                     (query_reg[19:16] - search_5_reg[19:16]) * (query_reg[19:16] - search_5_reg[19:16]) + 
-                     (query_reg[23:20] - search_5_reg[23:20]) * (query_reg[23:20] - search_5_reg[23:20]) + 
-                     (query_reg[27:24] - search_5_reg[27:24]) * (query_reg[27:24] - search_5_reg[27:24]) + 
-                     (query_reg[31:28] - search_5_reg[31:28]) * (query_reg[31:28] - search_5_reg[31:28]) + 
-                     (query_reg[35:32] - search_5_reg[35:32]) * (query_reg[35:32] - search_5_reg[35:32]) + 
-                     (query_reg[39:36] - search_5_reg[39:36]) * (query_reg[39:36] - search_5_reg[39:36]) + 
-                     (query_reg[43:40] - search_5_reg[43:40]) * (query_reg[43:40] - search_5_reg[43:40]) + 
-                     (query_reg[47:44] - search_5_reg[47:44]) * (query_reg[47:44] - search_5_reg[47:44]) + 
-                     (query_reg[51:48] - search_5_reg[51:48]) * (query_reg[51:48] - search_5_reg[51:48]) + 
-                     (query_reg[55:52] - search_5_reg[55:52]) * (query_reg[55:52] - search_5_reg[55:52]) + 
-                     (query_reg[59:56] - search_5_reg[59:56]) * (query_reg[59:56] - search_5_reg[59:56]) + 
-                     (query_reg[63:60] - search_5_reg[63:60]) * (query_reg[63:60] - search_5_reg[63:60]);
-
-            dist_6 = (query_reg[3:0] - search_6_reg[3:0]) * (query_reg[3:0] - search_6_reg[3:0]) + 
-                     (query_reg[7:4] - search_6_reg[7:4]) * (query_reg[7:4] - search_6_reg[7:4]) + 
-                     (query_reg[11:8] - search_6_reg[11:8]) * (query_reg[11:8] - search_6_reg[11:8]) + 
-                     (query_reg[15:12] - search_6_reg[15:12]) * (query_reg[15:12] - search_6_reg[15:12]) + 
-                     (query_reg[19:16] - search_6_reg[19:16]) * (query_reg[19:16] - search_6_reg[19:16]) + 
-                     (query_reg[23:20] - search_6_reg[23:20]) * (query_reg[23:20] - search_6_reg[23:20]) + 
-                     (query_reg[27:24] - search_6_reg[27:24]) * (query_reg[27:24] - search_6_reg[27:24]) + 
-                     (query_reg[31:28] - search_6_reg[31:28]) * (query_reg[31:28] - search_6_reg[31:28]) + 
-                     (query_reg[35:32] - search_6_reg[35:32]) * (query_reg[35:32] - search_6_reg[35:32]) + 
-                     (query_reg[39:36] - search_6_reg[39:36]) * (query_reg[39:36] - search_6_reg[39:36]) + 
-                     (query_reg[43:40] - search_6_reg[43:40]) * (query_reg[43:40] - search_6_reg[43:40]) + 
-                     (query_reg[47:44] - search_6_reg[47:44]) * (query_reg[47:44] - search_6_reg[47:44]) + 
-                     (query_reg[51:48] - search_6_reg[51:48]) * (query_reg[51:48] - search_6_reg[51:48]) + 
-                     (query_reg[55:52] - search_6_reg[55:52]) * (query_reg[55:52] - search_6_reg[55:52]) + 
-                     (query_reg[59:56] - search_6_reg[59:56]) * (query_reg[59:56] - search_6_reg[59:56]) + 
-                     (query_reg[63:60] - search_6_reg[63:60]) * (query_reg[63:60] - search_6_reg[63:60]);
-
-            dist_7 = (query_reg[3:0] - search_7_reg[3:0]) * (query_reg[3:0] - search_7_reg[3:0]) + 
-                     (query_reg[7:4] - search_7_reg[7:4]) * (query_reg[7:4] - search_7_reg[7:4]) + 
-                     (query_reg[11:8] - search_7_reg[11:8]) * (query_reg[11:8] - search_7_reg[11:8]) + 
-                     (query_reg[15:12] - search_7_reg[15:12]) * (query_reg[15:12] - search_7_reg[15:12]) + 
-                     (query_reg[19:16] - search_7_reg[19:16]) * (query_reg[19:16] - search_7_reg[19:16]) + 
-                     (query_reg[23:20] - search_7_reg[23:20]) * (query_reg[23:20] - search_7_reg[23:20]) + 
-                     (query_reg[27:24] - search_7_reg[27:24]) * (query_reg[27:24] - search_7_reg[27:24]) + 
-                     (query_reg[31:28] - search_7_reg[31:28]) * (query_reg[31:28] - search_7_reg[31:28]) + 
-                     (query_reg[35:32] - search_7_reg[35:32]) * (query_reg[35:32] - search_7_reg[35:32]) + 
-                     (query_reg[39:36] - search_7_reg[39:36]) * (query_reg[39:36] - search_7_reg[39:36]) + 
-                     (query_reg[43:40] - search_7_reg[43:40]) * (query_reg[43:40] - search_7_reg[43:40]) + 
-                     (query_reg[47:44] - search_7_reg[47:44]) * (query_reg[47:44] - search_7_reg[47:44]) + 
-                     (query_reg[51:48] - search_7_reg[51:48]) * (query_reg[51:48] - search_7_reg[51:48]) + 
-                     (query_reg[55:52] - search_7_reg[55:52]) * (query_reg[55:52] - search_7_reg[55:52]) + 
-                     (query_reg[59:56] - search_7_reg[59:56]) * (query_reg[59:56] - search_7_reg[59:56]) + 
-                     (query_reg[63:60] - search_7_reg[63:60]) * (query_reg[63:60] - search_7_reg[63:60]);
+                dist_0 = dist_0 + (diff_0 * diff_0);
+                dist_1 = dist_1 + (diff_1 * diff_1);
+                dist_2 = dist_2 + (diff_2 * diff_2);
+                dist_3 = dist_3 + (diff_3 * diff_3);
+                dist_4 = dist_4 + (diff_4 * diff_4);
+                dist_5 = dist_5 + (diff_5 * diff_5);
+                dist_6 = dist_6 + (diff_6 * diff_6);
+                dist_7 = dist_7 + (diff_7 * diff_7);
+            end
                      
             // Find first smallest distance
 
 
-
-            sort_addr_1 = 3'b000;
+            sort_addr_1 = 3'b0;
             data_addr_1 = dist_0;
             
             if (dist_1 < data_addr_1) begin sort_addr_1 = 3'b001; data_addr_1 = dist_1; end
@@ -218,8 +106,8 @@ module dist_sort (
             if (dist_7 < data_addr_1) begin sort_addr_1 = 3'b111; data_addr_1 = dist_7; end
 
             // Find second smallest distance
-            sort_addr_2 = 3'b000;
-            data_addr_2 = (sort_addr_1 == 3'b000) ? dist_1 : dist_0;
+            sort_addr_2 = 3'b0;
+            data_addr_2 = (sort_addr_1 == 3'b0) ? dist_1 : dist_0;
 
             if ((dist_1 < data_addr_2) && (sort_addr_1 != 3'b001)) begin sort_addr_2 = 3'b001; data_addr_2 = dist_1; end
             if ((dist_2 < data_addr_2) && (sort_addr_1 != 3'b010)) begin sort_addr_2 = 3'b010; data_addr_2 = dist_2; end
