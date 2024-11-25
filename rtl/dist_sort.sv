@@ -16,9 +16,7 @@ module dist_sort (
 );
 
     // Register declarations for input signals
-
-    // Internal signals
-    logic [127:0] dist_0, dist_1, dist_2, dist_3, dist_4, dist_5, dist_6, dist_7;
+    logic [63:0] dist_0, dist_1, dist_2, dist_3, dist_4, dist_5, dist_6, dist_7;
     logic signed [63:0] diff_0, diff_1, diff_2, diff_3, diff_4, diff_5, diff_6, diff_7;
     logic [2:0] sort_addr_1, sort_addr_2;
     logic [63:0] data_addr_1, data_addr_2;
@@ -27,16 +25,6 @@ module dist_sort (
 
     // Main combinational logic
     always_ff @(posedge clk or posedge rst) begin
-        
-        /*
-        if (rst) begin
-            //
-        end else begin
-            $display("Clock tick, in_valid: %b", in_valid);
-        end
-
-        */
-        
         
         // Default assignments
         addr_1st= 3'b0;
@@ -55,14 +43,14 @@ module dist_sort (
 
             // Calculate distances
             for (int i = 0; i < 16; i++) begin
-                diff_0 = $signed( query[i*4 +: 4]) - $signed( search_0[i*4 +: 4]);
-                diff_1 = $signed( query[i*4 +: 4]) - $signed( search_1[i*4 +: 4]);
-                diff_2 = $signed( query[i*4 +: 4]) - $signed( search_2[i*4 +: 4]);
-                diff_3 = $signed( query[i*4 +: 4]) - $signed( search_3[i*4 +: 4]);
-                diff_4 = $signed( query[i*4 +: 4]) - $signed( search_4[i*4 +: 4]);
-                diff_5 = $signed( query[i*4 +: 4]) - $signed( search_5[i*4 +: 4]);
-                diff_6 = $signed( query[i*4 +: 4]) - $signed( search_6[i*4 +: 4]);
-                diff_7 = $signed( query[i*4 +: 4]) - $signed( search_7[i*4 +: 4]);
+                diff_0 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_0[i*4 +: 4]});
+                diff_1 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_1[i*4 +: 4]});
+                diff_2 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_2[i*4 +: 4]});
+                diff_3 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_3[i*4 +: 4]});
+                diff_4 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_4[i*4 +: 4]});
+                diff_5 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_5[i*4 +: 4]});
+                diff_6 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_6[i*4 +: 4]});
+                diff_7 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_7[i*4 +: 4]});
 
                 dist_0 = dist_0 + (diff_0 * diff_0);
                 dist_1 = dist_1 + (diff_1 * diff_1);
@@ -99,6 +87,9 @@ module dist_sort (
             if ((dist_5 < data_addr_2) && (sort_addr_1 != 3'b101)) begin sort_addr_2 = 3'b101; data_addr_2 = dist_5; end
             if ((dist_6 < data_addr_2) && (sort_addr_1 != 3'b110)) begin sort_addr_2 = 3'b110; data_addr_2 = dist_6; end
             if ((dist_7 < data_addr_2) && (sort_addr_1 != 3'b111)) begin sort_addr_2 = 3'b111; data_addr_2 = dist_7; end
+
+            if (sort_addr_1 == 3'b0 && (sort_addr_2 == 3'b0)) begin sort_addr_2 = 3'b001; end 
+            // if everything is equal then we just put it as the first and second addresses
 
 
 
