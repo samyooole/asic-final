@@ -1,0 +1,726 @@
+[11/25 13:38:26      0s] 
+[11/25 13:38:26      0s] Cadence Innovus(TM) Implementation System.
+[11/25 13:38:26      0s] Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+[11/25 13:38:26      0s] 
+[11/25 13:38:26      0s] Version:	v23.12-s091_1, built Tue Jul 30 16:11:30 PDT 2024
+[11/25 13:38:26      0s] Options:	
+[11/25 13:38:26      0s] Date:		Mon Nov 25 13:38:26 2024
+[11/25 13:38:26      0s] Host:		ecelinux-14.ece.cornell.edu (x86_64 w/Linux 4.18.0-553.27.1.el8_10.x86_64) (4cores*8cpus*Intel(R) Xeon(R) Gold 6252N CPU @ 2.30GHz 36608KB)
+[11/25 13:38:26      0s] OS:		Red Hat Enterprise Linux 8.10 (Ootpa)
+[11/25 13:38:26      0s] 
+[11/25 13:38:26      0s] License:
+[11/25 13:38:26      0s] 		[13:38:26.474041] Configured Lic search path (23.02-s005): 5280@flex.ece.cornell.edu
+
+[11/25 13:38:26      0s] 		invs	Innovus Implementation System	23.1	checkout succeeded
+[11/25 13:38:26      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[11/25 13:38:26      0s] **WARN: (IMPSYT-1507):	The display is invalid and will start in no window mode
+[11/25 13:38:38     12s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v23.12-s091_1 (64bit) 07/30/2024 16:11 (Linux 3.10.0-693.el7.x86_64)
+[11/25 13:38:40     14s] @(#)CDS: NanoRoute 23.12-s091_1 NR240717-0458/23_12-UB (database version 18.20.633) {superthreading v2.20}
+[11/25 13:38:40     14s] @(#)CDS: AAE 23.12-s024 (64bit) 07/30/2024 (Linux 3.10.0-693.el7.x86_64)
+[11/25 13:38:40     14s] @(#)CDS: CTE 23.12-s018_1 () Jul 26 2024 06:03:48 ( )
+[11/25 13:38:40     14s] @(#)CDS: SYNTECH 23.12-s010_1 () Jul 16 2024 00:01:03 ( )
+[11/25 13:38:40     14s] @(#)CDS: CPE v23.12-s039
+[11/25 13:38:40     14s] @(#)CDS: IQuantus/TQuantus 23.1.1-s122 (64bit) Tue May 28 20:12:45 PDT 2024 (Linux 3.10.0-693.el7.x86_64)
+[11/25 13:38:40     14s] @(#)CDS: OA 22.61-p014 Tue Apr 16 14:38:48 2024
+[11/25 13:38:40     14s] @(#)CDS: SGN 23.10-d005 (03-Oct-2023) (64 bit executable, TkQt5.15.9)
+[11/25 13:38:40     14s] @(#)CDS: RCDB 11.15.0
+[11/25 13:38:40     14s] @(#)CDS: STYLUS 23.10-a014_1 (03/28/2024 09:42 PDT)
+[11/25 13:38:40     14s] @(#)CDS: IntegrityPlanner-23.12-15697 (23.12) (2024-06-27 11:26:54+0800)
+[11/25 13:38:40     14s] @(#)CDS: SYNTHESIS_ENGINE 23.12-s086
+[11/25 13:38:40     14s] Create and set the environment variable TMPDIR to /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_768533_57bb2992-0bf4-451c-90b8-3f01546993b5_ecelinux-14.ece.cornell.edu_sh2663_QrcDm9.
+
+[11/25 13:38:41     14s] Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+[11/25 13:38:42     15s] 
+[11/25 13:38:42     15s] **INFO:  MMMC transition support version v31-84 
+[11/25 13:38:42     15s] 
+[11/25 13:38:42     15s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[11/25 13:38:42     15s] <CMD> suppressMessage ENCEXT-2799
+[11/25 13:38:42     15s] <CMD> getVersion
+[11/25 13:38:42     15s] <CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+        {-window "window coordinates" "" list optional}
+        {-window_size "window size in microns" "" string optional}
+    
+    }
+[11/25 13:38:42     15s] [INFO] Loading Pegasus 23.23 fill procedures
+[11/25 13:38:42     15s] **WARN: Tk package not loaded. The Pegasus fill DRC monitor is disabled.
+[11/25 13:38:42     15s] <CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[11/25 13:38:42     15s] <CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[11/25 13:38:42     15s] <CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[11/25 13:38:42     15s] <CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[11/25 13:38:42     15s] <CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+[11/25 13:38:42     15s] <CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+[11/25 13:38:47     15s] <CMD> setLibraryUnit -time 1ps
+[11/25 13:38:47     15s] <CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+[11/25 13:38:47     15s] <CMD> set conf_qxconf_file NULL
+[11/25 13:38:47     15s] <CMD> set conf_qxlib_file NULL
+[11/25 13:38:47     15s] <CMD> set defHierChar /
+[11/25 13:38:47     15s] <CMD> set distributed_client_message_echo 1
+[11/25 13:38:47     15s] <CMD> set gpsPrivate::dpgNewAddBufsDBUpdate 1
+[11/25 13:38:47     15s] <CMD> set gpsPrivate::lsgEnableNewDbApiInRestruct 1
+[11/25 13:38:47     15s] <CMD> set init_gnd_net vss
+[11/25 13:38:47     15s] <CMD> set init_lef_file {./asap7_tech_4x_170803.lef ./asap7sc7p5t_24_R_4x_170912.lef}
+[11/25 13:38:47     15s] <CMD> set init_mmmc_file ./Default.view
+[11/25 13:38:47     15s] <CMD> set init_pwr_net vdd
+[11/25 13:38:47     15s] <CMD> set init_verilog ../synthesis/dist_sort.ALL.1080.syn.v
+[11/25 13:38:47     15s] <CMD> set pegDefaultResScaleFactor 1.000000
+[11/25 13:38:47     15s] <CMD> set pegDetailResScaleFactor 1.000000
+[11/25 13:38:47     15s] <CMD> set timing_library_float_precision_tol 0.000010
+[11/25 13:38:47     15s] <CMD> set timing_library_load_pin_cap_indices {}
+[11/25 13:38:47     15s] <CMD> set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+[11/25 13:38:47     15s] <CMD> init_design
+[11/25 13:38:47     15s] #% Begin Load MMMC data ... (date=11/25 13:38:47, mem=1728.9M)
+[11/25 13:38:47     15s] **ERROR: (TCLCMD-989):	cannot open SDC file './' for mode 'common'
+
+[11/25 13:39:02     16s] <CMD> setLibraryUnit -time 1ps
+[11/25 13:39:02     16s] <CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+[11/25 13:39:02     16s] <CMD> set conf_qxconf_file NULL
+[11/25 13:39:02     16s] <CMD> set conf_qxlib_file NULL
+[11/25 13:39:02     16s] <CMD> set defHierChar /
+[11/25 13:39:02     16s] <CMD> set distributed_client_message_echo 1
+[11/25 13:39:02     16s] <CMD> set gpsPrivate::dpgNewAddBufsDBUpdate 1
+[11/25 13:39:02     16s] <CMD> set gpsPrivate::lsgEnableNewDbApiInRestruct 1
+[11/25 13:39:02     16s] <CMD> set init_gnd_net vss
+[11/25 13:39:02     16s] <CMD> set init_lef_file {./asap7_tech_4x_170803.lef ./asap7sc7p5t_24_R_4x_170912.lef}
+[11/25 13:39:02     16s] <CMD> set init_mmmc_file ./Default.view
+[11/25 13:39:02     16s] <CMD> set init_pwr_net vdd
+[11/25 13:39:02     16s] <CMD> set init_verilog ../synthesis/dist_sort.ALL.1080.syn.v
+[11/25 13:39:02     16s] <CMD> set pegDefaultResScaleFactor 1.000000
+[11/25 13:39:02     16s] <CMD> set pegDetailResScaleFactor 1.000000
+[11/25 13:39:02     16s] <CMD> set timing_library_float_precision_tol 0.000010
+[11/25 13:39:02     16s] <CMD> set timing_library_load_pin_cap_indices {}
+[11/25 13:39:02     16s] <CMD> set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+[11/25 13:39:03     16s] <CMD> init_design
+[11/25 13:39:03     16s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/25 13:39:03     16s] % Begin Load MMMC data ... (date=11/25 13:39:03, mem=1730.3M)
+[11/25 13:39:03     16s] Extraction setup Started 
+[11/25 13:39:03     16s] Extraction setup Started 
+[11/25 13:39:03     16s] Extraction setup Started 
+[11/25 13:39:03     16s] **ERROR: (TCLCMD-989):	cannot open SDC file './' for mode 'common'
+
+[11/25 13:39:44     16s] <CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+[11/25 13:39:44     16s] <CMD> set conf_qxconf_file NULL
+[11/25 13:39:44     16s] <CMD> set conf_qxlib_file NULL
+[11/25 13:39:44     16s] <CMD> set defHierChar /
+[11/25 13:39:44     16s] <CMD> set distributed_client_message_echo 1
+[11/25 13:39:44     16s] <CMD> set gpsPrivate::dpgNewAddBufsDBUpdate 1
+[11/25 13:39:44     16s] <CMD> set gpsPrivate::lsgEnableNewDbApiInRestruct 1
+[11/25 13:39:44     16s] <CMD> set init_gnd_net vss
+[11/25 13:39:44     16s] <CMD> set init_lef_file {./asap7_tech_4x_170803.lef ./asap7sc7p5t_24_R_4x_170912.lef}
+[11/25 13:39:44     16s] <CMD> set init_mmmc_file ./Default.view
+[11/25 13:39:44     16s] <CMD> set init_pwr_net vdd
+[11/25 13:39:44     16s] <CMD> set init_verilog ../synthesis/dist_sort.ALL.1080.syn.v
+[11/25 13:39:44     16s] <CMD> set pegDefaultResScaleFactor 1.000000
+[11/25 13:39:44     16s] <CMD> set pegDetailResScaleFactor 1.000000
+[11/25 13:39:44     16s] <CMD> set timing_library_float_precision_tol 0.000010
+[11/25 13:39:44     16s] <CMD> set timing_library_load_pin_cap_indices {}
+[11/25 13:39:44     16s] <CMD> set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+[11/25 13:39:46     16s] <CMD> init_design
+[11/25 13:39:46     16s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/25 13:39:47     16s] % Begin Load MMMC data ... (date=11/25 13:39:47, mem=1733.8M)
+[11/25 13:39:47     16s] Extraction setup Started 
+[11/25 13:39:47     16s] Extraction setup Started 
+[11/25 13:39:47     16s] Extraction setup Started 
+[11/25 13:39:47     16s] % End Load MMMC data ... (date=11/25 13:39:47, total cpu=0:00:00.0, real=0:00:00.0, peak res=1733.9M, current mem=1733.9M)
+[11/25 13:39:47     16s] *** Loading design ... ***
+[11/25 13:39:47     16s] 
+[11/25 13:39:47     16s] Loading LEF file ./asap7_tech_4x_170803.lef ...
+[11/25 13:39:47     16s] 
+[11/25 13:39:47     16s] Loading LEF file ./asap7sc7p5t_24_R_4x_170912.lef ...
+[11/25 13:39:47     16s] Set DBUPerIGU to M1 pitch 576.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'A2O1A1Ixp33_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'A2O1A1O1Ixp25_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AND2x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AND2x4_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AND2x6_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AND3x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AND3x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AND3x4_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AND4x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AND4x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AND5x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AND5x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AO211x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AO21x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AO21x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AO221x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AO221x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AO222x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AO22x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (IMPLF-45):	Macro 'AO22x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/25 13:39:47     16s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/25 13:39:47     16s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/25 13:39:47     16s] SIZE height.
+[11/25 13:39:47     16s] **WARN: (EMS-27):	Message (IMPLF-45) has exceeded the current message display limit of 20.
+[11/25 13:39:47     16s] To increase the message display limit, refer to the product command reference manual.
+[11/25 13:39:47     16s] 
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[11/25 13:39:47     16s] Loading view definition file from ./Default.view
+[11/25 13:39:47     16s] Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_INVBUF_RVT_TT.lib' ...
+[11/25 13:39:47     16s] Read 27 cells in library 'asap7sc7p5t_22b_INVBUF_RVT_TT_170906' 
+[11/25 13:39:47     16s] Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_AO_RVT_TT.lib' ...
+[11/25 13:39:48     17s] Read 42 cells in library 'asap7sc7p5t_22b_AO_RVT_TT_170906' 
+[11/25 13:39:48     17s] Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_OA_RVT_TT.lib' ...
+[11/25 13:39:49     18s] Read 34 cells in library 'asap7sc7p5t_22b_OA_RVT_TT_170906' 
+[11/25 13:39:49     18s] Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_SEQ_RVT_TT.lib' ...
+[11/25 13:39:49     18s] Read 26 cells in library 'asap7sc7p5t_22b_SEQ_RVT_TT_170906' 
+[11/25 13:39:49     18s] Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_SIMPLE_RVT_TT.lib' ...
+[11/25 13:39:49     18s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /classes/ece5746/asap7libs/lib/asap7sc7p5t_24_SIMPLE_RVT_TT.lib, Line 11230)
+[11/25 13:39:49     18s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /classes/ece5746/asap7libs/lib/asap7sc7p5t_24_SIMPLE_RVT_TT.lib, Line 14483)
+[11/25 13:39:49     18s] Read 56 cells in library 'asap7sc7p5t_22b_SIMPLE_RVT_TT_170906' 
+[11/25 13:39:49     18s] Ending "PreSetAnalysisView" (total cpu=0:00:02.2, real=0:00:02.0, peak res=1882.9M, current mem=1753.6M)
+[11/25 13:39:49     18s] *** End library_loading (cpu=0.04min, real=0.03min, mem=67.0M, fe_cpu=0.31min, fe_real=1.38min, fe_mem=1758.3M) ***
+[11/25 13:39:49     18s] % Begin Load netlist data ... (date=11/25 13:39:49, mem=1753.6M)
+[11/25 13:39:49     18s] *** Begin netlist parsing (mem=1758.3M) ***
+[11/25 13:39:49     18s] Created 185 new cells from 5 timing libraries.
+[11/25 13:39:49     18s] Reading netlist ...
+[11/25 13:39:49     18s] Backslashed names will retain backslash and a trailing blank character.
+[11/25 13:39:49     18s] Reading verilog netlist '../synthesis/dist_sort.ALL.1080.syn.v'
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'ASYNC_DFFHx1_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'ASYNC_DFFHx1_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'FAx1_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'FAx1_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'NOR2xp33_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'BUFx2_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'NOR2xp33_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'AOI21xp5_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'AOI31xp33_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'NAND2x1_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'HB1xp67_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'INVx4_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'NAND2xp5_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'INVx1_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'NOR2x1_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'HB1xp67_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'NAND2xp5_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'BUFx2_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'INVx1_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPVL-346):	Module 'INVxp67_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[11/25 13:39:49     18s] Type 'man IMPVL-346' for more detail.
+[11/25 13:39:49     18s] **WARN: (EMS-27):	Message (IMPVL-346) has exceeded the current message display limit of 20.
+[11/25 13:39:49     18s] To increase the message display limit, refer to the product command reference manual.
+[11/25 13:39:49     18s] 
+[11/25 13:39:49     18s] *** Memory Usage v#1 (Current mem = 1758.305M, initial mem = 836.516M) ***
+[11/25 13:39:49     18s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1758.3M) ***
+[11/25 13:39:49     18s] % End Load netlist data ... (date=11/25 13:39:49, total cpu=0:00:00.1, real=0:00:00.0, peak res=1774.2M, current mem=1774.2M)
+[11/25 13:39:49     18s] Top level cell is dist_sort.
+[11/25 13:39:49     18s] Hooked 185 DB cells to tlib cells.
+[11/25 13:39:49     18s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1797.7M, current mem=1797.7M)
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'ASYNC_DFFHx1_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'BUFx2_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'NOR2xp33_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'FAx1_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'FAx1_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'ASYNC_DFFHx1_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'AND2x2_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'BUFx5_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'INVx2_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'BUFx3_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'BUFx4f_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'XOR2x2_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'NAND2xp33_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'OAI21xp5_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'XNOR2xp5_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'XOR2xp5_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'OAI22xp5_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'AO21x1_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'AOI21xp5_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'XNOR2xp5_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[11/25 13:39:49     18s] Type 'man IMPDB-2504' for more detail.
+[11/25 13:39:49     18s] **WARN: (EMS-27):	Message (IMPDB-2504) has exceeded the current message display limit of 20.
+[11/25 13:39:49     18s] To increase the message display limit, refer to the product command reference manual.
+[11/25 13:39:49     18s] Cell 'XNOR2xp5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XNOR2xp5_ASAP7_75t_L' as output for net 'N16351' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'FAx1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'SN' of cell 'FAx1_ASAP7_75t_L' as output for net 'N16599' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI21xp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI21xp5_ASAP7_75t_SL' as output for net 'N17563' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR2xp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR2xp33_ASAP7_75t_L' as output for net 'N17566' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'ASYNC_DFFHx1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'QN' of cell 'ASYNC_DFFHx1_ASAP7_75t_L' as output for net 'n440' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'ASYNC_DFFHx1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'QN' of cell 'ASYNC_DFFHx1_ASAP7_75t_SL' as output for net 'n444' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVx1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVx1_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n988' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AND2x2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AND2x2_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n979' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR2x1p5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR2x1p5_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n978' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OR2x2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OR2x2_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n972' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XNOR2x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XNOR2x1_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n967' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR2x1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR2x1_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n933' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AND2x2_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AND2x2_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n931' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR2xp67_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR2xp67_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n930' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR2x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR2x1_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n906' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2xp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2xp5_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n904' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XNOR2x2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XNOR2x2_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n853' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XNOR2x1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XNOR2x1_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n831' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVx2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVx2_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n830' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR2xp67_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR2xp67_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n813' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVx1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVx1_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n804' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XNOR2xp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XNOR2xp5_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n785' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XNOR2x2_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XNOR2x2_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n716' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XOR2xp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XOR2xp5_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n646' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'FAx1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'SN' of cell 'FAx1_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n622' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'FAx1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'CON' of cell 'FAx1_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n621' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'FAx1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'CON' of cell 'FAx1_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n613' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'MAJIxp5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'MAJIxp5_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n611' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XOR2xp5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XOR2xp5_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n608' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'MAJIxp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'MAJIxp5_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n596' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'MAJx2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'MAJx2_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n447' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XOR2x2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XOR2x2_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n394' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI21xp5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI21xp5_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n260' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AO21x1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AO21x1_ASAP7_75t_L' as output for net 'DP_OP_680J1_122_2455_n258' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVxp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVxp33_ASAP7_75t_SL' as output for net 'DP_OP_680J1_122_2455_n243' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OR2x2_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OR2x2_ASAP7_75t_L' as output for net 'DP_OP_681J1_123_2455_n903' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2xp5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2xp5_ASAP7_75t_L' as output for net 'DP_OP_681J1_123_2455_n878' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2x1_ASAP7_75t_SL' as output for net 'DP_OP_681J1_123_2455_n809' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OA21x2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OA21x2_ASAP7_75t_SL' as output for net 'DP_OP_681J1_123_2455_n758' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR2xp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR2xp33_ASAP7_75t_SL' as output for net 'DP_OP_681J1_123_2455_n657' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'MAJx2_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'MAJx2_ASAP7_75t_L' as output for net 'DP_OP_681J1_123_2455_n621' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AO21x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AO21x1_ASAP7_75t_SL' as output for net 'DP_OP_681J1_123_2455_n588' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVxp67_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVxp67_ASAP7_75t_SL' as output for net 'DP_OP_681J1_123_2455_n532' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'A2O1A1Ixp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'A2O1A1Ixp33_ASAP7_75t_SL' as output for net 'DP_OP_681J1_123_2455_n528' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI21xp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI21xp5_ASAP7_75t_SL' as output for net 'DP_OP_681J1_123_2455_n401' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XOR2x2_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XOR2x2_ASAP7_75t_L' as output for net 'DP_OP_682J1_124_2455_n920' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI21x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI21x1_ASAP7_75t_SL' as output for net 'DP_OP_682J1_124_2455_n894' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XOR2x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XOR2x1_ASAP7_75t_SL' as output for net 'DP_OP_682J1_124_2455_n851' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVx2_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVx2_ASAP7_75t_L' as output for net 'DP_OP_682J1_124_2455_n827' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI21x1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI21x1_ASAP7_75t_L' as output for net 'DP_OP_682J1_124_2455_n756' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'XOR2x1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'XOR2x1_ASAP7_75t_L' as output for net 'DP_OP_682J1_124_2455_n350' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'BUFx6f_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'BUFx6f_ASAP7_75t_SL' as output for net 'DP_OP_687J1_129_2455_n1471' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'BUFx4f_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'BUFx4f_ASAP7_75t_L' as output for net 'DP_OP_687J1_129_2455_n1423' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI22xp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI22xp33_ASAP7_75t_L' as output for net 'DP_OP_687J1_129_2455_n447' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI22xp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI22xp33_ASAP7_75t_L' as output for net 'DP_OP_687J1_129_2455_n249' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI22xp5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI22xp5_ASAP7_75t_L' as output for net 'DP_OP_687J1_129_2455_n188' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'A2O1A1Ixp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'A2O1A1Ixp33_ASAP7_75t_L' as output for net 'DP_OP_686J1_128_2455_n1152' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVxp67_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVxp67_ASAP7_75t_L' as output for net 'DP_OP_686J1_128_2455_n901' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI21xp5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI21xp5_ASAP7_75t_L' as output for net 'DP_OP_683J1_125_2455_n966' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI21x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI21x1_ASAP7_75t_SL' as output for net 'n449' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'HB1xp67_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'HB1xp67_ASAP7_75t_SL' as output for net 'n452' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'BUFx2_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'BUFx2_ASAP7_75t_L' as output for net 'n457' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVx3_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVx3_ASAP7_75t_L' as output for net 'n568' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'BUFx2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'BUFx2_ASAP7_75t_SL' as output for net 'n590' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'HB1xp67_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'HB1xp67_ASAP7_75t_L' as output for net 'n591' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI22x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI22x1_ASAP7_75t_SL' as output for net 'n592' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI211xp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI211xp5_ASAP7_75t_SL' as output for net 'n593' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND3xp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND3xp33_ASAP7_75t_SL' as output for net 'n601' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVxp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVxp33_ASAP7_75t_L' as output for net 'n670' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2xp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2xp33_ASAP7_75t_L' as output for net 'n672' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI22xp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI22xp5_ASAP7_75t_SL' as output for net 'n682' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI22x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI22x1_ASAP7_75t_SL' as output for net 'n693' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'BUFx4f_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'BUFx4f_ASAP7_75t_SL' as output for net 'n706' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'BUFx3_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'BUFx3_ASAP7_75t_SL' as output for net 'n760' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI211xp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI211xp5_ASAP7_75t_SL' as output for net 'n776' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI31xp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI31xp33_ASAP7_75t_L' as output for net 'n779' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND4xp25_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND4xp25_ASAP7_75t_SL' as output for net 'n780' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2x1p5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2x1p5_ASAP7_75t_SL' as output for net 'n815' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AND3x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AND3x1_ASAP7_75t_SL' as output for net 'n884' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI21xp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI21xp33_ASAP7_75t_L' as output for net 'n913' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI21xp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI21xp33_ASAP7_75t_L' as output for net 'n918' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'O2A1O1Ixp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'O2A1O1Ixp5_ASAP7_75t_SL' as output for net 'n953' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AND2x4_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AND2x4_ASAP7_75t_SL' as output for net 'n963' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI22xp5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI22xp5_ASAP7_75t_SL' as output for net 'n1104' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR3xp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR3xp33_ASAP7_75t_SL' as output for net 'n1119' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'O2A1O1Ixp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'O2A1O1Ixp33_ASAP7_75t_SL' as output for net 'n1124' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND3xp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND3xp33_ASAP7_75t_L' as output for net 'n1148' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI31xp67_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI31xp67_ASAP7_75t_SL' as output for net 'n1152' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI31xp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI31xp33_ASAP7_75t_SL' as output for net 'n1210' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'BUFx3_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'BUFx3_ASAP7_75t_L' as output for net 'n1270' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI211x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI211x1_ASAP7_75t_SL' as output for net 'n1383' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2x1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2x1_ASAP7_75t_L' as output for net 'n1479' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVx3_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVx3_ASAP7_75t_SL' as output for net 'n1493' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'BUFx5_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'BUFx5_ASAP7_75t_SL' as output for net 'n1607' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'BUFx5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'BUFx5_ASAP7_75t_L' as output for net 'n1921' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI21xp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI21xp33_ASAP7_75t_SL' as output for net 'n2041' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'BUFx6f_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'BUFx6f_ASAP7_75t_L' as output for net 'n2107' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI21xp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI21xp33_ASAP7_75t_SL' as output for net 'n2177' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OA21x2_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OA21x2_ASAP7_75t_L' as output for net 'n2631' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR2x2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR2x2_ASAP7_75t_SL' as output for net 'n2880' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR2x1p5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR2x1p5_ASAP7_75t_L' as output for net 'n3009' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2xp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2xp33_ASAP7_75t_SL' as output for net 'n3400' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI31xp67_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI31xp67_ASAP7_75t_SL' as output for net 'n3566' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AND3x1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AND3x1_ASAP7_75t_L' as output for net 'n3624' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI31xp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI31xp33_ASAP7_75t_SL' as output for net 'n3627' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI22xp33_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI22xp33_ASAP7_75t_SL' as output for net 'n3661' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR3xp33_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR3xp33_ASAP7_75t_L' as output for net 'n3689' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND4xp75_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND4xp75_ASAP7_75t_SL' as output for net 'n3696' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR4xp75_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR4xp75_ASAP7_75t_SL' as output for net 'n3714' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OR3x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OR3x1_ASAP7_75t_SL' as output for net 'n3771' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND3x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND3x1_ASAP7_75t_SL' as output for net 'n3843' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2xp67_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2xp67_ASAP7_75t_SL' as output for net 'n3857' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'INVx4_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'INVx4_ASAP7_75t_SL' as output for net 'n3933' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR4xp25_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR4xp25_ASAP7_75t_SL' as output for net 'n4058' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI211xp5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI211xp5_ASAP7_75t_L' as output for net 'n4086' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2x2_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2x2_ASAP7_75t_L' as output for net 'n4147' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AOI22xp5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AOI22xp5_ASAP7_75t_L' as output for net 'n4183' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND3x2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND3x2_ASAP7_75t_SL' as output for net 'n4233' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2x2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2x2_ASAP7_75t_SL' as output for net 'n4352' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NOR3x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NOR3x1_ASAP7_75t_SL' as output for net 'n4370' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AND2x6_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AND2x6_ASAP7_75t_SL' as output for net 'n4778' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'NAND2x1p5_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'NAND2x1p5_ASAP7_75t_L' as output for net 'n6119' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'OAI21x1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'OAI21x1_ASAP7_75t_L' as output for net 'n6213' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AO21x2_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AO21x2_ASAP7_75t_L' as output for net 'n6255' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AO21x2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AO21x2_ASAP7_75t_SL' as output for net 'n6275' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'ASYNC_DFFHx1_ASAP7_75t_L' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'RESET' of cell 'ASYNC_DFFHx1_ASAP7_75t_L' as output for net 'n441' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AND4x1_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AND4x1_ASAP7_75t_SL' as output for net 'n3653' in module 'dist_sort'.
+[11/25 13:39:49     18s] Cell 'AO31x2_ASAP7_75t_SL' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'Y' of cell 'AO31x2_ASAP7_75t_SL' as output for net 'n3887' in module 'dist_sort'.
+[11/25 13:39:49     18s] 126 empty module found.
+[11/25 13:39:49     18s] Starting recursive module instantiation check.
+[11/25 13:39:49     18s] No recursion found.
+[11/25 13:39:49     18s] Term dir updated for 0 vinsts of 126 cells.
+[11/25 13:39:49     18s] Building hierarchical netlist for Cell dist_sort ...
+[11/25 13:39:49     18s] ***** UseNewTieNetMode *****.
+[11/25 13:39:49     18s] *** Netlist is unique.
+[11/25 13:39:49     18s] Set DBUPerIGU to techSite coreSite width 864.
+[11/25 13:39:49     18s] Setting Std. cell height to 4320 DBU (smallest netlist inst).
+[11/25 13:39:49     18s] ** info: there are 323 modules.
+[11/25 13:39:49     18s] ** info: there are 1795 stdCell insts.
+[11/25 13:39:49     18s] ** info: there are 1795 stdCell insts with at least one signal pin.
+[11/25 13:39:49     18s] 
+[11/25 13:39:49     18s] *** Memory Usage v#1 (Current mem = 1825.719M, initial mem = 836.516M) ***
+[11/25 13:39:49     18s] Start create_tracks
+[11/25 13:39:49     19s] Extraction setup Started for TopCell dist_sort 
+[11/25 13:39:49     19s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[11/25 13:39:49     19s] Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[11/25 13:39:49     19s] eee: __QRC_SADV_USE_LE__ is set 0
+[11/25 13:39:50     19s] Generating auto layer map file.
+[11/25 13:39:50     19s] eee:  LayerId	    Name	QrcTechId	QrcTechName	Type
+[11/25 13:39:50     19s] eee:        1	      M1	        2	       lisd	Metal          
+[11/25 13:39:50     19s] eee:       34	      V1	        3	         v0	Via            
+[11/25 13:39:50     19s] eee:        2	      M2	        4	         m1	Metal          
+[11/25 13:39:50     19s] eee:       35	      V2	        5	         v1	Via            
+[11/25 13:39:50     19s] eee:        3	      M3	        6	         m2	Metal          
+[11/25 13:39:50     19s] eee:       36	      V3	        7	         v2	Via            
+[11/25 13:39:50     19s] eee:        4	      M4	        8	         m3	Metal          
+[11/25 13:39:50     19s] eee:       37	      V4	        9	         v3	Via            
+[11/25 13:39:50     19s] eee:        5	      M5	       10	         m4	Metal          
+[11/25 13:39:50     19s] eee:       38	      V5	       11	         v4	Via            
+[11/25 13:39:50     19s] eee:        6	      M6	       12	         m5	Metal          
+[11/25 13:39:50     19s] eee:       39	      V6	       13	         v5	Via            
+[11/25 13:39:50     19s] eee:        7	      M7	       14	         m6	Metal          
+[11/25 13:39:50     19s] eee:       40	      V7	       15	         v6	Via            
+[11/25 13:39:50     19s] eee:        8	      M8	       16	         m7	Metal          
+[11/25 13:39:50     19s] eee:       41	      V8	       17	         v7	Via            
+[11/25 13:39:50     19s] eee:        9	      M9	       18	         m8	Metal          
+[11/25 13:39:50     19s] eee:       42	      V9	       19	         v8	Via            
+[11/25 13:39:50     19s] eee:       10	     Pad	       20	         m9	Metal          
+[11/25 13:39:50     19s] eee: TechFile: /classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06
+[11/25 13:39:50     19s] eee: HoWee  : 0 0 0 0 0 0 0 0 0 0 
+[11/25 13:39:50     19s] eee: Erosn  : 0 0 0 0 0 0 0 0 0 0 
+[11/25 13:39:50     19s] eee: nrColor: 0 0 0 0 0 0 0 0 0 0 
+[11/25 13:39:50     19s] eee: Save / Restore of RC patterns enabled 
+[11/25 13:39:50     19s] eee: Pattern meta data file doesn't exist
+[11/25 13:39:50     19s] eee: Pattern data restore failed for 1 tech files
+[11/25 13:39:50     19s] eee: Pattern extraction started for 1 tech files
+[11/25 13:39:50     19s] Importing multi-corner technology file(s) for preRoute extraction...
+[11/25 13:39:50      0s] /classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06
+[11/25 13:39:51      0s] Generating auto layer map file.
+[11/25 13:39:51      0s] eee:  LayerId	    Name	QrcTechId	QrcTechName	Type
+[11/25 13:39:51      0s] eee:        1	      M1	        2	       lisd	Metal          
+[11/25 13:39:51      0s] eee:       34	      V1	        3	         v0	Via            
+[11/25 13:39:51      0s] eee:        2	      M2	        4	         m1	Metal          
+[11/25 13:39:51      0s] eee:       35	      V2	        5	         v1	Via            
+[11/25 13:39:51      0s] eee:        3	      M3	        6	         m2	Metal          
+[11/25 13:39:51      0s] eee:       36	      V3	        7	         v2	Via            
+[11/25 13:39:51      0s] eee:        4	      M4	        8	         m3	Metal          
+[11/25 13:39:51      0s] eee:       37	      V4	        9	         v3	Via            
+[11/25 13:39:51      0s] eee:        5	      M5	       10	         m4	Metal          
+[11/25 13:39:51      0s] eee:       38	      V5	       11	         v4	Via            
+[11/25 13:39:51      0s] eee:        6	      M6	       12	         m5	Metal          
+[11/25 13:39:51      0s] eee:       39	      V6	       13	         v5	Via            
+[11/25 13:39:51      0s] eee:        7	      M7	       14	         m6	Metal          
+[11/25 13:39:51      0s] eee:       40	      V7	       15	         v6	Via            
+[11/25 13:39:51      0s] eee:        8	      M8	       16	         m7	Metal          
+[11/25 13:39:51      0s] eee:       41	      V8	       17	         v7	Via            
+[11/25 13:39:51      0s] eee:        9	      M9	       18	         m8	Metal          
+[11/25 13:39:51      0s] eee:       42	      V9	       19	         v8	Via            
+[11/25 13:39:51      0s] eee:       10	     Pad	       20	         m9	Metal          
+
+[11/25 13:39:54     20s] eee: Pattern extraction completed
+[11/25 13:39:54     20s] Completed (cpu: 0:00:01.4 real: 0:00:05.0)
+[11/25 13:39:54     20s] Set Shrink Factor to 1.00000
+[11/25 13:39:54     20s] Summary of Active RC-Corners : 
+[11/25 13:39:54     20s]  
+[11/25 13:39:54     20s]  Analysis View: default_setup_view
+[11/25 13:39:54     20s]     RC-Corner Name        : RC_corner_25
+[11/25 13:39:54     20s]     RC-Corner Index       : 0
+[11/25 13:39:54     20s]     RC-Corner Temperature : 25 Celsius
+[11/25 13:39:54     20s]     RC-Corner Cap Table   : ''
+[11/25 13:39:54     20s]     RC-Corner PreRoute Res Factor         : 1
+[11/25 13:39:54     20s]     RC-Corner PreRoute Cap Factor         : 1
+[11/25 13:39:54     20s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[11/25 13:39:54     20s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[11/25 13:39:54     20s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[11/25 13:39:54     20s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[11/25 13:39:54     20s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[11/25 13:39:54     20s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[11/25 13:39:54     20s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[11/25 13:39:54     20s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[11/25 13:39:54     20s]     RC-Corner Technology file: '/classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06'
+[11/25 13:39:54     20s]  
+[11/25 13:39:54     20s]  Analysis View: default_hold_view
+[11/25 13:39:54     20s]     RC-Corner Name        : RC_corner_25
+[11/25 13:39:54     20s]     RC-Corner Index       : 0
+[11/25 13:39:54     20s]     RC-Corner Temperature : 25 Celsius
+[11/25 13:39:54     20s]     RC-Corner Cap Table   : ''
+[11/25 13:39:54     20s]     RC-Corner PreRoute Res Factor         : 1
+[11/25 13:39:54     20s]     RC-Corner PreRoute Cap Factor         : 1
+[11/25 13:39:54     20s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[11/25 13:39:54     20s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[11/25 13:39:54     20s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[11/25 13:39:54     20s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[11/25 13:39:54     20s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[11/25 13:39:54     20s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[11/25 13:39:54     20s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[11/25 13:39:54     20s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[11/25 13:39:54     20s]     RC-Corner Technology file: '/classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06'
+[11/25 13:39:54     20s] eee: RC Grid memory allocated = 4320 (6 X 6 X 10 X 12b)
+[11/25 13:39:54     20s] Updating RC Grid density data for preRoute extraction ...
+[11/25 13:39:54     20s] eee: pegSigSF=1.070000
+[11/25 13:39:54     20s] Initializing multi-corner resistance tables ...
+[11/25 13:39:54     20s] eee: Grid unit RC data computation started
+[11/25 13:39:54     20s] eee: Grid unit RC data computation completed
+[11/25 13:39:54     20s] eee: l=1 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/25 13:39:54     20s] eee: l=2 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/25 13:39:54     20s] eee: l=3 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/25 13:39:54     20s] eee: l=4 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/25 13:39:54     20s] eee: l=5 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/25 13:39:54     20s] eee: l=6 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/25 13:39:54     20s] eee: l=7 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/25 13:39:54     20s] eee: l=8 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/25 13:39:54     20s] eee: l=9 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/25 13:39:54     20s] eee: l=10 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/25 13:39:54     20s] {RT RC_corner_25 0 2 10  {4 1} {6 0} {8 0} {9 0} 4}
+[11/25 13:39:54     20s] eee: LAM-FP: thresh=1 ; dimX=347.805556 ; dimY=345.000000 ; multX=1.000000 ; multY=1.000000 ; minP=576 ; fpMult=1.000000 ;
+[11/25 13:39:54     20s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.000000 uaWl=0.000000 uaWlH=0.000000 aWlH=0.000000 lMod=0 pMax=0.850000 pMod=82 pModAss=50 wcR=0.640700 crit=0.000000 siPrev=0 newSi=0.000000 wHLS=1.601800 viaL=0.000000 shortMod=0.000000 fModUnas=0.000000 fModAs=0.000000 pDens=0.500000 
+[11/25 13:39:54     20s] eee: NetCapCache creation started. (Current Mem: 1987.789M) 
+[11/25 13:39:54     20s] eee: NetCapCache completed. (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  Curr Mem: 1987.789M) 
+[11/25 13:39:54     20s] eee: dbu = 4000, Design = [ll(0.000000, 0.000000) ur(50.084000, 49.680000)], Layers = [f(10) b(0)], Grid size = 10.800000 um, Grid Dim = (5 X 5)
+[11/25 13:39:54     20s] eee: Metal Layers Info:
+[11/25 13:39:54     20s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[11/25 13:39:54     20s] eee: |   Layer  |  Id |    W    |    S    |    P    |   uC   |   uR   | D | T | wS |
+[11/25 13:39:54     20s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[11/25 13:39:54     20s] eee: |       M1 |   1 |   0.072 |   0.072 |   0.144 |  0.039 |  13.89 | V | 0 |  1 |
+[11/25 13:39:54     20s] eee: |       M2 |   2 |   0.072 |   0.072 |   0.144 |  0.049 |  16.96 | H | 0 |  1 |
+[11/25 13:39:54     20s] eee: |       M3 |   3 |   0.072 |   0.072 |   0.144 |  0.047 |  16.96 | V | 0 |  1 |
+[11/25 13:39:54     20s] eee: |       M4 |   4 |   0.096 |   0.096 |   0.192 |  0.043 |  11.74 | H | 0 |  1 |
+[11/25 13:39:54     20s] eee: |       M5 |   5 |   0.096 |   0.096 |   0.216 |  0.044 |  10.27 | V | 0 |  1 |
+[11/25 13:39:54     20s] eee: |       M6 |   6 |   0.128 |   0.128 |   0.288 |  0.038 |   7.26 | H | 0 |  1 |
+[11/25 13:39:54     20s] eee: |       M7 |   7 |   0.128 |   0.128 |   0.288 |  0.045 |   6.77 | V | 0 |  1 |
+[11/25 13:39:54     20s] eee: |       M8 |   8 |   0.160 |   0.160 |   0.384 |  0.039 |   5.20 | H | 0 |  1 |
+[11/25 13:39:54     20s] eee: |       M9 |   9 |   0.160 |   0.160 |   0.360 |  0.044 |   4.83 | V | 0 |  1 |
+[11/25 13:39:54     20s] eee: |      Pad |  10 |   0.160 |   8.000 |   0.384 |  0.042 |   4.83 | H | 0 |  1 |
+[11/25 13:39:54     20s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[11/25 13:39:54     20s] eee: uC/uR for corner RC_corner_25, min-width/min-spacing, 30 perc over/under densities.
+[11/25 13:39:54     20s] Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+[11/25 13:39:54     20s] *Info: initialize multi-corner CTS.
+[11/25 13:39:54     20s] Ending "SetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2084.6M, current mem=1866.2M)
+[11/25 13:39:54     20s] Reading timing constraints file './dist_sort.ALL.1080.syn.sdc' ...
+[11/25 13:39:54     20s] Current (total cpu=0:00:20.9, real=0:01:28, peak res=2234.4M, current mem=2234.4M)
+[11/25 13:39:54     20s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ./dist_sort.ALL.1080.syn.sdc, Line 8).
+[11/25 13:39:54     20s] 
+[11/25 13:39:54     20s] INFO (CTE): Reading of timing constraints file ./dist_sort.ALL.1080.syn.sdc completed, with 1 WARNING
+[11/25 13:39:54     20s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2249.8M, current mem=2249.8M)
+[11/25 13:39:54     20s] Current (total cpu=0:00:21.0, real=0:01:28, peak res=2249.8M, current mem=2249.8M)
+[11/25 13:39:55     21s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[11/25 13:39:55     21s] 
+[11/25 13:39:55     21s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[11/25 13:39:55     21s] Summary for sequential cells identification: 
+[11/25 13:39:55     21s]   Identified SBFF number: 17
+[11/25 13:39:55     21s]   Identified MBFF number: 0
+[11/25 13:39:55     21s]   Identified SB Latch number: 6
+[11/25 13:39:55     21s]   Identified MB Latch number: 0
+[11/25 13:39:55     21s]   Not identified SBFF number: 0
+[11/25 13:39:55     21s]   Not identified MBFF number: 0
+[11/25 13:39:55     21s]   Not identified SB Latch number: 0
+[11/25 13:39:55     21s]   Not identified MB Latch number: 0
+[11/25 13:39:55     21s]   Number of sequential cells which are not FFs: 3
+[11/25 13:39:55     21s] Total number of combinational cells: 159
+[11/25 13:39:55     21s] Total number of sequential cells: 26
+[11/25 13:39:55     21s] Total number of tristate cells: 0
+[11/25 13:39:55     21s] Total number of level shifter cells: 0
+[11/25 13:39:55     21s] Total number of power gating cells: 0
+[11/25 13:39:55     21s] Total number of isolation cells: 0
+[11/25 13:39:55     21s] Total number of power switch cells: 0
+[11/25 13:39:55     21s] Total number of pulse generator cells: 0
+[11/25 13:39:55     21s] Total number of always on buffers: 0
+[11/25 13:39:55     21s] Total number of retention cells: 0
+[11/25 13:39:55     21s] Total number of physical cells: 0
+[11/25 13:39:55     21s] List of usable buffers: BUFx10_ASAP7_75t_R BUFx12_ASAP7_75t_R BUFx12f_ASAP7_75t_R BUFx16f_ASAP7_75t_R BUFx24_ASAP7_75t_R BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R BUFx4_ASAP7_75t_R BUFx5_ASAP7_75t_R BUFx4f_ASAP7_75t_R BUFx6f_ASAP7_75t_R BUFx8_ASAP7_75t_R HB1xp67_ASAP7_75t_R HB2xp67_ASAP7_75t_R
+[11/25 13:39:55     21s] Total number of usable buffers: 14
+[11/25 13:39:55     21s] List of unusable buffers:
+[11/25 13:39:55     21s] Total number of unusable buffers: 0
+[11/25 13:39:55     21s] List of usable inverters: INVx11_ASAP7_75t_R INVx13_ASAP7_75t_R INVx1_ASAP7_75t_R INVx2_ASAP7_75t_R INVx3_ASAP7_75t_R INVx4_ASAP7_75t_R INVx5_ASAP7_75t_R INVx6_ASAP7_75t_R INVx8_ASAP7_75t_R INVxp67_ASAP7_75t_R INVxp33_ASAP7_75t_R
+[11/25 13:39:55     21s] Total number of usable inverters: 11
+[11/25 13:39:55     21s] List of unusable inverters:
+[11/25 13:39:55     21s] Total number of unusable inverters: 0
+[11/25 13:39:55     21s] List of identified usable delay cells: HB3xp67_ASAP7_75t_R HB4xp67_ASAP7_75t_R
+[11/25 13:39:55     21s] Total number of identified usable delay cells: 2
+[11/25 13:39:55     21s] List of identified unusable delay cells:
+[11/25 13:39:55     21s] Total number of identified unusable delay cells: 0
+[11/25 13:39:55     21s] 
+[11/25 13:39:55     21s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+[11/25 13:39:55     21s] 
+[11/25 13:39:55     21s] TimeStamp Deleting Cell Server Begin ...
+[11/25 13:39:55     21s] 
+[11/25 13:39:55     21s] TimeStamp Deleting Cell Server End ...
+[11/25 13:39:55     21s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=2269.4M, current mem=2269.4M)
+[11/25 13:39:55     21s] 
+[11/25 13:39:55     21s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[11/25 13:39:55     21s] Summary for sequential cells identification: 
+[11/25 13:39:55     21s]   Identified SBFF number: 17
+[11/25 13:39:55     21s]   Identified MBFF number: 0
+[11/25 13:39:55     21s]   Identified SB Latch number: 6
+[11/25 13:39:55     21s]   Identified MB Latch number: 0
+[11/25 13:39:55     21s]   Not identified SBFF number: 0
+[11/25 13:39:55     21s]   Not identified MBFF number: 0
+[11/25 13:39:55     21s]   Not identified SB Latch number: 0
+[11/25 13:39:55     21s]   Not identified MB Latch number: 0
+[11/25 13:39:55     21s]   Number of sequential cells which are not FFs: 3
+[11/25 13:39:55     21s]  Visiting view : default_setup_view
+[11/25 13:39:55     21s]    : PowerDomain = none : Weighted F : unweighted  = 4.20 (1.000) with rcCorner = 0
+[11/25 13:39:55     21s]    : PowerDomain = none : Weighted F : unweighted  = 2.80 (1.000) with rcCorner = -1
+[11/25 13:39:55     21s]  Visiting view : default_hold_view
+[11/25 13:39:55     21s]    : PowerDomain = none : Weighted F : unweighted  = 4.20 (1.000) with rcCorner = 0
+[11/25 13:39:55     21s]    : PowerDomain = none : Weighted F : unweighted  = 2.80 (1.000) with rcCorner = -1
+[11/25 13:39:55     21s] TLC MultiMap info (StdDelay):
+[11/25 13:39:55     21s]   : delayCorner_fast + libset_fast + 1 + no RcCorner := 2.8ps
+[11/25 13:39:55     21s]   : delayCorner_fast + libset_fast + 1 + RC_corner_25 := 4.2ps
+[11/25 13:39:55     21s]   : delayCorner_slow + libset_slow + 1 + no RcCorner := 2.8ps
+[11/25 13:39:55     21s]   : delayCorner_slow + libset_slow + 1 + RC_corner_25 := 4.2ps
+[11/25 13:39:55     21s]  Setting StdDelay to: 4.2ps
+[11/25 13:39:55     21s] 
+[11/25 13:39:55     21s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[11/25 13:39:55     21s] 
+[11/25 13:39:55     21s] TimeStamp Deleting Cell Server Begin ...
+[11/25 13:39:55     21s] 
+[11/25 13:39:55     21s] TimeStamp Deleting Cell Server End ...
+[11/25 13:39:55     21s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/25 13:39:58     21s] 
+[11/25 13:39:58     21s] *** Memory Usage v#1 (Current mem = 2271.992M, initial mem = 836.516M) ***
+[11/25 13:39:58     21s] 
+[11/25 13:39:58     21s] *** Summary of all messages that are not suppressed in this session:
+[11/25 13:39:58     21s] Severity  ID               Count  Summary                                  
+[11/25 13:39:58     21s] WARNING   IMPLF-45           196  Macro '%s' has no SITE statement and it ...
+[11/25 13:39:58     21s] WARNING   IMPVL-346          126  Module '%s' is instantiated in the netli...
+[11/25 13:39:58     21s] WARNING   IMPDB-2504         126  Unable to find netlist cell in the desig...
+[11/25 13:39:58     21s] ERROR     TCLCMD-989           2  cannot open SDC file '%s' for mode '%s'  
+[11/25 13:39:58     21s] WARNING   TCLCMD-1461          1  Skipped unsupported command: %s          
+[11/25 13:39:58     21s] WARNING   TECHLIB-1277         2  The %s '%s' has been defined for %s %s '...
+[11/25 13:39:58     21s] *** Message Summary: 451 warning(s), 2 error(s)
+[11/25 13:39:58     21s] 
+[11/25 13:39:58     21s] --- Ending "Innovus" (totcpu=0:00:21.1, real=0:01:32, mem=2272.0M) ---

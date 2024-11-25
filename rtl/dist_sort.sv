@@ -25,13 +25,15 @@ module dist_sort (
 
     // Main combinational logic
     always_ff @(posedge clk or posedge rst) begin
+
+        if (rst) begin 
+            // Default assignments
+            addr_1st= 3'b0;
+            addr_2nd = 3'b0;
+            out_valid= 1'b0;
         
-        // Default assignments
-        addr_1st= 3'b0;
-        addr_2nd = 3'b0;
-        out_valid= 1'b0;
-        
-        if (in_valid) begin
+
+        end else if (in_valid) begin
             // do the distance calculations explicitly
 
 
@@ -96,7 +98,13 @@ module dist_sort (
             addr_1st = sort_addr_1;
             addr_2nd = sort_addr_2;
             out_valid = 1'b1;
+        end else begin
+            // Default assignments
+            addr_1st= 3'b0;
+            addr_2nd = 3'b0;
+            out_valid= 1'b0;
         end
+
     end
 
 endmodule
