@@ -63,9 +63,10 @@ dist_sort DUT (.clk(clk),
 
 //-----------------Task to get query and sv--------------------//
 task get_query_and_sv();
-fp1=$fopen("./inputs.txt","r");
+fp1=$fopen("/home/sh2663/asap7_rundir/asic-final/rtl/inputs.txt","r");
 for(i=0;i<num_of_inputs;i++) begin
-	p=$fscanf(fp1,"%h\t%h\t%h\t%h\t%h\t%h\t%h\t%h\t%h\n",query_ip[i], S_0_ip[i], S_1_ip[i], S_2_ip[i], S_3_ip[i], S_4_ip[i], S_5_ip[i], S_6_ip[i], S_7_ip[i]);       
+	p=$fscanf(fp1,"%h\t%h\t%h\t%h\t%h\t%h\t%h\t%h\t%h\n",query_ip[i], S_0_ip[i], S_1_ip[i], S_2_ip[i], S_3_ip[i], S_4_ip[i], S_5_ip[i], S_6_ip[i], S_7_ip[i]); 
+  $display("query=%h, S_0=%h",query_ip[i], S_0_ip[i]);
 end
 
 $fclose(fp1);
@@ -145,9 +146,9 @@ endtask
 task init_valid();
 #(START_IN_VALID)
 @(negedge clk)
-in_valid <= ~in_valid;
+in_valid <= 1;
 #(RUN_TIME) //After the design ends invalidate the inputs
-in_valid <= ~in_valid;
+in_valid <= 0;
 endtask
 //-------------------------------------------------------------//
 

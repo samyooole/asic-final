@@ -16,68 +16,53 @@ module dist_sort (
 );
 
     // Register declarations for input signals
-    logic [63:0] query_reg;
-    logic [63:0] search_0_reg, search_1_reg, search_2_reg, search_3_reg;
-    logic [63:0] search_4_reg, search_5_reg, search_6_reg, search_7_reg;
 
     // Internal signals
-    logic [15:0] dist_0, dist_1, dist_2, dist_3, dist_4, dist_5, dist_6, dist_7;
-    logic signed [4:0] diff_0, diff_1, diff_2, diff_3, diff_4, diff_5, diff_6, diff_7;
+    logic [63:0] dist_0, dist_1, dist_2, dist_3, dist_4, dist_5, dist_6, dist_7;
+    logic signed [63:0] diff_0, diff_1, diff_2, diff_3, diff_4, diff_5, diff_6, diff_7;
     logic [2:0] sort_addr_1, sort_addr_2;
-    logic [15:0] data_addr_1, data_addr_2;
-    logic [2:0] addr_1st_comb;
-    logic [2:0] addr_2nd_comb;
-    logic out_valid_comb;
+    logic [63:0] data_addr_1, data_addr_2;
 
-    // Input registration
-    always_ff @(posedge clk or posedge rst) begin
-        if (rst) begin
-            query_reg <= 64'b0;
-            search_0_reg <= 64'b0;
-            search_1_reg <= 64'b0;
-            search_2_reg <= 64'b0;
-            search_3_reg <= 64'b0;
-            search_4_reg <= 64'b0;
-            search_5_reg <= 64'b0;
-            search_6_reg <= 64'b0;
-            search_7_reg <= 64'b0;
-        end else begin
-            query_reg <= query;
-            search_0_reg <= search_0;
-            search_1_reg <= search_1;
-            search_2_reg <= search_2;
-            search_3_reg <= search_3;
-            search_4_reg <= search_4;
-            search_5_reg <= search_5;
-            search_6_reg <= search_6;
-            search_7_reg <= search_7;
-        end
-    end
+
 
     // Main combinational logic
-    always_comb begin
+    always_ff @(posedge clk or posedge rst) begin
+        
+        /*
+        if (rst) begin
+            //
+        end else begin
+            $display("Clock tick, in_valid: %b", in_valid);
+        end
+
+        */
+        
+        
         // Default assignments
-        addr_1st_comb = 3'b0;
-        addr_2nd_comb = 3'b0;
-        out_valid_comb = 1'b0;
+        addr_1st= 3'b0;
+        addr_2nd = 3'b0;
+        out_valid= 1'b0;
         
         if (in_valid) begin
             // do the distance calculations explicitly
+
 
             // Reset accumulators
             dist_0 = '0; dist_1 = '0; dist_2 = '0; dist_3 = '0;
             dist_4 = '0; dist_5 = '0; dist_6 = '0; dist_7 = '0;
 
+
+
             // Calculate distances
             for (int i = 0; i < 16; i++) begin
-                diff_0 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_0_reg[i*4 +: 4]});
-                diff_1 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_1_reg[i*4 +: 4]});
-                diff_2 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_2_reg[i*4 +: 4]});
-                diff_3 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_3_reg[i*4 +: 4]});
-                diff_4 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_4_reg[i*4 +: 4]});
-                diff_5 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_5_reg[i*4 +: 4]});
-                diff_6 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_6_reg[i*4 +: 4]});
-                diff_7 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_7_reg[i*4 +: 4]});
+                diff_0 = $signed( query[i*4 +: 4]) - $signed( search_0[i*4 +: 4]);
+                diff_1 = $signed( query[i*4 +: 4]) - $signed( search_1[i*4 +: 4]);
+                diff_2 = $signed( query[i*4 +: 4]) - $signed( search_2[i*4 +: 4]);
+                diff_3 = $signed( query[i*4 +: 4]) - $signed( search_3[i*4 +: 4]);
+                diff_4 = $signed( query[i*4 +: 4]) - $signed( search_4[i*4 +: 4]);
+                diff_5 = $signed( query[i*4 +: 4]) - $signed( search_5[i*4 +: 4]);
+                diff_6 = $signed( query[i*4 +: 4]) - $signed( search_6[i*4 +: 4]);
+                diff_7 = $signed( query[i*4 +: 4]) - $signed( search_7[i*4 +: 4]);
 
                 dist_0 = dist_0 + (diff_0 * diff_0);
                 dist_1 = dist_1 + (diff_1 * diff_1);
@@ -117,22 +102,9 @@ module dist_sort (
 
 
 
-            addr_1st_comb = sort_addr_1;
-            addr_2nd_comb = sort_addr_2;
-            out_valid_comb = 1'b1;
-        end
-    end
-
-    // Output registration
-    always_ff @(posedge clk or posedge rst) begin
-        if (rst) begin
-            addr_1st <= 3'b0;
-            addr_2nd <= 3'b0;
-            out_valid <= 1'b0;
-        end else begin
-            addr_1st <= addr_1st_comb;
-            addr_2nd <= addr_2nd_comb;
-            out_valid <= out_valid_comb;
+            addr_1st = sort_addr_1;
+            addr_2nd = sort_addr_2;
+            out_valid = 1'b1;
         end
     end
 
