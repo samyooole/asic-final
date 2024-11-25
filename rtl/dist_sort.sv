@@ -61,9 +61,7 @@ module dist_sort (
         addr_2nd_comb = 3'b0;
         out_valid_comb = 1'b0;
         
-        if (!in_valid) begin
-            // Keep default values
-        end else begin
+        if (in_valid) begin
             // do the distance calculations explicitly
 
             // Reset accumulators
