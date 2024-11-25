@@ -13,7 +13,7 @@ logic [63:0] search_0_reg;
 
 // Internal signals
 logic [31:0] dist_0;
-logic signed [4:0] diff_0;
+logic signed [31:0] diff_0; // the # of bits you allocate here is pretty crucial because we were seeing a lot of overflow earlier
 logic out_valid_comb;
 
 // Input registration
@@ -39,12 +39,16 @@ always_comb begin
         dist_0 = '0;
         // Calculate distances
         for (int i = 0; i < 16; i++) begin
-            diff_0 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_0_reg[i*4 +: 4]});
+
+            diff_0 = $signed(query_reg[i*4 +: 4]) - $signed(search_0_reg[i*4 +: 4]);
 
             dist_0 = dist_0 + (diff_0 * diff_0);
+            
         end
 
         $display(dist_0);
+
+        
 
         out_valid_comb = 1'b1;
 

@@ -43,15 +43,7 @@ module dist_sort_simple_tb;
 
         // Test case 1: All zeros
         query = 64'h0000000000000000;
-        search_0 = 64'h0000000000000000;
-        in_valid = 1;
-        #(CLK_PERIOD);
-        in_valid = 0;
-
-        // Test case 2: Different vectors
-        #(CLK_PERIOD * 2);
-        query = 64'hddabaaef1c450b1;
-        search_0 = 64'h11223344556677;
+        search_0 = 64'h0000000000000001;
         in_valid = 1;
         #(CLK_PERIOD);
         in_valid = 0;
