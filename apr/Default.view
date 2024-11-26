@@ -25,7 +25,7 @@ create_delay_corner -name delayCorner_fast\
 # Edit this with your sdc file generated after synthesis
 create_constraint_mode -name common\
    -sdc_files\
-    [list ./dist_sort.ALL.1080.syn.sdc]
+   ./dist_sort.RVT.2300.syn.sdc
 
 create_analysis_view -name default_setup_view -constraint_mode common -delay_corner delayCorner_slow
 create_analysis_view -name default_hold_view -constraint_mode common -delay_corner delayCorner_fast

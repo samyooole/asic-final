@@ -1,0 +1,44 @@
+Information: Propagating switching activity (medium effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort medium
+Design : dist_sort
+Version: V-2023.12-SP5
+Date   : Mon Nov 25 20:17:28 2024
+****************************************
+
+
+Library(s) Used:
+
+    asap7sc7p5t_22b_SIMPLE_RVT_TT_170906 (File: /classes/ece5746/asap7libs/ldbs/asap7sc7p5t_22b_SIMPLE_RVT_TT_170906.ldb)
+    asap7sc7p5t_22b_AO_RVT_TT_170906 (File: /classes/ece5746/asap7libs/ldbs/asap7sc7p5t_22b_AO_RVT_TT_170906.ldb)
+    asap7sc7p5t_22b_INVBUF_RVT_TT_170906 (File: /classes/ece5746/asap7libs/ldbs/asap7sc7p5t_22b_INVBUF_RVT_TT_170906.ldb)
+    asap7sc7p5t_22b_OA_RVT_TT_170906 (File: /classes/ece5746/asap7libs/ldbs/asap7sc7p5t_22b_OA_RVT_TT_170906.ldb)
+    asap7sc7p5t_22b_SEQ_RVT_TT_170906 (File: /classes/ece5746/asap7libs/ldbs/asap7sc7p5t_22b_SEQ_RVT_TT_170906.ldb)
+
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_22b_AO_RVT_TT_170906
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+
+
+Global Operating Voltage = 0.7  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ps
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+dist_sort                                 0.607    0.299 7.24e+05    0.907 100.0
+1

@@ -9,6 +9,8 @@ catch { setOptMode -opt_fix_fanout_load true }
 catch { setOptMode -opt_hold_allow_setup_tns_degradation false }
 catch { setOptMode -opt_post_route_fix_si_transitions true }
 catch { setOptMode -opt_skew false }
+catch { setPathGroupOptions reg2reg -effortLevel high -weight 2 }
+catch { setPathGroupOptions reg2reg -late -slackAdjustment -0 }
 catch { setExtractRCMode  -engine preRoute }
 catch {setNanoRouteMode -quiet -route_extract_third_party_compatible false}
 catch {setNanoRouteMode -quiet -route_exp_design_mode_top_routing_layer 3}

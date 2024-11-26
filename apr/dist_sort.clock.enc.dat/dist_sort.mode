@@ -21,6 +21,8 @@ catch { setOptMode -opt_resize_flip_flops true }
 catch { setOptMode -opt_preserve_all_sequential false }
 catch { setOptMode -opt_setup_target_slack 0 }
 catch { setOptMode -opt_skew false }
+catch { setPathGroupOptions reg2reg -effortLevel high -weight 2 }
+catch { setPathGroupOptions reg2reg -late -slackAdjustment -0 }
 catch { setExtractRCMode  -engine preRoute }
 catch {setNanoRouteMode -quiet -route_detail_minimize_litho_effect_on_layer "f t t t t t t t t t"}
 catch {setNanoRouteMode -quiet -route_extract_third_party_compatible false}

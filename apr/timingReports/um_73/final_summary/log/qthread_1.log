@@ -1,0 +1,8 @@
+**INFO: Starting Blocking QThread with 1 CPU
+   ____________________________________________________________________
+__/ message from Blocking QThread
+*** QThread MetricCollect [begin] (optDesign #2) : mem = 0.8M
+Ending "set_metric_additional_insts" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2864.4M, current mem=2204.6M)
+Ending "set_metric_inst_count_area" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2218.4M, current mem=2213.6M)
+*** QThread MetricCollect [finish] (optDesign #2) : cpu/real = 0:00:00.2/0:00:00.2 (0.9), mem = 9.8M
+_______________________________________________________________________

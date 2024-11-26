@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Mon Nov 25 13:40:15 2024                
+#  Created on Tue Nov 26 10:25:08 2024                
 #                                                     
 #######################################################
 
@@ -52,53 +52,23 @@ define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processe
 define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
     {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
 }
-setLibraryUnit -time 1ps
-set ::TimeLib::tsgMarkCellLatchConstructFlag 1
-set conf_qxconf_file NULL
-set conf_qxlib_file NULL
-set defHierChar /
-set distributed_client_message_echo 1
-set gpsPrivate::dpgNewAddBufsDBUpdate 1
-set gpsPrivate::lsgEnableNewDbApiInRestruct 1
-set init_gnd_net vss
-set init_lef_file {./asap7_tech_4x_170803.lef ./asap7sc7p5t_24_R_4x_170912.lef}
-set init_mmmc_file ./Default.view
-set init_pwr_net vdd
-set init_verilog ../synthesis/dist_sort.ALL.1080.syn.v
-set pegDefaultResScaleFactor 1.000000
-set pegDetailResScaleFactor 1.000000
-set timing_library_float_precision_tol 0.000010
-set timing_library_load_pin_cap_indices {}
-set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
-init_design
-floorPlan -site coreSite -r 1 0.8 10 10 10 10
-setDontUse asap7sc7p5t_22b_SEQ_RVT_TT_170906/*x2_ASAP7_75t_R true
-setDontUse asap7sc7p5t_22b_INVBUF_RVT_TT_170906/BUFx16f_ASAP7_75t_R true
-add_tracks -honor_pitch
-clearGlobalNets
-globalNetConnect vdd -type pgpin -pin VDD -inst * -module {}
-globalNetConnect vss -type pgpin -pin VSS -inst * -module {}
-addWellTap -cell TAPCELL_ASAP7_75t_R -cellInterval 50 -inRowOffset 10.564 -prefix WELLTAP
-saveDesign dist_sort.pre_power.enc
-addRing -nets {vdd vss } -around default_power_domain -center 1 -width 1.224 -spacing 0.5 -layer {left M1 right M1 bottom M2 top M2} -extend_corner {lb lt rb rt bl tl br tr} -snap_wire_center_to_grid grid
-sroute -connect { blockPin padPin padRing corePin floatingStripe } -nets {vdd vss } -layerChangeRange { M1 M3 } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { M1 Pad } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { M1 Pad }
-saveDesign dist_sort.specialRoute.enc
-setViaGenMode -viarule_preference { M6_M5widePWR1p152 M5_M4widePWR0p864 M4_M3widePWR0p864 }
-setViaGenMode -bar_cut_orientation vertical
-saveDesign dist_sort.power_complete.enc
-timeDesign -prePlace
-createBasicPathGroups
-setRouteMode -earlyGlobalMaxRouteLayer 3
-setPinAssignMode -maxLayer 3
-setNanoRouteMode -routeTopRoutingLayer 3
-setDesignMode -topRoutingLayer M3
-set_interactive_constraint_modes common
-report_clocks
-setOptMode -usefulSkew false -allEndPoints true -fixHoldAllowSetupTnsDegrade false -fixDrc true -fixFanoutLoad true -fixSISlew true -checkRoutingCongestion true
-getPinAssignMode -pinEditInBatch -quiet
-setPinAssignMode -pinEditInBatch true
-editPin -fixedPin 1 -fixOverlap 1 -spreadDirection clockwise -edge 0 -layer 2 -offsetEnd 15 -offsetStart 15 -spreadType side -pin {clk rst {inp_a[15]} {inp_a[14]} {inp_a[13]} {inp_a[12]} {inp_a[11]} {inp_a[10]} {inp_a[9]} {inp_a[8]} {inp_a[7]} {inp_a[6]} {inp_a[5]} {inp_a[4]} {inp_a[3]} {inp_a[2]} {inp_a[1]} {inp_a[0]} {inp_b[15]} {inp_b[14]} {inp_b[13]} {inp_b[12]} {inp_b[11]} {inp_b[10]} {inp_b[9]} {inp_b[8]} {inp_b[7]} {inp_b[6]} {inp_b[5]} {inp_b[4]} {inp_b[3]} {inp_b[2]} {inp_b[1]} {inp_b[0]} } -snap TRACK
-setPinAssignMode -pinEditInBatch false
-getPinAssignMode -pinEditInBatch -quiet
-setPinAssignMode -pinEditInBatch true
-editPin -fixedPin 1 -fixOverlap 1 -spreadDirection clockwise -edge 2 -layer 2 -offsetEnd 15 -offsetStart 15 -spreadType side -pin {{prod[31]} {prod[30]} {prod[29]} {prod[28]} {prod[27]} {prod[26]} {prod[25]} {prod[24]} {prod[23]} {prod[22]} {prod[21]} {prod[20]} {prod[19]} {prod[18]} {prod[17]} {prod[16]} {prod[15]} {prod[14]} {prod[13]} {prod[12]} {prod[11]} {prod[10]} {prod[9]} {prod[8]} {prod[7]} {prod[6]} {prod[5]} {prod[4]} {prod[3]} {prod[2]} {prod[1]} {prod[0]} } -snap TRACK
+win
+setEditMode -type regular
+restoreDesign dist_sort.final.enc.dat dist_sort
+zoomBox -1.30900 25.11450 176.26075 184.07725
+zoomBox 38.53500 64.48575 147.58500 162.10875
+zoomBox 48.01500 73.79650 140.70775 156.77625
+zoomBox 55.91125 81.71075 134.70000 152.24350
+zoomBox 68.32775 94.15575 125.25300 145.11600
+zoomBox 73.17700 99.01600 121.56350 142.33225
+zoomBox 77.29900 103.14725 118.42750 139.96600
+zoomBox 83.78050 109.64350 113.49600 136.24525
+zoomBox 90.28175 116.14475 108.53075 132.48150
+zoomBox 73.12700 98.98975 121.51400 142.30650
+zoomBox 55.78125 81.76225 134.57200 152.29675
+zoomBox 47.84875 73.88375 140.54375 156.86550
+zoomBox 38.51650 64.61475 147.56950 162.24050
+zoomBox 14.56200 40.91050 165.50050 176.03275
+zoomBox -0.70300 25.85225 176.87175 184.81950
+zoomBox -18.70225 8.21750 190.20925 195.23800
+zoomBox -64.89500 -36.93700 224.25650 221.91525

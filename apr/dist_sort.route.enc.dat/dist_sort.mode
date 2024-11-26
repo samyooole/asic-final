@@ -25,6 +25,8 @@ catch { setOptMode -opt_resize_flip_flops true }
 catch { setOptMode -opt_preserve_all_sequential false }
 catch { setOptMode -opt_setup_target_slack 0 }
 catch { setOptMode -opt_skew false }
+catch { setPathGroupOptions reg2reg -effortLevel high -weight 2 }
+catch { setPathGroupOptions reg2reg -late -slackAdjustment -0 }
 catch { setExtractRCMode  -engine preRoute }
 catch {setNanoRouteMode -quiet -route_detail_end_iteration 20}
 catch {setNanoRouteMode -quiet -route_detail_fix_antenna false}
@@ -41,7 +43,7 @@ catch {setNanoRouteMode -quiet -route_top_routing_layer 3}
 catch {setNanoRouteMode -quiet -route_with_si_driven false}
 catch {setNanoRouteMode -quiet -route_with_timing_driven true}
 catch {setNanoRouteMode -quiet -route_with_via_in_pin "true"}
-catch {setNanoRouteMode -quiet -timingEngine ".timing_file_758739.tif.gz"}
+catch {setNanoRouteMode -quiet -timingEngine ".timing_file_1090489.tif.gz"}
 
 catch { setPlaceMode -place_global_cong_effort high }
 catch { setPlaceMode -place_global_reorder_scan false }

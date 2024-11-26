@@ -1,0 +1,41 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -verbose
+Design : dist_sort
+Version: V-2023.12-SP5
+Date   : Mon Nov 25 20:17:28 2024
+****************************************
+
+
+  Startpoint: in_valid (input port clocked by clk)
+  Endpoint: out_valid_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                           Incr       Path
+  ------------------------------------------------------------------
+  clock clk (rise edge)                           0.00       0.00
+  clock network delay (ideal)                     0.00       0.00
+  input external delay                            0.10       0.10 f
+  in_valid (in)                                   0.80       0.90 f
+  out_valid_reg/D (ASYNC_DFFHx1_ASAP7_75t_R)      0.00       0.90 f
+  data arrival time                                          0.90
+
+  clock clk (rise edge)                           0.00       0.00
+  clock network delay (ideal)                     0.00       0.00
+  clock uncertainty                               0.01       0.01
+  out_valid_reg/CLK (ASYNC_DFFHx1_ASAP7_75t_R)
+                                                  0.00       0.01 r
+  library hold time                               6.13       6.14
+  data required time                                         6.14
+  ------------------------------------------------------------------
+  data required time                                         6.14
+  data arrival time                                         -0.90
+  ------------------------------------------------------------------
+  slack (VIOLATED)                                          -5.24
+
+
+1

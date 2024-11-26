@@ -4,16 +4,15 @@ Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
 
 Version:	v23.12-s091_1, built Tue Jul 30 16:11:30 PDT 2024
 Options:	
-Date:		Mon Nov 25 13:38:26 2024
-Host:		ecelinux-14.ece.cornell.edu (x86_64 w/Linux 4.18.0-553.27.1.el8_10.x86_64) (4cores*8cpus*Intel(R) Xeon(R) Gold 6252N CPU @ 2.30GHz 36608KB)
+Date:		Tue Nov 26 10:22:37 2024
+Host:		ecelinux-11.ece.cornell.edu (x86_64 w/Linux 4.18.0-553.27.1.el8_10.x86_64) (4cores*8cpus*Intel(R) Xeon(R) Gold 6252N CPU @ 2.30GHz 36608KB)
 OS:		Red Hat Enterprise Linux 8.10 (Ootpa)
 
 License:
-		[13:38:26.474041] Configured Lic search path (23.02-s005): 5280@flex.ece.cornell.edu
+		[10:22:37.473977] Configured Lic search path (23.02-s005): 5280@flex.ece.cornell.edu
 
 		invs	Innovus Implementation System	23.1	checkout succeeded
 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
-**WARN: (IMPSYT-1507):	The display is invalid and will start in no window mode
 Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
 
 **INFO:  MMMC transition support version v31-84 
@@ -27,7 +26,6 @@ Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_si
     
     }
 [INFO] Loading Pegasus 23.23 fill procedures
-**WARN: Tk package not loaded. The Pegasus fill DRC monitor is disabled.
 <CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
     {-fillInfo "Design Fill data" "" list required}
 				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
@@ -59,82 +57,22 @@ Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_si
 <CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
     {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
 }
-<CMD> setLibraryUnit -time 1ps
-<CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
-<CMD> set conf_qxconf_file NULL
-<CMD> set conf_qxlib_file NULL
-<CMD> set defHierChar /
-<CMD> set distributed_client_message_echo 1
-<CMD> set gpsPrivate::dpgNewAddBufsDBUpdate 1
-<CMD> set gpsPrivate::lsgEnableNewDbApiInRestruct 1
-<CMD> set init_gnd_net vss
-<CMD> set init_lef_file {./asap7_tech_4x_170803.lef ./asap7sc7p5t_24_R_4x_170912.lef}
-<CMD> set init_mmmc_file ./Default.view
-<CMD> set init_pwr_net vdd
-<CMD> set init_verilog ../synthesis/dist_sort.ALL.1080.syn.v
-<CMD> set pegDefaultResScaleFactor 1.000000
-<CMD> set pegDetailResScaleFactor 1.000000
-<CMD> set timing_library_float_precision_tol 0.000010
-<CMD> set timing_library_load_pin_cap_indices {}
-<CMD> set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
-<CMD> init_design
-#% Begin Load MMMC data ... (date=11/25 13:38:47, mem=1728.9M)
-**ERROR: (TCLCMD-989):	cannot open SDC file './' for mode 'common'
-
-<CMD> setLibraryUnit -time 1ps
-<CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
-<CMD> set conf_qxconf_file NULL
-<CMD> set conf_qxlib_file NULL
-<CMD> set defHierChar /
-<CMD> set distributed_client_message_echo 1
-<CMD> set gpsPrivate::dpgNewAddBufsDBUpdate 1
-<CMD> set gpsPrivate::lsgEnableNewDbApiInRestruct 1
-<CMD> set init_gnd_net vss
-<CMD> set init_lef_file {./asap7_tech_4x_170803.lef ./asap7sc7p5t_24_R_4x_170912.lef}
-<CMD> set init_mmmc_file ./Default.view
-<CMD> set init_pwr_net vdd
-<CMD> set init_verilog ../synthesis/dist_sort.ALL.1080.syn.v
-<CMD> set pegDefaultResScaleFactor 1.000000
-<CMD> set pegDetailResScaleFactor 1.000000
-<CMD> set timing_library_float_precision_tol 0.000010
-<CMD> set timing_library_load_pin_cap_indices {}
-<CMD> set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
-<CMD> init_design
-% Begin Load MMMC data ... (date=11/25 13:39:03, mem=1730.3M)
-Extraction setup Started 
-Extraction setup Started 
-Extraction setup Started 
-**ERROR: (TCLCMD-989):	cannot open SDC file './' for mode 'common'
-
-<CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
-<CMD> set conf_qxconf_file NULL
-<CMD> set conf_qxlib_file NULL
-<CMD> set defHierChar /
-<CMD> set distributed_client_message_echo 1
-<CMD> set gpsPrivate::dpgNewAddBufsDBUpdate 1
-<CMD> set gpsPrivate::lsgEnableNewDbApiInRestruct 1
-<CMD> set init_gnd_net vss
-<CMD> set init_lef_file {./asap7_tech_4x_170803.lef ./asap7sc7p5t_24_R_4x_170912.lef}
-<CMD> set init_mmmc_file ./Default.view
-<CMD> set init_pwr_net vdd
-<CMD> set init_verilog ../synthesis/dist_sort.ALL.1080.syn.v
-<CMD> set pegDefaultResScaleFactor 1.000000
-<CMD> set pegDetailResScaleFactor 1.000000
-<CMD> set timing_library_float_precision_tol 0.000010
-<CMD> set timing_library_load_pin_cap_indices {}
-<CMD> set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
-<CMD> init_design
-% Begin Load MMMC data ... (date=11/25 13:39:47, mem=1733.8M)
-Extraction setup Started 
-Extraction setup Started 
-Extraction setup Started 
-% End Load MMMC data ... (date=11/25 13:39:47, total cpu=0:00:00.0, real=0:00:00.0, peak res=1733.9M, current mem=1733.9M)
+<CMD> win
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> is_common_ui_mode
+<CMD> restoreDesign /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat dist_sort
+#% Begin load design ... (date=11/26 10:23:44, mem=1839.5M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'dist_sort' saved by 'Innovus' '23.12-s091_1' on 'Tue Nov 26 10:21:33 2024'.
+% Begin Load MMMC data ... (date=11/26 10:23:45, mem=1843.9M)
+% End Load MMMC data ... (date=11/26 10:23:45, total cpu=0:00:00.0, real=0:00:00.0, peak res=1845.1M, current mem=1845.1M)
 RC_corner_25
-*** Loading design ... ***
 
-Loading LEF file ./asap7_tech_4x_170803.lef ...
+Loading LEF file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/lef/asap7_tech_4x_170803.lef ...
 
-Loading LEF file ./asap7sc7p5t_24_R_4x_170912.lef ...
+Loading LEF file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/lef/asap7sc7p5t_24_R_4x_170912.lef ...
 Set DBUPerIGU to M1 pitch 576.
 **WARN: (IMPLF-45):	Macro 'A2O1A1Ixp33_ASAP7_75t_R' has no SITE statement and it is a class
 CORE macro that requires a SITE statement. The SITE coreSite is
@@ -222,7 +160,7 @@ To increase the message display limit, refer to the product command reference ma
 ##  Check design process and node:  
 ##  Both design process and tech node are not set.
 
-Loading view definition file from ./Default.view
+Loading view definition file from /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/viewDefinition.tcl
 Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_INVBUF_RVT_TT.lib' ...
 Read 27 cells in library 'asap7sc7p5t_22b_INVBUF_RVT_TT_170906' 
 Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_AO_RVT_TT.lib' ...
@@ -235,192 +173,49 @@ Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_2
 **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /classes/ece5746/asap7libs/lib/asap7sc7p5t_24_SIMPLE_RVT_TT.lib, Line 11230)
 **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /classes/ece5746/asap7libs/lib/asap7sc7p5t_24_SIMPLE_RVT_TT.lib, Line 14483)
 Read 56 cells in library 'asap7sc7p5t_22b_SIMPLE_RVT_TT_170906' 
-*** End library_loading (cpu=0.04min, real=0.03min, mem=67.0M, fe_cpu=0.31min, fe_real=1.38min, fe_mem=1758.3M) ***
-% Begin Load netlist data ... (date=11/25 13:39:49, mem=1753.6M)
-*** Begin netlist parsing (mem=1758.3M) ***
+*** End library_loading (cpu=0.04min, real=0.03min, mem=55.0M, fe_cpu=0.37min, fe_real=1.17min, fe_mem=1816.1M) ***
+% Begin Load netlist data ... (date=11/26 10:23:47, mem=1864.8M)
+*** Begin netlist parsing (mem=1816.1M) ***
 Created 185 new cells from 5 timing libraries.
 Reading netlist ...
 Backslashed names will retain backslash and a trailing blank character.
-Reading verilog netlist '../synthesis/dist_sort.ALL.1080.syn.v'
-**WARN: (IMPVL-346):	Module 'ASYNC_DFFHx1_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'ASYNC_DFFHx1_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'FAx1_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'FAx1_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'NOR2xp33_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'BUFx2_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'NOR2xp33_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'AOI21xp5_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'AOI31xp33_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'NAND2x1_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'HB1xp67_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'INVx4_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'NAND2xp5_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'INVx1_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'NOR2x1_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'HB1xp67_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'NAND2xp5_ASAP7_75t_SL' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'BUFx2_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'INVx1_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (IMPVL-346):	Module 'INVxp67_ASAP7_75t_L' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
-Type 'man IMPVL-346' for more detail.
-**WARN: (EMS-27):	Message (IMPVL-346) has exceeded the current message display limit of 20.
-To increase the message display limit, refer to the product command reference manual.
+Reading verilogBinary netlist '/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.v.bin'
 
-*** Memory Usage v#1 (Current mem = 1758.305M, initial mem = 836.516M) ***
-*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1758.3M) ***
-% End Load netlist data ... (date=11/25 13:39:49, total cpu=0:00:00.1, real=0:00:00.0, peak res=1774.2M, current mem=1774.2M)
+*** Memory Usage v#1 (Current mem = 1824.125M, initial mem = 844.516M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1824.1M) ***
+% End Load netlist data ... (date=11/26 10:23:47, total cpu=0:00:00.0, real=0:00:01.0, peak res=1884.4M, current mem=1884.4M)
 Top level cell is dist_sort.
 Hooked 185 DB cells to tlib cells.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'ASYNC_DFFHx1_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'BUFx2_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'NOR2xp33_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'FAx1_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'FAx1_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'ASYNC_DFFHx1_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'AND2x2_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'BUFx5_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'INVx2_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'BUFx3_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'BUFx4f_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'XOR2x2_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'NAND2xp33_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'OAI21xp5_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'XNOR2xp5_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'XOR2xp5_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'OAI22xp5_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'AO21x1_ASAP7_75t_SL' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'AOI21xp5_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'XNOR2xp5_ASAP7_75t_L' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
-Type 'man IMPDB-2504' for more detail.
-**WARN: (EMS-27):	Message (IMPDB-2504) has exceeded the current message display limit of 20.
-To increase the message display limit, refer to the product command reference manual.
-126 empty module found.
 Starting recursive module instantiation check.
 No recursion found.
-Term dir updated for 0 vinsts of 126 cells.
 Building hierarchical netlist for Cell dist_sort ...
 ***** UseNewTieNetMode *****.
 *** Netlist is unique.
 Set DBUPerIGU to techSite coreSite width 864.
-** info: there are 323 modules.
-** info: there are 1795 stdCell insts.
-** info: there are 1795 stdCell insts with at least one signal pin.
+** info: there are 197 modules.
+** info: there are 8112 stdCell insts.
+** info: there are 8112 stdCell insts with at least one signal pin.
 
-*** Memory Usage v#1 (Current mem = 1825.719M, initial mem = 836.516M) ***
+*** Memory Usage v#1 (Current mem = 1880.039M, initial mem = 844.516M) ***
+*info: set bottom ioPad orient R0
 Start create_tracks
-Extraction setup Started for TopCell dist_sort 
-Initializing multi-corner RC extraction with 1 active RC Corners ...
-Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
-Generating auto layer map file.
-Importing multi-corner technology file(s) for preRoute extraction...
-/classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06
-Generating auto layer map file.
+**WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for reg2reg path_group
+Slack adjustment of -0 applied on reg2reg path_group
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+#WARNING (NRIF-90) Option setNanoRouteMode -route_bottom_routing_layer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -bottomRoutingLayer instead.
+#WARNING (NRIF-95) Option setNanoRouteMode -routeTopRoutingLayer has invalid value "0". Reset to max routing layer "10".
+#WARNING (NRIF-91) Option setNanoRouteMode -route_top_routing_layer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
 
-Completed (cpu: 0:00:01.4 real: 0:00:05.0)
-Set Shrink Factor to 1.00000
-Summary of Active RC-Corners : 
- 
- Analysis View: default_setup_view
-    RC-Corner Name        : RC_corner_25
-    RC-Corner Index       : 0
-    RC-Corner Temperature : 25 Celsius
-    RC-Corner Cap Table   : ''
-    RC-Corner PreRoute Res Factor         : 1
-    RC-Corner PreRoute Cap Factor         : 1
-    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
-    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
-    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
-    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
-    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
-    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
-    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
-    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
-    RC-Corner Technology file: '/classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06'
- 
- Analysis View: default_hold_view
-    RC-Corner Name        : RC_corner_25
-    RC-Corner Index       : 0
-    RC-Corner Temperature : 25 Celsius
-    RC-Corner Cap Table   : ''
-    RC-Corner PreRoute Res Factor         : 1
-    RC-Corner PreRoute Cap Factor         : 1
-    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
-    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
-    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
-    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
-    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
-    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
-    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
-    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
-    RC-Corner Technology file: '/classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06'
-Updating RC Grid density data for preRoute extraction ...
-Initializing multi-corner resistance tables ...
-Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+viaInitial starts at Tue Nov 26 10:23:48 2024
+viaInitial ends at Tue Nov 26 10:23:48 2024
+AAE_INFO: switching setDelayCal -siAware from false to true ...
+AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
 *Info: initialize multi-corner CTS.
-Reading timing constraints file './dist_sort.ALL.1080.syn.sdc' ...
-Current (total cpu=0:00:20.9, real=0:01:28, peak res=2234.4M, current mem=2234.4M)
-**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ./dist_sort.ALL.1080.syn.sdc, Line 8).
-
-------------------------------------------------------------------------------------
-CONSTRAINT READING SUMMARY                                                          
-------------------------------------------------------------------------------------
-Constraint                                        | Success        | Fail           
-------------------------------------------------------------------------------------
-set_input_delay                                   | 578            | 0              
-set_clock_transition                              | 4              | 0              
-set_clock_uncertainty                             | 1              | 0              
-get_clocks                                        | 5              | 0              
-create_clock                                      | 1              | 0              
-set_driving_cell                                  | 579            | 0              
-get_ports                                         | 1172           | 0              
-current_design                                    | 1              | 0              
-set_output_delay                                  | 7              | 0              
-set_max_fanout                                    | 1              | 0              
-set_wire_load_mode                                | 1              | 0              
-set_load                                          | 7              | 0              
-set_units                                         | 1              | 0              
-------------------------------------------------------------------------------------
-INFO (CTE): Reading of timing constraints file ./dist_sort.ALL.1080.syn.sdc completed, with 1 WARNING
-Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2249.8M, current mem=2249.8M)
-Current (total cpu=0:00:21.0, real=0:01:28, peak res=2249.8M, current mem=2249.8M)
 Total number of combinational cells: 159
 Total number of sequential cells: 26
 Total number of tristate cells: 0
@@ -444,8 +239,209 @@ List of identified usable delay cells: HB3xp67_ASAP7_75t_R HB4xp67_ASAP7_75t_R
 Total number of identified usable delay cells: 2
 List of identified unusable delay cells:
 Total number of identified unusable delay cells: 0
+% Begin Load MMMC data post ... (date=11/26 10:23:48, mem=2220.7M)
+% End Load MMMC data post ... (date=11/26 10:23:48, total cpu=0:00:00.0, real=0:00:01.0, peak res=2220.7M, current mem=2220.7M)
+Reading floorplan file - /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.fp.gz (mem = 2139.8M).
+% Begin Load floorplan data ... (date=11/26 10:23:49, mem=2221.4M)
+*info: reset 10610 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 800064 800064)
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.fp.spr.gz (Created by Innovus v23.12-s091_1 on Tue Nov 26 10:21:32 2024, version: 1)
+Convert 0 swires and 0 svias from compressed groups
+16 swires and 10 svias were compressed
+16 swires and 10 svias were decompressed from small or sparse groups
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=2222.4M, current mem=2222.4M)
+There are 1 nets with weight being set
+There are 1 nets with bottomPreferredRoutingLayer being set
+There are 1 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+**WARN: (IMPTR-2104):	Layer M10: Pitch=1280 is less than min width=640 + min spacing=32000.
+**ERROR: (IMPTR-2101):	Layer M10: Pitch=11520x9 is still less than min width=32000 + min spacing=640.
+**WARN: (IMPTR-2108):	For layer M10, the gaps of 623 out of 623 tracks are narrower than 8.160um (space 8.000 + width 0.160).
+Type 'man IMPTR-2108' for more detail.
+ As a result, your trialRoute congestion could be incorrect.
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=11/26 10:23:49, total cpu=0:00:00.1, real=0:00:00.0, peak res=2224.3M, current mem=2224.3M)
+Reading congestion map file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=11/26 10:23:49, mem=2224.3M)
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=11/26 10:23:49, total cpu=0:00:00.0, real=0:00:00.0, peak res=2228.1M, current mem=2228.1M)
+Loading place ...
+% Begin Load placement data ... (date=11/26 10:23:49, mem=2228.1M)
+Reading placement file - /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v23.12-s091_1 on Tue Nov 26 10:21:32 2024, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:00.1 real=0:00:00.0 mem=2157.7M) ***
+Total net length = 1.737e+05 (1.203e+05 5.346e+04) (ext = 2.023e+04)
+% End Load placement data ... (date=11/26 10:23:49, total cpu=0:00:00.1, real=0:00:00.0, peak res=2242.5M, current mem=2240.2M)
+Reading PG file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.pg.gz, version#2, (Created by Innovus v23.12-s091_1 on       Tue Nov 26 10:21:32 2024)
+*** Completed restorePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=2154.7M) ***
+% Begin Load routing data ... (date=11/26 10:23:49, mem=2241.4M)
+Reading routing file - /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.route.gz.
+Reading Innovus routing data (Created by Innovus v23.12-s091_1 on Tue Nov 26 10:21:32 2024 Format: 23.1) ...
+*** Total 10610 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.1 real=0:00:00.0 mem=2163.7M) ***
+% End Load routing data ... (date=11/26 10:23:49, total cpu=0:00:00.1, real=0:00:00.0, peak res=2251.7M, current mem=2250.8M)
+TAT_INFO: ::restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2167.7M) ***
+Reading dirtyarea snapshot file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.db.da.gz (Create by Innovus v23.12-s091_1 on Tue Nov 26 10:21:32 2024, version: 7).
+Set Default Input Pin Transition as 0.1 ps.
+Loading preRoute extraction data from directory '/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/extraction/' ...
+Extraction setup Started for TopCell dist_sort 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+Generating auto layer map file.
+Loading preRoute extracted patterns from file '/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.techData.gz' ...
+Importing multi-corner technology file(s) for preRoute extraction...
+/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/mmmc/RC_corner_25/qrcTechFile_typ03_scaled4xV06
+Generating auto layer map file.
 
-*** Memory Usage v#1 (Current mem = 2271.992M, initial mem = 836.516M) ***
-*** Message Summary: 451 warning(s), 2 error(s)
+Completed (cpu: 0:00:01.4 real: 0:00:03.0)
+Set Shrink Factor to 1.00000
+Summary of Active RC-Corners : 
+ 
+ Analysis View: default_setup_view
+    RC-Corner Name        : RC_corner_25
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/mmmc/RC_corner_25/qrcTechFile_typ03_scaled4xV06'
+ 
+ Analysis View: default_hold_view
+    RC-Corner Name        : RC_corner_25
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/mmmc/RC_corner_25/qrcTechFile_typ03_scaled4xV06'
+Initializing multi-corner resistance tables ...
+Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+delayCorner_slow delayCorner_fast
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Via generation completed.
+% Begin Load power constraints ... (date=11/26 10:23:53, mem=2302.8M)
+'set_default_switching_activity' finished successfully.
+% End Load power constraints ... (date=11/26 10:23:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=2309.1M, current mem=2309.1M)
+delayCorner_slow delayCorner_fast
+% Begin load AAE data ... (date=11/26 10:23:53, mem=2351.9M)
+**WARN: (IMPESI-3505):	setDelayCalMode -eng_enablePrePlacedFlow false (default=false) will be obsoleted along with its sgs2set equivalent.  This parameter will continue to be supported in the current release, but will be removed in the next major release of the software.
+AAE DB initialization (MEM=2310.78 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=11/26 10:23:54, total cpu=0:00:00.5, real=0:00:01.0, peak res=2359.5M, current mem=2359.5M)
+Restoring CCOpt config...
+  Extracting original clock gating for clk...
+    clock_tree clk contains 7 sinks and 0 clock gates.
+  Extracting original clock gating for clk done.
+  The skew group clk/common was created. It contains 7 sinks and 1 sources.
+  The skew group clk/common was created. It contains 7 sinks and 1 sources.
+Restoring CCOpt config done.
+Total number of combinational cells: 159
+Total number of sequential cells: 26
+Total number of tristate cells: 0
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFx10_ASAP7_75t_R BUFx12_ASAP7_75t_R BUFx12f_ASAP7_75t_R BUFx24_ASAP7_75t_R BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R BUFx4_ASAP7_75t_R BUFx5_ASAP7_75t_R BUFx4f_ASAP7_75t_R BUFx6f_ASAP7_75t_R BUFx8_ASAP7_75t_R HB1xp67_ASAP7_75t_R HB2xp67_ASAP7_75t_R
+Total number of usable buffers: 13
+List of unusable buffers: BUFx16f_ASAP7_75t_R
+Total number of unusable buffers: 1
+List of usable inverters: INVx11_ASAP7_75t_R INVx13_ASAP7_75t_R INVx1_ASAP7_75t_R INVx2_ASAP7_75t_R INVx3_ASAP7_75t_R INVx4_ASAP7_75t_R INVx5_ASAP7_75t_R INVx6_ASAP7_75t_R INVx8_ASAP7_75t_R INVxp67_ASAP7_75t_R INVxp33_ASAP7_75t_R
+Total number of usable inverters: 11
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: HB3xp67_ASAP7_75t_R HB4xp67_ASAP7_75t_R
+Total number of identified usable delay cells: 2
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version (null). They will be removed in the next release. 
+timing_aocv_enable_gba_combine_launch_capture
+timing_enable_backward_compatible_latch_thru_mt_mode
+timing_enable_separate_device_slew_effect_sensitivities
+#% End load design ... (date=11/26 10:23:54, total cpu=0:00:07.9, real=0:00:10.0, peak res=2382.4M, current mem=2362.5M)
 
---- Ending "Innovus" (totcpu=0:00:21.1, real=0:01:32, mem=2272.0M) ---
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-45           196  Macro '%s' has no SITE statement and it ...
+WARNING   IMPPTN-867           2  Found use of %s. This will continue to w...
+WARNING   IMPESI-3505          1  setDelayCalMode -eng_%s (default=%s) wil...
+WARNING   IMPOPT-3602          1  The specified path group name %s is not ...
+ERROR     IMPTR-2101           1  Layer %s: Pitch=%dx%d is still less than...
+WARNING   IMPTR-2104           1  Layer %s: Pitch=%d is less than min widt...
+WARNING   IMPTR-2108           1  For layer M%d, the gaps of %d out of %d ...
+WARNING   NRDB-407             1  pitch for %s %s is defined too small, re...
+WARNING   NRDB-2012            3  The ENCLOSURE statement in layer %s has ...
+WARNING   NRIF-90              1  Option setNanoRouteMode -route_bottom_ro...
+WARNING   NRIF-91              1  Option setNanoRouteMode -route_top_routi...
+WARNING   NRIF-95              1  Option setNanoRouteMode -routeTopRouting...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+WARNING   IMPPSP-1003          1  Found use of '%s'. This will continue to...
+WARNING   TECHLIB-1277         2  The %s '%s' has been defined for %s %s '...
+*** Message Summary: 214 warning(s), 1 error(s)
+
+<CMD> setDrawView fplan
+<CMD> encMessage warning 1
+<CMD> encMessage debug 0
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> is_common_ui_mode
+<CMD> restoreDesign /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat dist_sort
+#% Begin load design ... (date=11/26 10:23:58, mem=2388.9M)
+
+
+ERROR: **ERROR: (IMPIMEX-7031):	restoreDesign more than once in the same Innovus session is dangerous and not recommended. Some internal state of applications or global settings cannot be reset, so it's not reliable enough in real flow. If you are just experimenting and/or debugging and accept the risks, you can set the global restore_db_stop_at_design_in_memory to 0 and try again.
+
+
+**ERROR: (IMPIMEX-7031):	restoreDesign more than once in the same Innovus session is dangerous and not recommended. Some internal state of applications or global settings cannot be reset, so it's not reliable enough in real flow. If you are just experimenting and/or debugging and accept the risks, you can set the global restore_db_stop_at_design_in_memory to 0 and try again.
+
+    while executing
+"error $catchMsg"
+    (procedure "restoreDesign" line 36)
+
+**ERROR: (IMPSYT-6300):	Failed to execute command 'source'. For more details, refer to error message: **ERROR: (IMPIMEX-7031):	restoreDesign more than once in the same Innovus session is dangerous and not recommended. Some internal state of applications or global settings cannot be reset, so it's not reliable enough in real flow. If you are just experimenting and/or debugging and accept the risks, you can set the global restore_db_stop_at_design_in_memory to 0 and try again.
+
+<CMD> encMessage warning 1
+Un-suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Tue Nov 26 10:24:08 2024
+  Total CPU time:     0:00:28
+  Total real time:    0:01:33
+  Peak memory (main): 2392.95MB
+
+
+*** Memory Usage v#1 (Current mem = 2356.141M, initial mem = 844.516M) ***
+*** Message Summary: 214 warning(s), 4 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:27.8, real=0:01:31, mem=2356.1M) ---

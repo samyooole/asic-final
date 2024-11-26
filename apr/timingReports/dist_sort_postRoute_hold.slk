@@ -1,1 +1,22 @@
 # Format: clock  timeReq  slackR/slackF  holdR/holdF  instName/pinName   # cycle(s)
+clk(R)->clk(R)	0.016    */0.016         */-12.288       out_valid_reg/D    1
+clk(R)->clk(R)	0.012    */0.039         */-7.540        out_valid_reg/SET    1
+clk(R)->clk(R)	0.012    */0.039         */-7.540        addr_2nd_reg_1_/SET    1
+clk(R)->clk(R)	0.012    */0.040         */-7.540        addr_1st_reg_1_/SET    1
+clk(R)->clk(R)	0.012    */0.040         */-7.540        addr_1st_reg_2_/SET    1
+clk(R)->clk(R)	0.012    */0.040         */-7.540        addr_1st_reg_0_/SET    1
+clk(R)->clk(R)	0.011    */0.040         */-7.540        addr_2nd_reg_0_/SET    1
+clk(R)->clk(R)	0.011    */0.040         */-7.540        addr_2nd_reg_2_/SET    1
+clk(R)->clk(R)	0.024    */0.049         */-20.357       addr_2nd_reg_0_/D    1
+clk(R)->clk(R)	0.024    */0.049         */-19.809       addr_2nd_reg_2_/D    1
+clk(R)->clk(R)	0.024    */0.054         */-20.000       addr_2nd_reg_1_/D    1
+clk(R)->clk(R)	0.024    */0.055         */-19.466       addr_1st_reg_1_/D    1
+clk(R)->clk(R)	0.023    */0.057         */-18.950       addr_1st_reg_0_/D    1
+clk(R)->clk(R)	0.023    */0.057         */-19.160       addr_1st_reg_2_/D    1
+clk(R)->clk(R)	-0.000   */0.089         */0.100         addr_1st[0]    1
+clk(R)->clk(R)	-0.000   */0.092         */0.100         addr_2nd[2]    1
+clk(R)->clk(R)	-0.000   */0.094         */0.100         addr_1st[1]    1
+clk(R)->clk(R)	-0.000   */0.096         */0.100         addr_2nd[1]    1
+clk(R)->clk(R)	-0.000   */0.098         */0.100         addr_1st[2]    1
+clk(R)->clk(R)	-0.000   */0.103         */0.100         addr_2nd[0]    1
+clk(R)->clk(R)	-0.000   */0.103         */0.100         out_valid    1

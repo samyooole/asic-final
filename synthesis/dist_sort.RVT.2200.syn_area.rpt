@@ -1,0 +1,73 @@
+ 
+****************************************
+Report : area
+Design : dist_sort
+Version: V-2023.12-SP5
+Date   : Tue Nov 26 07:44:08 2024
+****************************************
+
+Library(s) Used:
+
+    asap7sc7p5t_22b_AO_RVT_TT_170906 (File: /classes/ece5746/asap7libs/ldbs/asap7sc7p5t_22b_AO_RVT_TT_170906.ldb)
+    asap7sc7p5t_22b_OA_RVT_TT_170906 (File: /classes/ece5746/asap7libs/ldbs/asap7sc7p5t_22b_OA_RVT_TT_170906.ldb)
+    asap7sc7p5t_22b_SIMPLE_RVT_TT_170906 (File: /classes/ece5746/asap7libs/ldbs/asap7sc7p5t_22b_SIMPLE_RVT_TT_170906.ldb)
+    asap7sc7p5t_22b_INVBUF_RVT_TT_170906 (File: /classes/ece5746/asap7libs/ldbs/asap7sc7p5t_22b_INVBUF_RVT_TT_170906.ldb)
+    asap7sc7p5t_22b_SEQ_RVT_TT_170906 (File: /classes/ece5746/asap7libs/ldbs/asap7sc7p5t_22b_SEQ_RVT_TT_170906.ldb)
+
+Number of ports:                          586
+Number of nets:                          9942
+Number of cells:                         7389
+Number of combinational cells:           7382
+Number of sequential cells:                 7
+Number of macros/black boxes:               0
+Number of buf/inv:                       1723
+Number of references:                      52
+
+Combinational area:              11833.594427
+Buf/Inv area:                     1214.222416
+Noncombinational area:              42.456960
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 11876.051387
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------
+dist_sort                         11876.0514    100.0  11833.5944    42.4570  0.0000  dist_sort
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------
+Total                                                  11833.5944    42.4570  0.0000
+
+
+Area of detected synthetic parts
+--------------------------------
+  No DW parts to report!
+
+Estimated area of ungrouped synthetic parts
+-------------------------------------------
+                                        Estimated  Perc. of
+  Module               Implem.  Count        Area cell area
+  -------------------- -------  ----- ----------- ---------
+  DP_OP_680J1_122_2455     str      1   1607.4240     13.5%
+  DP_OP_681J1_123_2455     str      1   1607.4240     13.5%
+  DP_OP_682J1_124_2455     str      1   1608.0924     13.5%
+  DP_OP_683J1_125_2455     str      1   1172.2043      9.9%
+  DP_OP_684J1_126_2455     str      1   1172.2044      9.9%
+  DP_OP_685J1_127_2455     str      1   1172.2044      9.9%
+  DP_OP_686J1_128_2455     str      1   1211.8703     10.2%
+  DP_OP_687J1_129_2455     str      1   1281.4037     10.8%
+  DW_cmp               apparch     14    816.4179      6.9%
+  -------------------- -------  ----- ----------- ---------
+  DP_OP Subtotal:                   8  10832.8275     91.2%
+  Total:                           22  11649.2454     98.1%
+
+Subtotal of datapath(DP_OP) cell area:  10832.8275  91.2%  (estimated)
+Total synthetic cell area:              11649.2454  98.1%  (estimated)
+
+1

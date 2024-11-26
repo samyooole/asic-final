@@ -1,0 +1,14 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream In
+Program   : @(#)$CDS: strmin version IC23.1-64b 05/22/2024 07:39 (cpgbld16) $
+          : sub-version  IC23.1-64b.ISR7.27 
+Started at: 26-Nov-2024  11:24:03
+User Name : sh2663
+Host Name : ecelinux-11.ece.cornell.edu
+Directory : /home/sh2663/asap7_rundir/asic-final/postapr
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+ERROR (XSTRM-80): The technology library 'asap7_TechLib' specified in the 'Attach Technology Library' option does not exist.
+INFO (XSTRM-273): Translation failed. '1' error(s) and '0' warning(s) found.

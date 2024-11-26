@@ -36,7 +36,7 @@ set netlist_search_path "../rtl"
 # NETLIST NAME > list of RTL files in design. 
 set netlist_name "dist_sort.sv"
 # CLOCK PERIOD
-set clk_period 			1080
+set clk_period 			1296
 # verilog format <verilog|sverilog|vhdl>
 set file_type "sverilog"
 # set Vt type RVT | ALL

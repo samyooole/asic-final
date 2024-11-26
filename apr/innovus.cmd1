@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Mon Nov 25 13:38:41 2024                
+#  Created on Tue Nov 26 10:22:53 2024                
 #                                                     
 #######################################################
 
@@ -52,59 +52,17 @@ define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processe
 define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
     {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
 }
-setLibraryUnit -time 1ps
-set ::TimeLib::tsgMarkCellLatchConstructFlag 1
-set conf_qxconf_file NULL
-set conf_qxlib_file NULL
-set defHierChar /
-set distributed_client_message_echo 1
-set gpsPrivate::dpgNewAddBufsDBUpdate 1
-set gpsPrivate::lsgEnableNewDbApiInRestruct 1
-set init_gnd_net vss
-set init_lef_file {./asap7_tech_4x_170803.lef ./asap7sc7p5t_24_R_4x_170912.lef}
-set init_mmmc_file ./Default.view
-set init_pwr_net vdd
-set init_verilog ../synthesis/dist_sort.ALL.1080.syn.v
-set pegDefaultResScaleFactor 1.000000
-set pegDetailResScaleFactor 1.000000
-set timing_library_float_precision_tol 0.000010
-set timing_library_load_pin_cap_indices {}
-set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
-init_design
-setLibraryUnit -time 1ps
-set ::TimeLib::tsgMarkCellLatchConstructFlag 1
-set conf_qxconf_file NULL
-set conf_qxlib_file NULL
-set defHierChar /
-set distributed_client_message_echo 1
-set gpsPrivate::dpgNewAddBufsDBUpdate 1
-set gpsPrivate::lsgEnableNewDbApiInRestruct 1
-set init_gnd_net vss
-set init_lef_file {./asap7_tech_4x_170803.lef ./asap7sc7p5t_24_R_4x_170912.lef}
-set init_mmmc_file ./Default.view
-set init_pwr_net vdd
-set init_verilog ../synthesis/dist_sort.ALL.1080.syn.v
-set pegDefaultResScaleFactor 1.000000
-set pegDetailResScaleFactor 1.000000
-set timing_library_float_precision_tol 0.000010
-set timing_library_load_pin_cap_indices {}
-set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
-init_design
-set ::TimeLib::tsgMarkCellLatchConstructFlag 1
-set conf_qxconf_file NULL
-set conf_qxlib_file NULL
-set defHierChar /
-set distributed_client_message_echo 1
-set gpsPrivate::dpgNewAddBufsDBUpdate 1
-set gpsPrivate::lsgEnableNewDbApiInRestruct 1
-set init_gnd_net vss
-set init_lef_file {./asap7_tech_4x_170803.lef ./asap7sc7p5t_24_R_4x_170912.lef}
-set init_mmmc_file ./Default.view
-set init_pwr_net vdd
-set init_verilog ../synthesis/dist_sort.ALL.1080.syn.v
-set pegDefaultResScaleFactor 1.000000
-set pegDetailResScaleFactor 1.000000
-set timing_library_float_precision_tol 0.000010
-set timing_library_load_pin_cap_indices {}
-set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
-init_design
+win
+encMessage warning 0
+encMessage debug 0
+is_common_ui_mode
+restoreDesign /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat dist_sort
+setDrawView fplan
+encMessage warning 1
+encMessage debug 0
+encMessage warning 0
+encMessage debug 0
+is_common_ui_mode
+restoreDesign /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat dist_sort
+encMessage warning 1
+encMessage debug 0

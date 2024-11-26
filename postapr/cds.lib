@@ -1,0 +1,7 @@
+SOFTINCLUDE /opt/cadence/IC231.007/share/cdssetup/cds.lib
+DEFINE asap7sc7p5t_24 /classes/ece5746/asap7libs/cdk/asap7sc7p5t_24
+
+
+#Removed by ddDeleteObj: DEFINE dist_sort /home/sh2663/asap7_rundir/asic-final/postapr/dist_sort
+#Removed by ddDeleteObj: DEFINE dist_sort /home/sh2663/asap7_rundir/asic-final/postapr/dist_sort
+#Removed by ddDeleteObj: DEFINE dist_sort /home/sh2663/asap7_rundir/asic-final/postapr/dist_sort

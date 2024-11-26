@@ -1,0 +1,71 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -verbose
+Design : dist_sort
+Version: V-2023.12-SP5
+Date   : Mon Nov 25 19:36:14 2024
+****************************************
+
+
+  Startpoint: in_valid (input port clocked by clk)
+  Endpoint: out_valid_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                           Incr       Path
+  ------------------------------------------------------------------
+  clock clk (rise edge)                           0.00       0.00
+  clock network delay (ideal)                     0.00       0.00
+  input external delay                            0.10       0.10 f
+  in_valid (in)                                   1.13       1.23 f
+  out_valid_reg/D (ASYNC_DFFHx1_ASAP7_75t_L)      0.00       1.23 f
+  data arrival time                                          1.23
+
+  clock clk (rise edge)                           0.00       0.00
+  clock network delay (ideal)                     0.00       0.00
+  clock uncertainty                               0.01       0.01
+  out_valid_reg/CLK (ASYNC_DFFHx1_ASAP7_75t_L)
+                                                  0.00       0.01 r
+  library hold time                               4.67       4.68
+  data required time                                         4.68
+  ------------------------------------------------------------------
+  data required time                                         4.68
+  data arrival time                                         -1.23
+  ------------------------------------------------------------------
+  slack (VIOLATED)                                          -3.45
+
+
+  Startpoint: in_valid (input port clocked by clk)
+  Endpoint: addr_2nd_reg_0_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                             Incr       Path
+  --------------------------------------------------------------------
+  clock clk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                       0.00       0.00
+  input external delay                              0.10       0.10 r
+  in_valid (in)                                     1.35       1.45 r
+  U4904/Y (A2O1A1Ixp33_ASAP7_75t_SL)                3.43       4.88 f
+  addr_2nd_reg_0_/D (ASYNC_DFFHx1_ASAP7_75t_R)      0.00       4.88 f
+  data arrival time                                            4.88
+
+  clock clk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                       0.00       0.00
+  clock uncertainty                                 0.01       0.01
+  addr_2nd_reg_0_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)
+                                                    0.00       0.01 r
+  library hold time                                 5.41       5.42
+  data required time                                           5.42
+  --------------------------------------------------------------------
+  data required time                                           5.42
+  data arrival time                                           -4.88
+  --------------------------------------------------------------------
+  slack (VIOLATED)                                            -0.54
+
+
+1

@@ -34,8 +34,8 @@ create_delay_corner -name delayCorner_fast\
    -rc_corner RC_corner_25
 create_constraint_mode -name common\
    -sdc_files\
-    [list ${::IMEX::libVar}/mmmc/dist_sort.ALL.1080.syn.sdc]
-create_analysis_view -name default_hold_view -constraint_mode common -delay_corner delayCorner_fast
-create_analysis_view -name default_setup_view -constraint_mode common -delay_corner delayCorner_slow
+    [list ${::IMEX::dataVar}/mmmc/modes/common/common.sdc]
+create_analysis_view -name default_hold_view -constraint_mode common -delay_corner delayCorner_fast -latency_file ${::IMEX::dataVar}/mmmc/views/default_hold_view/latency.sdc
+create_analysis_view -name default_setup_view -constraint_mode common -delay_corner delayCorner_slow -latency_file ${::IMEX::dataVar}/mmmc/views/default_setup_view/latency.sdc
 set_analysis_view -setup [list default_setup_view] -hold [list default_hold_view]
 catch {set_interactive_constraint_mode [list common] } 

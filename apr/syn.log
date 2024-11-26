@@ -1,0 +1,23 @@
+Current time:       Tue Nov 26 08:01:03 2024
+Hostname:           ecelinux-19.ece.cornell.edu
+CPU Model:          Intel(R) Xeon(R) Gold 6252N CPU @ 2.30GHz
+CPU Details:        Cores = 8 : Sockets = 2 : Cache Size = 36608 KB : Freq = 2.29 GHz
+OS:                 Linux 4.18.0-553.27.1.el8_10.x86_64
+RAM:                 31 GB (Free   9 GB)
+Swap:                 3 GB (Free   3 GB)
+Work Filesystem:    /home mounted to en-ec-nfs22-rhel.coecis.cornell.edu:/home
+Tmp Filesystem:     /tmp mounted to /dev/mapper/VG00-tmp
+Work Disk:          6954 GB (Free 1505 GB)
+Tmp Disk:            14 GB (Free  14 GB)
+
+CPU Load: 14%, Ram Free: 9 GB, Swap Free: 3 GB, Work Disk Free: 1505 GB, Tmp Disk Free: 14 GB
+Error: could not open script file "/home/sh2663/asap7_rundir/asic-final/apr/synRVT.dc.tcl" (CMD-015)
+dc_shell> exit
+
+Memory usage for this session 74 Mbytes.
+Memory usage for this session including child processes 74 Mbytes.
+CPU usage for this session 1 seconds ( 0.00 hours ).
+Elapsed time for this session 29 seconds ( 0.01 hours ).
+
+Thank you...
+

@@ -2,7 +2,7 @@
    ____________________________________________________________________
 __/ message from Blocking QThread
 *** QThread MetricCollect [begin] (optDesign #3) : mem = 0.5M
-Ending "set_metric_additional_insts" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2567.1M, current mem=1947.6M)
-Ending "set_metric_inst_count_area" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1960.8M, current mem=1955.8M)
+Ending "set_metric_additional_insts" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2606.8M, current mem=1983.9M)
+Ending "set_metric_inst_count_area" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1997.8M, current mem=1992.9M)
 *** QThread MetricCollect [finish] (optDesign #3) : cpu/real = 0:00:00.2/0:00:00.2 (0.9), mem = 0.5M
 _______________________________________________________________________
