@@ -21,3 +21,7 @@ end
 ```
 
 From the original file, I changed `negedge clk` to `posedge clk`. This is because of a one-off error that resulted in design outputs being compared to the *next* golden output. 
+
+## Bugfixes
+
+- it was the = ... the  <=  is not working for some reason ????
