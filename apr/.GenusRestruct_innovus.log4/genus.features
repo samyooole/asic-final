@@ -1,0 +1,21 @@
+# version: 23.12-s086_1
+min_lib_gates: 1
+crr_map_def command: 1
+create_lib_context command: 1
+create_slack_adjusts command: 1
+set_pin_activity command: 1
+setPowerDomainOfDelayCorner command: 1
+crr_set_port_location command: 1
+map_def command: 1
+set_load_fast -mode command_option: 1
+root/dft_tracking attribute: 1
+root/dft_track_scan_chain attribute: 1
+port/dft_tracking_scan_out attribute: 1
+root/lp_toggle_rate_unit attribute: 1
+root/map_avg_toggle_count_root_scale attribute: 1
+root/use_inverter_for_scan_out attribute: 1
+port/slack_adjust_base_by_mode attribute: 1
+root/map_std_gate_power_area_factor attribute: 1
+root/map_eliminate_oupin_pos_slack attribute: 1
+root/innovus_crr_design_level_unit_dynamic_power_per_area attribute: 1
+root/init_design_skip_consistency_check attribute: 1

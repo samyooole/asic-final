@@ -4,7 +4,7 @@ module tb_dist_sort();
 
 //--------------------To be read in from .txt-------------------//
 parameter num_of_inputs = 1000;
-integer fp1,fp2,p,q,i,j;
+integer fp1,fp2,p,q,i;
 
 logic  [num_of_inputs-1:0] [63:0] query_ip;
 logic  [num_of_inputs-1:0] [63:0] S_0_ip;
@@ -22,7 +22,7 @@ logic  [num_of_inputs-1:0] [2:0] addr_2nd_gold;
 //-------------Inputs/Outputs to DUT instance-----------------//
 `include "./params.vh"
 parameter START_IN_VALID = CLK_PERIOD*7;
-parameter RUN_TIME = CLK_PERIOD * (num_of_inputs + PIPE_STAGES); 
+parameter RUN_TIME = CLK_PERIOD * (num_of_inputs+PIPE_STAGES); 
 
 
 logic [63:0] query;
@@ -63,9 +63,9 @@ dist_sort DUT (.clk(clk),
 
 //-----------------Task to get query and sv--------------------//
 task get_query_and_sv();
-fp1=$fopen("/home/sh2663/asap7_rundir/asic-final/rtl/inputs.txt","r");
+fp1=$fopen("./inputs.txt","r");
 for(i=0;i<num_of_inputs;i++) begin
-	p=$fscanf(fp1,"%h\t%h\t%h\t%h\t%h\t%h\t%h\t%h\t%h\n",query_ip[i], S_0_ip[i], S_1_ip[i], S_2_ip[i], S_3_ip[i], S_4_ip[i], S_5_ip[i], S_6_ip[i], S_7_ip[i]); 
+	p=$fscanf(fp1,"%h\t%h\t%h\t%h\t%h\t%h\t%h\t%h\t%h\n",query_ip[i], S_0_ip[i], S_1_ip[i], S_2_ip[i], S_3_ip[i], S_4_ip[i], S_5_ip[i], S_6_ip[i], S_7_ip[i]);       
 end
 
 $fclose(fp1);
@@ -74,9 +74,9 @@ endtask
 
 //-----------------Task to get golden outputs------------------//
 task get_golden_outputs();
-fp2 = $fopen("/home/sh2663/asap7_rundir/asic-final/rtl/golden_bin.txt","r");
-for(j=0;j<num_of_inputs;j++) begin
-   q = $fscanf(fp2,"%b\t%b\n",addr_1st_gold[j],addr_2nd_gold[j]);   
+fp2 = $fopen("./golden_bin.txt","r");
+for(i=0;i<num_of_inputs;i++) begin
+   q = $fscanf(fp2,"%b\t%b\n",addr_1st_gold[i],addr_2nd_gold[i]);   
 end
 
 $fclose(fp2);
@@ -111,9 +111,9 @@ end
 
 //----------Store outs into memory for comparison--------------//
 int k =0;
-always@ (posedge clk) begin
+always@ (negedge clk) begin
  if(out_valid) begin
-   if (k < num_of_inputs+1) begin
+   if (k < num_of_inputs) begin
      addr_1st_mem[k] = addr_1st;
      addr_2nd_mem[k] = addr_2nd;
      k++;
@@ -122,7 +122,7 @@ always@ (posedge clk) begin
       $display("!!!!!!!!!!!!!!!!!!!!!!!!!Out Valid is high for too long. More outputs than inputs are present!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
    end//  else
    end // out_valid
-end
+end //negedge
 //-------------------------------------------------------------//
 
 //-------Task to compare results stored in mem vs golden-------//

@@ -1,1 +1,0 @@
-/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.RVT.2300.syn.sdc

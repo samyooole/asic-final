@@ -1,0 +1,479 @@
+Ignoring AAE DB Resetting ...
+Updating timing graph...
+  
+  Leaving CCOpt scope - BuildTimeGraph...
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: dist_sort
+# Design Mode: 90nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+#WARNING (NRDB-2012) The ENCLOSURE statement in layer V3 has the syntax for overhang values without END/SIDE keywords but contains CUTCLASS attribute and the cut defined in the CUTCLASS is rectangular. The new syntax 'END overhang1 SIDE overhang2' must be used in this case. Without the END/SIDE keywords, the larger value is assigned as end overhang and smaller value is assigned as side overhang. 
+#WARNING (NRDB-2012) The ENCLOSURE statement in layer V3 has the syntax for overhang values without END/SIDE keywords but contains CUTCLASS attribute and the cut defined in the CUTCLASS is rectangular. The new syntax 'END overhang1 SIDE overhang2' must be used in this case. Without the END/SIDE keywords, the larger value is assigned as end overhang and smaller value is assigned as side overhang. 
+#WARNING (NRDB-2012) The ENCLOSURE statement in layer V5 has the syntax for overhang values without END/SIDE keywords but contains CUTCLASS attribute and the cut defined in the CUTCLASS is rectangular. The new syntax 'END overhang1 SIDE overhang2' must be used in this case. Without the END/SIDE keywords, the larger value is assigned as end overhang and smaller value is assigned as side overhang. 
+#WARNING (NRDB-407) pitch for LAYER Pad is defined too small, reset to 1280
+#WARNING (NRDB-733) PIN A in CELL_VIEW BUFx16f_ASAP7_75t_R does not have a physical port. NanoRoute will not route to the pin. To resolve this issue, check that the pin shapes exist in the LEF abstract.
+#Extract in post route mode
+#Finish check_net_pin_list step Enter extract_rc_in_nr_cmd
+#Fast data preparation for tQuantus.
+#Start routing data preparation on Tue Nov 26 12:22:57 2024
+#
+#WARNING (NRDB-2040) Rule LEF_DEFAULT doesn't specify any vias that satisfy all of the area rules for layer M2 M3 M4 M5 M6 M7 M8 M9 
+#WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER M8 are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+#WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER M9 are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+#WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER Pad are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+# M1           V   Track-Pitch = 0.14400    Line-2-Via Pitch = 0.14400
+# M2           H   Track-Pitch = 0.14400    Line-2-Via Pitch = 0.14400
+# M3           V   Track-Pitch = 0.14400    Line-2-Via Pitch = 0.14400
+# M4           H   Track-Pitch = 0.19200    Line-2-Via Pitch = 0.19200
+# M5           V   Track-Pitch = 0.19200    Line-2-Via Pitch = 0.19200
+# M6           H   Track-Pitch = 0.25600    Line-2-Via Pitch = 0.41600
+#WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+# M7           V   Track-Pitch = 0.25600    Line-2-Via Pitch = 0.41600
+#WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+# M8           H   Track-Pitch = 0.32000    Line-2-Via Pitch = 0.32000
+# M9           V   Track-Pitch = 0.32000    Line-2-Via Pitch = 0.32000
+# Pad          H   Track-Pitch = 0.32000    Line-2-Via Pitch = 8.28000
+#WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=20 tracks, using layer M2's pitch = 0.14400.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2342.98 (MB), peak = 2344.29 (MB)
+#Start routing data preparation on Tue Nov 26 12:22:57 2024
+#
+#Bottom routing layer index=2(M2), bottom routing layer for shielding=2(M2), bottom shield layer=2(M2)
+#shield_bottom_stripe_layer=1(M1), shield_top_stripe_layer=3(M3)
+#pin_access_rlayer=2(M2)
+#shield_top_dpt_rlayer=-1 top_rlayer=3 top_trim_metal_rlayer=-1 rlayer_lowest=1 bottom_rlayer=2
+#enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
+#enable_dpt_layer_shield=F
+#has_line_end_grid=F
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=20 tracks, using layer M2's pitch = 0.14400.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2357.15 (MB), peak = 2357.15 (MB)
+#
+#Start tQuantus RC extraction...
+#Start building rc corner(s)...
+#Number of RC Corner = 1
+#Corner RC_corner_25 /classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06 25.000000 (real) 
+#(i=10, n=10 4000)
+#LISD -> M1 (1)
+#M1 -> M2 (2)
+#M2 -> M3 (3)
+#M3 -> M4 (4)
+#M4 -> M5 (5)
+#M5 -> M6 (6)
+#M6 -> M7 (7)
+#M7 -> M8 (8)
+#M8 -> M9 (9)
+#M9 -> Pad (10)
+#SADV-On
+# Corner(s) : 
+#RC_corner_25 [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#SADV-Off
+#
+#layer[1] tech width 288 != ict width 400.0
+#
+#layer[1] tech spc 288 != ict spc 464.0
+#
+#layer[4] tech width 384 != ict width 288.0
+#
+#layer[4] tech spc 384 != ict spc 288.0
+#
+#layer[6] tech width 512 != ict width 384.0
+#
+#layer[6] tech spc 512 != ict spc 384.0
+#
+#layer[8] tech width 640 != ict width 512.0
+#
+#layer[8] tech spc 640 != ict spc 512.0
+#
+#layer[10] tech spc 32000 != ict spc 640.0
+#total pattern=220 [10, 605]
+#Reading previously stored rc_model file ( /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/misc/rc_model.bin ) ...
+#found CAPMODEL /classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06
+#found RESMODEL /classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06 25.000000 
+#CCE Version read = IQuantus/TQuantus 23.1.1-s122
+#number model r/c [1,1] [10,605] read
+#0 rcmodel(s) requires rebuild
+#Build RC corners: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2375.41 (MB), peak = 2382.71 (MB)
+#Finish check_net_pin_list step Enter extract
+#Start init net ripin tree building
+#Finish init net ripin tree building
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (MB)
+#Total memory = 2375.41 (MB)
+#Peak memory = 2382.71 (MB)
+#begin processing metal fill model file
+#end processing metal fill model file
+#Length limit = 200 pitches
+#opt mode = 2
+#Finish check_net_pin_list step Fix net pin list
+#Start generate extraction boxes.
+#
+#Extract using 30 x 30 Hboxes
+#5x5 initial hboxes
+#Use area based hbox pruning.
+#0/0 hboxes pruned.
+#Complete generating extraction boxes.
+#Start step Extraction
+#Extract 15 hboxes with single thread on machine with  Xeon 2.30GHz 36608KB Cache 8CPU...
+#Process 0 special clock nets for rc extraction
+#Total 10608 nets were built. 1397 nodes added to break long wires. 0 net(s) have incomplete routes.
+#Run Statistics for Extraction:
+#   Cpu time = 00:00:01, elapsed time = 00:00:01 .
+#   Increased memory =    41.66 (MB), total memory =  2417.07 (MB), peak memory =  2417.07 (MB)
+#Register nets and terms for rcdb /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d
+#Finish registering nets and terms for rcdb.
+#Simplify RC tree: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2413.79 (MB), peak = 2417.33 (MB)
+#RC Statistics: 42180 Res, 25147 Ground Cap, 754 XCap (Edge to Edge)
+#RC V/H edge ratio: 0.73, Avg V/H Edge Length: 20020.54 (19868), Avg L-Edge Length: 14303.08 (10037)
+#Nets and terms are pre-registered for rcdb /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d.
+#Start writing RC data.
+#Finish writing RC data
+#Finish writing rcdb with 52830 nodes, 42222 edges, and 2328 xcaps
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2410.55 (MB), peak = 2417.33 (MB)
+Restoring parasitic data from file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d' ...
+Reading RCDB with compressed RC data.
+Reading RCDB with compressed RC data.
+Begin read_parasitics... (cpu: 0:00:00.0 real: 0:00:00.0 mem: 2437.672M)
+Following multi-corner parasitics specified:
+        /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d (rcdb)
+Reading RCDB with compressed RC data.
+                Cell dist_sort has rcdb /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d specified
+Cell dist_sort, hinst 
+Reading RCDB with compressed RC data.
+Done read_parasitics... (cpu: 0:00:00.1 real: 0:00:00.0 mem: 2437.672M)
+#
+#Restore RCDB.
+#
+#Complete tQuantus RC extraction.
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 54.75 (MB)
+#Total memory = 2411.90 (MB)
+#Peak memory = 2421.23 (MB)
+#
+#1397 inserted nodes are removed
+#Restored 0 tie nets, 0 tie snets, 0 partial nets
+#Start Design Signature (0)
+#Finish Inst Signature in MT(9772939)
+#Finish Net Signature in MT(75557168)
+#Finish SNet Signature in MT (132381466)
+#Run time and memory report for RC extraction:
+#RC extraction running on  Xeon 2.30GHz 36608KB Cache 8CPU.
+#Run Statistics for snet signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2384.07 (MB), peak memory =  2421.23 (MB)
+#Run Statistics for Net Final Signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2384.07 (MB), peak memory =  2421.23 (MB)
+#Run Statistics for Net launch:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.06 (MB), total memory =  2384.07 (MB), peak memory =  2421.23 (MB)
+#Run Statistics for Net init_dbsNet_slist:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2384.01 (MB), peak memory =  2421.23 (MB)
+#Run Statistics for net signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.06 (MB), total memory =  2384.07 (MB), peak memory =  2421.23 (MB)
+#Run Statistics for inst signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =    -0.75 (MB), total memory =  2384.01 (MB), peak memory =  2421.23 (MB)
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2418.64)
+Reading RCDB with compressed RC data.
+Total number of fetched objects 10608
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 10610,  100.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2470.78 CPU=0:00:01.6 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=2456.07 CPU=0:00:01.9 REAL=0:00:02.0)
+Save waveform /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/.AAE_gJtGDT/.AAE_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03/waveform.data...
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2900.6M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2900.6M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2487.6)
+Glitch Analysis: View default_setup_view -- Total Number of Nets Skipped = 25. 
+Glitch Analysis: View default_setup_view -- Total Number of Nets Analyzed = 10608. 
+Total number of fetched objects 10608
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 10610,  0.8 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2501.35 CPU=0:00:00.1 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2501.35 CPU=0:00:00.1 REAL=0:00:00.0)
+  Leaving CCOpt scope - BuildTimeGraph done. (took cpu=0:00:06.0 real=0:00:06.1)
+Updating timing graph done.
+Updating latch analysis...
+  Leaving CCOpt scope - Updating latch analysis...
+  Leaving CCOpt scope - Updating latch analysis done. (took cpu=0:00:00.2 real=0:00:00.2)
+Updating latch analysis done.
+Updating ideal nets and annotations...
+Clock tree spec update: Ideal nets, transition and delay annotations were updated to match active timing constraints.
+Updating ideal nets and annotations done. (took cpu=0:00:00.0 real=0:00:00.0)
+No differences between SDC and CTS ideal net status found.
+Clock tree timing engine global stage delay update for delayCorner_slow:setup.early...
+Clock tree timing engine global stage delay update for delayCorner_slow:setup.early done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for delayCorner_slow:setup.late...
+Clock tree timing engine global stage delay update for delayCorner_slow:setup.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for delayCorner_fast:hold.early...
+Clock tree timing engine global stage delay update for delayCorner_fast:hold.early done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for delayCorner_fast:hold.late...
+Clock tree timing engine global stage delay update for delayCorner_fast:hold.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+
+Clock DAG stats:
+================
+
+-------------------------------------------------------
+Cell type                 Count    Area     Capacitance
+-------------------------------------------------------
+Buffers                     0      0.000       0.000
+Inverters                   0      0.000       0.000
+Integrated Clock Gates      0      0.000       0.000
+Discrete Clock Gates        0      0.000       0.000
+Clock Logic                 0      0.000       0.000
+All                         0      0.000       0.000
+-------------------------------------------------------
+
+Clock DAG miscellaneous counts:
+===============================
+
+------------------------------
+Type                     Count
+------------------------------
+Roots                      1
+Preserved Ports            0
+Multiple Clock Inputs      0
+------------------------------
+
+
+Clock DAG sink counts:
+======================
+
+-------------------------
+Sink type           Count
+-------------------------
+Regular               7
+Enable Latch          0
+Load Capacitance      0
+Antenna Diode         0
+Node Sink             0
+Total                 7
+-------------------------
+
+
+Clock DAG wire lengths:
+=======================
+
+--------------------
+Type     Wire Length
+--------------------
+Top          0.000
+Trunk        0.000
+Leaf       296.064
+Total      296.064
+--------------------
+
+
+Clock DAG hp wire lengths:
+==========================
+
+-----------------------
+Type     hp Wire Length
+-----------------------
+Top          0.000
+Trunk        0.000
+Leaf         0.000
+Total        0.000
+-----------------------
+
+
+Clock DAG capacitances:
+=======================
+
+---------------------------------
+Type     Gate     Wire     Total
+---------------------------------
+Top      0.000    0.000     0.000
+Trunk    0.000    0.000     0.000
+Leaf     2.302    8.217    10.518
+Total    2.302    8.217    10.518
+---------------------------------
+
+
+Clock DAG sink capacitances:
+============================
+
+-----------------------------------------------
+Total    Average    Std. Dev.    Min      Max
+-----------------------------------------------
+2.302     0.329       0.000      0.329    0.329
+-----------------------------------------------
+
+
+Clock DAG net violations:
+=========================
+
+None
+
+
+Clock DAG primary half-corner transition distribution:
+======================================================
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Net Type    Target    Count    Average    Std. Dev.    Min     Max     Distribution                                                          Over Target
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Leaf        100.0       1       77.7         0.0       77.7    77.7    {0 <= 60.0ps, 1 <= 80.0ps, 0 <= 90.0ps, 0 <= 95.0ps, 0 <= 100.0ps}         -
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Please note that the following tables reflect only the defined clock trees, so the flop counts might not include all flops in your design.
+
+Clock Tree Summary:
+===================
+
+----------------------------------------------------------------------------------------------------------------------
+Clock Tree  Clock  Bufs  Invs  Other  Max       Max     Max      Max          Standard   Wire   Gate   Clock Tree Root
+Name        Gates              Clock  Non-leaf  Leaf    Length   Source-sink  cell area  cap    cap    
+                               Cells  Fanout    Fanout  (um)     Resistance   (um^2)     (fF)   (fF)   
+                                                                 (Ohms)                                
+----------------------------------------------------------------------------------------------------------------------
+clk           0     0     0      0       0        7     290.196    50235.7      0.000    8.217  2.302  clk
+----------------------------------------------------------------------------------------------------------------------
+
+Clock Sink Summary:
+===================
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Clock Tree  Explicit      Implicit      Explicit     Implicit     Explicit   Implicit   Posedge  Negedge  Memory  Enable  Non enable  Other
+Name        exclude pins  exclude pins  ignore pins  ignore pins  stop pins  stop pins  Flops    Flops    Clock   Latch   Latch       Sinks
+                                                                                                          Pins    Sinks   Sinks       
+-------------------------------------------------------------------------------------------------------------------------------------------
+clk              0             0             0            0           0          0         7        0       0       0         0         0
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Summary across all clock trees:
+===============================
+
+------------------------------------------------------------------------------------------------------------
+Clock  Bufs  Invs  Other  Max       Average   Max     Average  Max      Max          Standard   Wire   Gate
+Gates              Clock  Non-leaf  Non-leaf  Leaf    Leaf     Length   Source-sink  cell area  cap    cap
+                   Cells  Fanout    Fanout    Fanout  Fanout   (um)     Resistance   (um^2)     (fF)   (fF)
+                                                                        (Ohms)                         
+------------------------------------------------------------------------------------------------------------
+  0     0     0      0       0         0        7        7     290.196   5023.566      0.000    8.217  2.302
+------------------------------------------------------------------------------------------------------------
+
+Clock Sink Summary across all clock trees:
+==========================================
+
+-------------------------------------------------------------------------------------------------------------------------------
+Explicit      Implicit      Explicit     Implicit     Explicit   Implicit   Posedge  Negedge  Memory  Enable  Non enable  Other
+exclude pins  exclude pins  ignore pins  ignore pins  stop pins  stop pins  Flops    Flops    Clock   Latch   Latch       Sinks
+                                                                                              Pins    Sinks   Sinks       
+-------------------------------------------------------------------------------------------------------------------------------
+     0             0             0            0           0          0         7        0       0       0         0         0
+-------------------------------------------------------------------------------------------------------------------------------
+
+Physical metrics across all clock trees:
+========================================
+
+--------------------------------------------------------------------------
+Metric                               Minimum   Average   Maximum   Std.dev
+--------------------------------------------------------------------------
+Source-sink routed net length (um)    290.196   290.196   290.196   0.000
+Source-sink manhattan distance (um)   289.800   289.800   289.800   0.000
+Source-sink resistance (Ohm)         5023.566  5023.566  5023.566   0.000
+--------------------------------------------------------------------------
+
+Transition distribution for half-corner delayCorner_slow:setup.late:
+====================================================================
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Net Type    Target    Count    Average    Std. Dev.    Min     Max     Distribution                                                          Over Target
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Leaf        100.0       1       77.7         0.0       77.7    77.7    {0 <= 60.0ps, 1 <= 80.0ps, 0 <= 90.0ps, 0 <= 95.0ps, 0 <= 100.0ps}         -
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Count of violations across all clock trees:
+===========================================
+
+---------------------------------------------------------------------------------------
+Clock Tree  # Max capacitance  # Max resistance  # Max length  # Max fanout  # Slew
+Name        violations         violations        violations    violations    violations
+---------------------------------------------------------------------------------------
+clk                 0                 0               0             0            0
+---------------------------------------------------------------------------------------
+Total               0                 0               0             0            0
+---------------------------------------------------------------------------------------
+
+Note the above table per clock tree is based on CCOpt clock tree view. The violations are counted across half corners.
+
+Found a total of 0 clock tree pins with max capacitance violations.
+Found a total of 0 clock tree nets with max resistance violations.
+Found a total of 0 clock tree nets with max length violations.
+Found a total of 0 clock tree nets with max fanout violations.
+Found a total of 0 clock tree pins with a slew violation.
+
+Report for clock tree: clk:
+===========================
+
+Clock Tree Gating Structure (Logical):
+
+# Full cycle clock gates   : 0
+Minimum clock gating depth : 0
+Maximum clock gating depth : 0
+Clock gate area (um^2)     : 0.000
+
+Clock Tree Buffering Structure (Logical):
+
+# Buffers             : 0
+# Inverters           : 0
+  Total               : 0
+Minimum depth         : 0
+Maximum depth         : 0
+Buffering area (um^2) : 0.000
+
+Clock Tree Level Structure (Logical):
+
+-----------------------------------------------------------------
+Level  Full   Posedge  Negedge  Memory  Enable  Non enable  Other
+       Cycle  Flops    Flops    Clock   Latch   Latch       Sinks
+                                Pins    Sinks   Sinks       
+-----------------------------------------------------------------
+root     0       7        0       0       0         0         0
+-----------------------------------------------------------------
+Total    0       7        0       0       0         0         0
+-----------------------------------------------------------------
+
+Target and measured clock slews (in ps):
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Timing Corner                 Worst Rising  Worst Falling  Worst Rising  Worst Falling  Leaf Slew    Leaf Slew  Trunk Slew   Trunk Slew
+                              Leaf Slew     Leaf Slew      Trunk Slew    Trunk Slew     Target Type  Target     Target Type  Target
+---------------------------------------------------------------------------------------------------------------------------------------
+delayCorner_fast:hold.early       72.3          67.7            -              -        ignored          -      ignored          -
+delayCorner_fast:hold.late        77.7          72.9            -              -        ignored          -      ignored          -
+delayCorner_slow:setup.early      72.3          67.7            -              -        ignored          -      ignored          -
+delayCorner_slow:setup.late       77.7          72.9            -              -        explicit      100.0     explicit      100.0
+---------------------------------------------------------------------------------------------------------------------------------------
+
+* - indicates that target was not met.
+
+auto extracted - target was extracted from SDC.
+auto computed - target was computed when balancing trees.

@@ -1,0 +1,1173 @@
+[11/26 12:21:27      0s] 
+[11/26 12:21:27      0s] Cadence Innovus(TM) Implementation System.
+[11/26 12:21:27      0s] Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+[11/26 12:21:27      0s] 
+[11/26 12:21:27      0s] Version:	v23.12-s091_1, built Tue Jul 30 16:11:30 PDT 2024
+[11/26 12:21:27      0s] Options:	
+[11/26 12:21:27      0s] Date:		Tue Nov 26 12:21:27 2024
+[11/26 12:21:27      0s] Host:		ecelinux-19.ece.cornell.edu (x86_64 w/Linux 4.18.0-553.27.1.el8_10.x86_64) (4cores*8cpus*Intel(R) Xeon(R) Gold 6252N CPU @ 2.30GHz 36608KB)
+[11/26 12:21:27      0s] OS:		Red Hat Enterprise Linux 8.10 (Ootpa)
+[11/26 12:21:27      0s] 
+[11/26 12:21:27      0s] License:
+[11/26 12:21:27      0s] 		[12:21:27.473977] Configured Lic search path (23.02-s005): 5280@flex.ece.cornell.edu
+
+[11/26 12:21:27      0s] 		invs	Innovus Implementation System	23.1	checkout succeeded
+[11/26 12:21:27      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[11/26 12:21:27      0s] **WARN: (IMPSYT-1507):	The display is invalid and will start in no window mode
+[11/26 12:21:40     12s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v23.12-s091_1 (64bit) 07/30/2024 16:11 (Linux 3.10.0-693.el7.x86_64)
+[11/26 12:21:42     14s] @(#)CDS: NanoRoute 23.12-s091_1 NR240717-0458/23_12-UB (database version 18.20.633) {superthreading v2.20}
+[11/26 12:21:42     14s] @(#)CDS: AAE 23.12-s024 (64bit) 07/30/2024 (Linux 3.10.0-693.el7.x86_64)
+[11/26 12:21:42     14s] @(#)CDS: CTE 23.12-s018_1 () Jul 26 2024 06:03:48 ( )
+[11/26 12:21:42     14s] @(#)CDS: SYNTECH 23.12-s010_1 () Jul 16 2024 00:01:03 ( )
+[11/26 12:21:42     14s] @(#)CDS: CPE v23.12-s039
+[11/26 12:21:42     14s] @(#)CDS: IQuantus/TQuantus 23.1.1-s122 (64bit) Tue May 28 20:12:45 PDT 2024 (Linux 3.10.0-693.el7.x86_64)
+[11/26 12:21:42     14s] @(#)CDS: OA 22.61-p014 Tue Apr 16 14:38:48 2024
+[11/26 12:21:42     14s] @(#)CDS: SGN 23.10-d005 (03-Oct-2023) (64 bit executable, TkQt5.15.9)
+[11/26 12:21:42     14s] @(#)CDS: RCDB 11.15.0
+[11/26 12:21:42     14s] @(#)CDS: STYLUS 23.10-a014_1 (03/28/2024 09:42 PDT)
+[11/26 12:21:42     14s] @(#)CDS: IntegrityPlanner-23.12-15697 (23.12) (2024-06-27 11:26:54+0800)
+[11/26 12:21:42     14s] @(#)CDS: SYNTHESIS_ENGINE 23.12-s086
+[11/26 12:21:42     14s] Create and set the environment variable TMPDIR to /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr.
+
+[11/26 12:21:42     14s] Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+[11/26 12:21:43     15s] 
+[11/26 12:21:43     15s] **INFO:  MMMC transition support version v31-84 
+[11/26 12:21:43     15s] 
+[11/26 12:21:43     15s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[11/26 12:21:43     15s] <CMD> suppressMessage ENCEXT-2799
+[11/26 12:21:43     15s] <CMD> getVersion
+[11/26 12:21:44     15s] <CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+        {-window "window coordinates" "" list optional}
+        {-window_size "window size in microns" "" string optional}
+    
+    }
+[11/26 12:21:44     15s] [INFO] Loading Pegasus 23.23 fill procedures
+[11/26 12:21:44     15s] **WARN: Tk package not loaded. The Pegasus fill DRC monitor is disabled.
+[11/26 12:21:44     15s] <CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[11/26 12:21:44     15s] <CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[11/26 12:21:44     15s] <CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+[11/26 12:21:44     15s] <CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+[11/26 12:21:44     15s] <CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+[11/26 12:21:44     15s] <CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+[11/26 12:21:55     15s] <CMD> restoreDesign dist_sort.final.enc.dat dist_sort
+[11/26 12:21:55     16s] #% Begin load design ... (date=11/26 12:21:55, mem=1786.8M)
+[11/26 12:21:55     16s] Set Default Input Pin Transition as 0.1 ps.
+[11/26 12:21:56     17s] Loading design 'dist_sort' saved by 'Innovus' '23.12-s091_1' on 'Tue Nov 26 10:21:33 2024'.
+[11/26 12:21:56     17s] % Begin Load MMMC data ... (date=11/26 12:21:56, mem=1791.2M)
+[11/26 12:21:56     17s] % End Load MMMC data ... (date=11/26 12:21:56, total cpu=0:00:00.0, real=0:00:00.0, peak res=1792.4M, current mem=1792.4M)
+[11/26 12:21:56     17s] *** Loading design ... ***
+[11/26 12:21:56     17s] 
+[11/26 12:21:56     17s] Loading LEF file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/lef/asap7_tech_4x_170803.lef ...
+[11/26 12:21:56     17s] 
+[11/26 12:21:56     17s] Loading LEF file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/lef/asap7sc7p5t_24_R_4x_170912.lef ...
+[11/26 12:21:56     17s] Set DBUPerIGU to M1 pitch 576.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'A2O1A1Ixp33_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'A2O1A1O1Ixp25_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AND2x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AND2x4_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AND2x6_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AND3x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AND3x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AND3x4_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AND4x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AND4x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AND5x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AND5x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AO211x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AO21x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AO21x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AO221x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AO221x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AO222x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AO22x1_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (IMPLF-45):	Macro 'AO22x2_ASAP7_75t_R' has no SITE statement and it is a class
+[11/26 12:21:56     17s] CORE macro that requires a SITE statement. The SITE coreSite is
+[11/26 12:21:56     17s] chosen because it is a core site with height 1.0800 that matches the macro
+[11/26 12:21:56     17s] SIZE height.
+[11/26 12:21:56     17s] **WARN: (EMS-27):	Message (IMPLF-45) has exceeded the current message display limit of 20.
+[11/26 12:21:56     17s] To increase the message display limit, refer to the product command reference manual.
+[11/26 12:21:56     17s] 
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[11/26 12:21:56     17s] Loading view definition file from /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/viewDefinition.tcl
+[11/26 12:21:56     17s] Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_INVBUF_RVT_TT.lib' ...
+[11/26 12:21:56     17s] Read 27 cells in library 'asap7sc7p5t_22b_INVBUF_RVT_TT_170906' 
+[11/26 12:21:56     17s] Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_AO_RVT_TT.lib' ...
+[11/26 12:21:57     18s] Read 42 cells in library 'asap7sc7p5t_22b_AO_RVT_TT_170906' 
+[11/26 12:21:57     18s] Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_OA_RVT_TT.lib' ...
+[11/26 12:21:58     19s] Read 34 cells in library 'asap7sc7p5t_22b_OA_RVT_TT_170906' 
+[11/26 12:21:58     19s] Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_SEQ_RVT_TT.lib' ...
+[11/26 12:21:58     19s] Read 26 cells in library 'asap7sc7p5t_22b_SEQ_RVT_TT_170906' 
+[11/26 12:21:58     19s] Reading libset_slow timing library '/classes/ece5746/asap7libs/lib/asap7sc7p5t_24_SIMPLE_RVT_TT.lib' ...
+[11/26 12:21:58     19s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /classes/ece5746/asap7libs/lib/asap7sc7p5t_24_SIMPLE_RVT_TT.lib, Line 11230)
+[11/26 12:21:58     19s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /classes/ece5746/asap7libs/lib/asap7sc7p5t_24_SIMPLE_RVT_TT.lib, Line 14483)
+[11/26 12:21:58     19s] Read 56 cells in library 'asap7sc7p5t_22b_SIMPLE_RVT_TT_170906' 
+[11/26 12:21:58     19s] Ending "PreSetAnalysisView" (total cpu=0:00:02.4, real=0:00:02.0, peak res=1946.2M, current mem=1812.8M)
+[11/26 12:21:58     19s] *** End library_loading (cpu=0.04min, real=0.03min, mem=64.0M, fe_cpu=0.33min, fe_real=0.52min, fe_mem=1753.7M) ***
+[11/26 12:21:58     19s] % Begin Load netlist data ... (date=11/26 12:21:58, mem=1812.3M)
+[11/26 12:21:58     19s] *** Begin netlist parsing (mem=1753.7M) ***
+[11/26 12:21:58     19s] Created 185 new cells from 5 timing libraries.
+[11/26 12:21:58     19s] Reading netlist ...
+[11/26 12:21:58     19s] Backslashed names will retain backslash and a trailing blank character.
+[11/26 12:21:58     19s] Reading verilogBinary netlist '/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.v.bin'
+[11/26 12:21:58     19s] 
+[11/26 12:21:58     19s] *** Memory Usage v#1 (Current mem = 1761.695M, initial mem = 844.516M) ***
+[11/26 12:21:58     19s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1761.7M) ***
+[11/26 12:21:58     19s] % End Load netlist data ... (date=11/26 12:21:58, total cpu=0:00:00.1, real=0:00:00.0, peak res=1831.8M, current mem=1831.8M)
+[11/26 12:21:58     19s] Top level cell is dist_sort.
+[11/26 12:21:58     19s] Hooked 185 DB cells to tlib cells.
+[11/26 12:21:59     19s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:01.0, peak res=1855.4M, current mem=1855.4M)
+[11/26 12:21:59     19s] Starting recursive module instantiation check.
+[11/26 12:21:59     19s] No recursion found.
+[11/26 12:21:59     19s] Building hierarchical netlist for Cell dist_sort ...
+[11/26 12:21:59     19s] ***** UseNewTieNetMode *****.
+[11/26 12:21:59     19s] *** Netlist is unique.
+[11/26 12:21:59     19s] Set DBUPerIGU to techSite coreSite width 864.
+[11/26 12:21:59     19s] Setting Std. cell height to 4320 DBU (smallest netlist inst).
+[11/26 12:21:59     19s] ** info: there are 197 modules.
+[11/26 12:21:59     19s] ** info: there are 8112 stdCell insts.
+[11/26 12:21:59     19s] ** info: there are 8112 stdCell insts with at least one signal pin.
+[11/26 12:21:59     19s] 
+[11/26 12:21:59     19s] *** Memory Usage v#1 (Current mem = 1813.609M, initial mem = 844.516M) ***
+[11/26 12:21:59     19s] *info: set bottom ioPad orient R0
+[11/26 12:21:59     19s] Start create_tracks
+[11/26 12:21:59     19s] **WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+[11/26 12:21:59     19s] Type 'man IMPOPT-3602' for more detail.
+[11/26 12:21:59     19s] Effort level <high> specified for reg2reg path_group
+[11/26 12:21:59     19s] Slack adjustment of -0 applied on reg2reg path_group
+[11/26 12:21:59     19s] **WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+[11/26 12:21:59     19s] #WARNING (NRIF-90) Option setNanoRouteMode -route_bottom_routing_layer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -bottomRoutingLayer instead.
+[11/26 12:21:59     19s] #WARNING (NRIF-95) Option setNanoRouteMode -routeTopRoutingLayer has invalid value "0". Reset to max routing layer "10".
+[11/26 12:21:59     19s] #WARNING (NRIF-91) Option setNanoRouteMode -route_top_routing_layer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+[11/26 12:21:59     20s] 
+[11/26 12:21:59     20s] viaInitial starts at Tue Nov 26 12:21:59 2024
+viaInitial ends at Tue Nov 26 12:21:59 2024
+AAE_INFO: switching setDelayCal -siAware from false to true ...
+[11/26 12:21:59     20s] AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+[11/26 12:21:59     20s] **WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+[11/26 12:21:59     20s] **WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+[11/26 12:21:59     20s] **WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+[11/26 12:21:59     20s] Extraction setup Delayed 
+[11/26 12:21:59     20s] *Info: initialize multi-corner CTS.
+[11/26 12:21:59     20s] Ending "SetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2154.6M, current mem=1893.0M)
+[11/26 12:21:59     20s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[11/26 12:21:59     20s] 
+[11/26 12:21:59     20s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[11/26 12:21:59     20s] Summary for sequential cells identification: 
+[11/26 12:21:59     20s]   Identified SBFF number: 17
+[11/26 12:21:59     20s]   Identified MBFF number: 0
+[11/26 12:21:59     20s]   Identified SB Latch number: 6
+[11/26 12:21:59     20s]   Identified MB Latch number: 0
+[11/26 12:21:59     20s]   Not identified SBFF number: 0
+[11/26 12:21:59     20s]   Not identified MBFF number: 0
+[11/26 12:21:59     20s]   Not identified SB Latch number: 0
+[11/26 12:21:59     20s]   Not identified MB Latch number: 0
+[11/26 12:21:59     20s]   Number of sequential cells which are not FFs: 3
+[11/26 12:21:59     20s] Total number of combinational cells: 159
+[11/26 12:21:59     20s] Total number of sequential cells: 26
+[11/26 12:21:59     20s] Total number of tristate cells: 0
+[11/26 12:21:59     20s] Total number of level shifter cells: 0
+[11/26 12:21:59     20s] Total number of power gating cells: 0
+[11/26 12:21:59     20s] Total number of isolation cells: 0
+[11/26 12:21:59     20s] Total number of power switch cells: 0
+[11/26 12:21:59     20s] Total number of pulse generator cells: 0
+[11/26 12:21:59     20s] Total number of always on buffers: 0
+[11/26 12:21:59     20s] Total number of retention cells: 0
+[11/26 12:21:59     20s] Total number of physical cells: 0
+[11/26 12:21:59     20s] List of usable buffers: BUFx10_ASAP7_75t_R BUFx12_ASAP7_75t_R BUFx12f_ASAP7_75t_R BUFx16f_ASAP7_75t_R BUFx24_ASAP7_75t_R BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R BUFx4_ASAP7_75t_R BUFx5_ASAP7_75t_R BUFx4f_ASAP7_75t_R BUFx6f_ASAP7_75t_R BUFx8_ASAP7_75t_R HB1xp67_ASAP7_75t_R HB2xp67_ASAP7_75t_R
+[11/26 12:21:59     20s] Total number of usable buffers: 14
+[11/26 12:21:59     20s] List of unusable buffers:
+[11/26 12:21:59     20s] Total number of unusable buffers: 0
+[11/26 12:21:59     20s] List of usable inverters: INVx11_ASAP7_75t_R INVx13_ASAP7_75t_R INVx1_ASAP7_75t_R INVx2_ASAP7_75t_R INVx3_ASAP7_75t_R INVx4_ASAP7_75t_R INVx5_ASAP7_75t_R INVx6_ASAP7_75t_R INVx8_ASAP7_75t_R INVxp67_ASAP7_75t_R INVxp33_ASAP7_75t_R
+[11/26 12:21:59     20s] Total number of usable inverters: 11
+[11/26 12:21:59     20s] List of unusable inverters:
+[11/26 12:21:59     20s] Total number of unusable inverters: 0
+[11/26 12:21:59     20s] List of identified usable delay cells: HB3xp67_ASAP7_75t_R HB4xp67_ASAP7_75t_R
+[11/26 12:21:59     20s] Total number of identified usable delay cells: 2
+[11/26 12:21:59     20s] List of identified unusable delay cells:
+[11/26 12:21:59     20s] Total number of identified unusable delay cells: 0
+[11/26 12:21:59     20s] 
+[11/26 12:21:59     20s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[11/26 12:21:59     20s] 
+[11/26 12:21:59     20s] TimeStamp Deleting Cell Server Begin ...
+[11/26 12:21:59     20s] 
+[11/26 12:21:59     20s] TimeStamp Deleting Cell Server End ...
+[11/26 12:21:59     20s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=2159.7M, current mem=2159.6M)
+[11/26 12:21:59     20s] 
+[11/26 12:21:59     20s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[11/26 12:21:59     20s] Summary for sequential cells identification: 
+[11/26 12:21:59     20s]   Identified SBFF number: 17
+[11/26 12:21:59     20s]   Identified MBFF number: 0
+[11/26 12:21:59     20s]   Identified SB Latch number: 6
+[11/26 12:21:59     20s]   Identified MB Latch number: 0
+[11/26 12:21:59     20s]   Not identified SBFF number: 0
+[11/26 12:21:59     20s]   Not identified MBFF number: 0
+[11/26 12:21:59     20s]   Not identified SB Latch number: 0
+[11/26 12:21:59     20s]   Not identified MB Latch number: 0
+[11/26 12:21:59     20s]   Number of sequential cells which are not FFs: 3
+[11/26 12:21:59     20s]  Visiting view : default_setup_view
+[11/26 12:21:59     20s]    : PowerDomain = none : Weighted F : unweighted  = 5.70 (1.000) with rcCorner = 0
+[11/26 12:21:59     20s]    : PowerDomain = none : Weighted F : unweighted  = 2.80 (1.000) with rcCorner = -1
+[11/26 12:21:59     20s]  Visiting view : default_hold_view
+[11/26 12:21:59     20s]    : PowerDomain = none : Weighted F : unweighted  = 5.70 (1.000) with rcCorner = 0
+[11/26 12:21:59     20s]    : PowerDomain = none : Weighted F : unweighted  = 2.80 (1.000) with rcCorner = -1
+[11/26 12:21:59     20s] 
+[11/26 12:21:59     20s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[11/26 12:21:59     20s] 
+[11/26 12:21:59     20s] TimeStamp Deleting Cell Server Begin ...
+[11/26 12:21:59     20s] 
+[11/26 12:21:59     20s] TimeStamp Deleting Cell Server End ...
+[11/26 12:21:59     20s] % Begin Load MMMC data post ... (date=11/26 12:21:59, mem=2161.6M)
+[11/26 12:21:59     20s] % End Load MMMC data post ... (date=11/26 12:21:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=2161.6M, current mem=2161.6M)
+[11/26 12:21:59     20s] Reading floorplan file - /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.fp.gz (mem = 2072.8M).
+[11/26 12:21:59     20s] % Begin Load floorplan data ... (date=11/26 12:21:59, mem=2162.2M)
+[11/26 12:21:59     20s] *info: reset 10610 existing net BottomPreferredLayer and AvoidDetour
+[11/26 12:21:59     20s] Deleting old partition specification.
+[11/26 12:21:59     20s] Set FPlanBox to (0 0 800064 800064)
+[11/26 12:21:59     20s] Start create_tracks
+[11/26 12:21:59     20s]  ... processed partition successfully.
+[11/26 12:21:59     20s] Reading binary special route file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.fp.spr.gz (Created by Innovus v23.12-s091_1 on Tue Nov 26 10:21:32 2024, version: 1)
+[11/26 12:21:59     20s] Convert 0 swires and 0 svias from compressed groups
+[11/26 12:21:59     20s] 16 swires and 10 svias were compressed
+[11/26 12:21:59     20s] 16 swires and 10 svias were decompressed from small or sparse groups
+[11/26 12:22:00     20s] Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:01.0, peak res=2163.5M, current mem=2163.5M)
+[11/26 12:22:00     20s] There are 1 nets with weight being set
+[11/26 12:22:00     20s] There are 1 nets with bottomPreferredRoutingLayer being set
+[11/26 12:22:00     20s] There are 1 nets with avoidDetour being set
+[11/26 12:22:00     20s] Extracting standard cell pins and blockage ...... 
+[11/26 12:22:00     20s] **WARN: (IMPTR-2104):	Layer M10: Pitch=1280 is less than min width=640 + min spacing=32000.
+[11/26 12:22:00     20s] Temporarily expand pitch on layer M10 from 1280 to 11520 (9x).
+[11/26 12:22:00     20s] **ERROR: (IMPTR-2101):	Layer M10: Pitch=11520x9 is still less than min width=32000 + min spacing=640.
+**WARN: (IMPTR-2108):	For layer M10, the gaps of 623 out of 623 tracks are narrower than 8.160um (space 8.000 + width 0.160).
+[11/26 12:22:00     20s] Type 'man IMPTR-2108' for more detail.
+[11/26 12:22:00     20s]  As a result, your trialRoute congestion could be incorrect.
+[11/26 12:22:00     20s] Pin and blockage extraction finished
+[11/26 12:22:00     20s] % End Load floorplan data ... (date=11/26 12:22:00, total cpu=0:00:00.1, real=0:00:01.0, peak res=2165.1M, current mem=2165.1M)
+[11/26 12:22:00     20s] Reading congestion map file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.route.congmap.gz ...
+[11/26 12:22:00     20s] % Begin Load SymbolTable ... (date=11/26 12:22:00, mem=2165.1M)
+[11/26 12:22:00     20s] Suppress "**WARN ..." messages.
+[11/26 12:22:00     20s] routingBox: (0 0) (800064 800064)
+[11/26 12:22:00     20s] coreBox:    (20160 20160) (779904 779904)
+[11/26 12:22:00     20s] Un-suppress "**WARN ..." messages.
+[11/26 12:22:00     20s] % End Load SymbolTable ... (date=11/26 12:22:00, total cpu=0:00:00.1, real=0:00:00.0, peak res=2168.8M, current mem=2168.7M)
+[11/26 12:22:00     20s] Loading place ...
+[11/26 12:22:00     20s] % Begin Load placement data ... (date=11/26 12:22:00, mem=2168.7M)
+[11/26 12:22:00     20s] Reading placement file - /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.place.gz.
+[11/26 12:22:00     20s] ** Reading stdCellPlacement_binary (Created by Innovus v23.12-s091_1 on Tue Nov 26 10:21:32 2024, version# 2) ...
+[11/26 12:22:00     20s] Read Views for adaptive view pruning ...
+[11/26 12:22:00     20s] Read 0 views from Binary DB for adaptive view pruning
+[11/26 12:22:00     20s] *** applyConnectGlobalNets disabled.
+[11/26 12:22:00     20s] *** Completed restorePlace (cpu=0:00:00.1 real=0:00:00.0 mem=2088.6M) ***
+[11/26 12:22:00     20s] Total net length = 1.737e+05 (1.203e+05 5.346e+04) (ext = 2.023e+04)
+[11/26 12:22:00     20s] % End Load placement data ... (date=11/26 12:22:00, total cpu=0:00:00.1, real=0:00:00.0, peak res=2183.4M, current mem=2181.1M)
+[11/26 12:22:00     20s] Reading PG file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.pg.gz, version#2, (Created by Innovus v23.12-s091_1 on       Tue Nov 26 10:21:32 2024)
+[11/26 12:22:00     20s] *** Completed restorePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=2085.6M) ***
+[11/26 12:22:00     20s] % Begin Load routing data ... (date=11/26 12:22:00, mem=2182.3M)
+[11/26 12:22:00     20s] Reading routing file - /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.route.gz.
+[11/26 12:22:00     20s] Reading Innovus routing data (Created by Innovus v23.12-s091_1 on Tue Nov 26 10:21:32 2024 Format: 23.1) ...
+[11/26 12:22:00     20s] *** Total 10610 nets are successfully restored.
+[11/26 12:22:00     20s] *** Completed restoreRoute (cpu=0:00:00.0 real=0:00:00.0 mem=2094.6M) ***
+[11/26 12:22:00     21s] % End Load routing data ... (date=11/26 12:22:00, total cpu=0:00:00.1, real=0:00:00.0, peak res=2192.6M, current mem=2191.7M)
+[11/26 12:22:00     21s] TAT_INFO: ::restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+[11/26 12:22:00     21s] Reading property file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.prop
+[11/26 12:22:00     21s] *** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2098.6M) ***
+[11/26 12:22:00     21s] Reading dirtyarea snapshot file /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.db.da.gz (Create by Innovus v23.12-s091_1 on Tue Nov 26 10:21:32 2024, version: 7).
+[11/26 12:22:01     21s] Set Default Input Pin Transition as 0.1 ps.
+[11/26 12:22:01     22s] Loading preRoute extraction data from directory '/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/extraction/' ...
+[11/26 12:22:01     22s] eee: Design meta data check started
+[11/26 12:22:01     22s] eee: Design meta data check completed
+[11/26 12:22:01     22s] Extraction setup Started for TopCell dist_sort 
+[11/26 12:22:01     22s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[11/26 12:22:01     22s] Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[11/26 12:22:01     22s] eee: __QRC_SADV_USE_LE__ is set 0
+[11/26 12:22:02     22s] Generating auto layer map file.
+[11/26 12:22:02     22s] eee:  LayerId	    Name	QrcTechId	QrcTechName	Type
+[11/26 12:22:02     22s] eee:        1	      M1	        2	       lisd	Metal          
+[11/26 12:22:02     22s] eee:       34	      V1	        3	         v0	Via            
+[11/26 12:22:02     22s] eee:        2	      M2	        4	         m1	Metal          
+[11/26 12:22:02     22s] eee:       35	      V2	        5	         v1	Via            
+[11/26 12:22:02     22s] eee:        3	      M3	        6	         m2	Metal          
+[11/26 12:22:02     22s] eee:       36	      V3	        7	         v2	Via            
+[11/26 12:22:02     22s] eee:        4	      M4	        8	         m3	Metal          
+[11/26 12:22:02     22s] eee:       37	      V4	        9	         v3	Via            
+[11/26 12:22:02     22s] eee:        5	      M5	       10	         m4	Metal          
+[11/26 12:22:02     22s] eee:       38	      V5	       11	         v4	Via            
+[11/26 12:22:02     22s] eee:        6	      M6	       12	         m5	Metal          
+[11/26 12:22:02     22s] eee:       39	      V6	       13	         v5	Via            
+[11/26 12:22:02     22s] eee:        7	      M7	       14	         m6	Metal          
+[11/26 12:22:02     22s] eee:       40	      V7	       15	         v6	Via            
+[11/26 12:22:02     22s] eee:        8	      M8	       16	         m7	Metal          
+[11/26 12:22:02     22s] eee:       41	      V8	       17	         v7	Via            
+[11/26 12:22:02     22s] eee:        9	      M9	       18	         m8	Metal          
+[11/26 12:22:02     22s] eee:       42	      V9	       19	         v8	Via            
+[11/26 12:22:02     22s] eee:       10	     Pad	       20	         m9	Metal          
+[11/26 12:22:02     22s] eee: TechFile: /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/mmmc/RC_corner_25/qrcTechFile_typ03_scaled4xV06
+[11/26 12:22:02     22s] eee: HoWee  : 0 0 0 0 0 0 0 0 0 0 
+[11/26 12:22:02     22s] eee: Erosn  : 0 0 0 0 0 0 0 0 0 0 
+[11/26 12:22:02     22s] eee: nrColor: 0 0 0 0 0 0 0 0 0 0 
+[11/26 12:22:02     22s] eee: Save / Restore of RC patterns enabled 
+[11/26 12:22:02     22s] eee: Pattern meta data check started
+[11/26 12:22:02     22s] eee: Pattern meta data check completed
+[11/26 12:22:02     22s] eee: Pattern data restore started
+[11/26 12:22:02     22s] Loading preRoute extracted patterns from file '/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/dist_sort.techData.gz' ...
+[11/26 12:22:02     22s] eee: Pattern data restore failed for 1 tech files
+[11/26 12:22:02     22s] eee: Pattern extraction started for 1 tech files
+[11/26 12:22:02     22s] Importing multi-corner technology file(s) for preRoute extraction...
+[11/26 12:22:02      0s] /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/mmmc/RC_corner_25/qrcTechFile_typ03_scaled4xV06
+[11/26 12:22:03      0s] Generating auto layer map file.
+[11/26 12:22:03      0s] eee:  LayerId	    Name	QrcTechId	QrcTechName	Type
+[11/26 12:22:03      0s] eee:        1	      M1	        2	       lisd	Metal          
+[11/26 12:22:03      0s] eee:       34	      V1	        3	         v0	Via            
+[11/26 12:22:03      0s] eee:        2	      M2	        4	         m1	Metal          
+[11/26 12:22:03      0s] eee:       35	      V2	        5	         v1	Via            
+[11/26 12:22:03      0s] eee:        3	      M3	        6	         m2	Metal          
+[11/26 12:22:03      0s] eee:       36	      V3	        7	         v2	Via            
+[11/26 12:22:03      0s] eee:        4	      M4	        8	         m3	Metal          
+[11/26 12:22:03      0s] eee:       37	      V4	        9	         v3	Via            
+[11/26 12:22:03      0s] eee:        5	      M5	       10	         m4	Metal          
+[11/26 12:22:03      0s] eee:       38	      V5	       11	         v4	Via            
+[11/26 12:22:03      0s] eee:        6	      M6	       12	         m5	Metal          
+[11/26 12:22:03      0s] eee:       39	      V6	       13	         v5	Via            
+[11/26 12:22:03      0s] eee:        7	      M7	       14	         m6	Metal          
+[11/26 12:22:03      0s] eee:       40	      V7	       15	         v6	Via            
+[11/26 12:22:03      0s] eee:        8	      M8	       16	         m7	Metal          
+[11/26 12:22:03      0s] eee:       41	      V8	       17	         v7	Via            
+[11/26 12:22:03      0s] eee:        9	      M9	       18	         m8	Metal          
+[11/26 12:22:03      0s] eee:       42	      V9	       19	         v8	Via            
+[11/26 12:22:03      0s] eee:       10	     Pad	       20	         m9	Metal          
+
+[11/26 12:22:05     23s] eee: Pattern extraction completed
+[11/26 12:22:05     23s] Completed (cpu: 0:00:01.5 real: 0:00:04.0)
+[11/26 12:22:05     23s] Set Shrink Factor to 1.00000
+[11/26 12:22:05     23s] Summary of Active RC-Corners : 
+[11/26 12:22:05     23s]  
+[11/26 12:22:05     23s]  Analysis View: default_setup_view
+[11/26 12:22:05     23s]     RC-Corner Name        : RC_corner_25
+[11/26 12:22:05     23s]     RC-Corner Index       : 0
+[11/26 12:22:05     23s]     RC-Corner Temperature : 25 Celsius
+[11/26 12:22:05     23s]     RC-Corner Cap Table   : ''
+[11/26 12:22:05     23s]     RC-Corner PreRoute Res Factor         : 1
+[11/26 12:22:05     23s]     RC-Corner PreRoute Cap Factor         : 1
+[11/26 12:22:05     23s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[11/26 12:22:05     23s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[11/26 12:22:05     23s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[11/26 12:22:05     23s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[11/26 12:22:05     23s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[11/26 12:22:05     23s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[11/26 12:22:05     23s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[11/26 12:22:05     23s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[11/26 12:22:05     23s]     RC-Corner Technology file: '/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/mmmc/RC_corner_25/qrcTechFile_typ03_scaled4xV06'
+[11/26 12:22:05     23s]  
+[11/26 12:22:05     23s]  Analysis View: default_hold_view
+[11/26 12:22:05     23s]     RC-Corner Name        : RC_corner_25
+[11/26 12:22:05     23s]     RC-Corner Index       : 0
+[11/26 12:22:05     23s]     RC-Corner Temperature : 25 Celsius
+[11/26 12:22:05     23s]     RC-Corner Cap Table   : ''
+[11/26 12:22:05     23s]     RC-Corner PreRoute Res Factor         : 1
+[11/26 12:22:05     23s]     RC-Corner PreRoute Cap Factor         : 1
+[11/26 12:22:05     23s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[11/26 12:22:05     23s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[11/26 12:22:05     23s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[11/26 12:22:05     23s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[11/26 12:22:05     23s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[11/26 12:22:05     23s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[11/26 12:22:05     23s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[11/26 12:22:05     23s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[11/26 12:22:05     23s]     RC-Corner Technology file: '/home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/mmmc/RC_corner_25/qrcTechFile_typ03_scaled4xV06'
+[11/26 12:22:05     23s] eee: RC Grid memory allocated = 48000 (20 X 20 X 10 X 12b)
+[11/26 12:22:05     23s] eee: Grid density data restore started
+[11/26 12:22:05     23s] eee: Grid density data restore completed
+[11/26 12:22:05     23s] eee: pegSigSF=1.070000
+[11/26 12:22:05     23s] Initializing multi-corner resistance tables ...
+[11/26 12:22:05     23s] eee: Blockage data restore started... completed.
+[11/26 12:22:05     23s] eee: Grid unit RC data restore started
+[11/26 12:22:05     23s] eee:     Restore started for corner RC_corner_25
+[11/26 12:22:05     23s] eee:         Current session: RC_corner_25 Tech: /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/mmmc/RC_corner_25/qrcTechFile_typ03_scaled4xV06 25.000000 1.000000 1.000000 
+[11/26 12:22:05     23s] eee:         Saved   session: RC_corner_25 Tech: /classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06 25.000000 1.000000 1.000000 
+[11/26 12:22:05     23s] eee:     Restore completed for corner RC_corner_25
+[11/26 12:22:05     23s] eee: Grid unit RC data restore completed
+[11/26 12:22:05     23s] eee: l=1 avDens=0.005124 usedTrk=132.196622 availTrk=25800.000000 sigTrk=132.196622
+[11/26 12:22:05     23s] eee: l=2 avDens=0.420264 usedTrk=11378.645769 availTrk=27075.000000 sigTrk=11378.645769
+[11/26 12:22:05     23s] eee: l=3 avDens=0.244195 usedTrk=6574.947130 availTrk=26925.000000 sigTrk=6574.947130
+[11/26 12:22:05     23s] eee: l=4 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/26 12:22:05     23s] eee: l=5 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/26 12:22:05     23s] eee: l=6 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/26 12:22:05     23s] eee: l=7 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/26 12:22:05     23s] eee: l=8 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/26 12:22:05     23s] eee: l=9 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/26 12:22:05     23s] eee: l=10 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[11/26 12:22:05     23s] eee: LAM-FP: thresh=1 ; dimX=1389.000000 ; dimY=1389.000000 ; multX=1.000000 ; multY=1.000000 ; minP=576 ; fpMult=1.000000 ;
+[11/26 12:22:05     23s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.000000 uaWl=1.000000 uaWlH=0.000000 aWlH=0.000000 lMod=0 pMax=0.850000 pMod=82 pModAss=50 wcR=0.000000 crit=0.000000 siPrev=0 newSi=0.001600 wHLS=1.000000 viaL=0.000000 shortMod=0.000000 fModUnas=0.000000 fModAs=0.000000 pDens=0.500000 
+[11/26 12:22:05     23s] eee: dbu = 4000, Design = [ll(0.000000, 0.000000) ur(200.016000, 200.016000)], Layers = [f(10) b(0)], Grid size = 10.800000 um, Grid Dim = (19 X 19)
+[11/26 12:22:05     23s] eee: Metal Layers Info:
+[11/26 12:22:05     23s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[11/26 12:22:05     23s] eee: |   Layer  |  Id |    W    |    S    |    P    |   uC   |   uR   | D | T | wS |
+[11/26 12:22:05     23s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[11/26 12:22:05     23s] eee: |       M1 |   1 |   0.072 |   0.072 |   0.144 |  0.039 |  13.89 | V | 0 |  1 |
+[11/26 12:22:05     23s] eee: |       M2 |   2 |   0.072 |   0.072 |   0.144 |  0.049 |  16.96 | H | 0 |  1 |
+[11/26 12:22:05     23s] eee: |       M3 |   3 |   0.072 |   0.072 |   0.144 |  0.047 |  16.96 | V | 0 |  1 |
+[11/26 12:22:05     23s] eee: |       M4 |   4 |   0.096 |   0.096 |   0.192 |  0.042 |  11.74 | H | 0 |  1 |
+[11/26 12:22:05     23s] eee: |       M5 |   5 |   0.096 |   0.096 |   0.192 |  0.049 |  10.27 | V | 0 |  1 |
+[11/26 12:22:05     23s] eee: |       M6 |   6 |   0.128 |   0.128 |   0.256 |  0.044 |   7.26 | H | 0 |  1 |
+[11/26 12:22:05     23s] eee: |       M7 |   7 |   0.128 |   0.128 |   0.256 |  0.050 |   6.77 | V | 0 |  1 |
+[11/26 12:22:05     23s] eee: |       M8 |   8 |   0.160 |   0.160 |   0.320 |  0.046 |   5.20 | H | 0 |  1 |
+[11/26 12:22:05     23s] eee: |       M9 |   9 |   0.160 |   0.160 |   0.320 |  0.050 |   4.83 | V | 0 |  1 |
+[11/26 12:22:05     23s] eee: |      Pad |  10 |   0.160 |   8.000 |   0.320 |  0.050 |   4.83 | H | 0 |  1 |
+[11/26 12:22:05     23s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[11/26 12:22:05     23s] eee: uC/uR for corner RC_corner_25, min-width/min-spacing, 30 perc over/under densities.
+[11/26 12:22:05     23s] Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+[11/26 12:22:05     23s] Restore PreRoute all RC Grid data successful.Start generating vias ..
+[11/26 12:22:05     23s] #WARNING (NRDB-2012) The ENCLOSURE statement in layer V3 has the syntax for overhang values without END/SIDE keywords but contains CUTCLASS attribute and the cut defined in the CUTCLASS is rectangular. The new syntax 'END overhang1 SIDE overhang2' must be used in this case. Without the END/SIDE keywords, the larger value is assigned as end overhang and smaller value is assigned as side overhang. 
+[11/26 12:22:05     23s] #WARNING (NRDB-2012) The ENCLOSURE statement in layer V3 has the syntax for overhang values without END/SIDE keywords but contains CUTCLASS attribute and the cut defined in the CUTCLASS is rectangular. The new syntax 'END overhang1 SIDE overhang2' must be used in this case. Without the END/SIDE keywords, the larger value is assigned as end overhang and smaller value is assigned as side overhang. 
+[11/26 12:22:05     23s] #WARNING (NRDB-2012) The ENCLOSURE statement in layer V5 has the syntax for overhang values without END/SIDE keywords but contains CUTCLASS attribute and the cut defined in the CUTCLASS is rectangular. The new syntax 'END overhang1 SIDE overhang2' must be used in this case. Without the END/SIDE keywords, the larger value is assigned as end overhang and smaller value is assigned as side overhang. 
+[11/26 12:22:05     23s] #WARNING (NRDB-407) pitch for LAYER Pad is defined too small, reset to 1280
+[11/26 12:22:05     23s] ### import design signature (1): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1 inst_orient=1 via=2127493176 routing_via=1 timing=1 sns=1 ppa_info=1
+[11/26 12:22:05     23s] #Skip building auto via since it is not turned on.
+[11/26 12:22:05     23s] Via generation completed.
+[11/26 12:22:05     23s] % Begin Load power constraints ... (date=11/26 12:22:05, mem=2244.0M)
+[11/26 12:22:05     23s] % End Load power constraints ... (date=11/26 12:22:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=2250.3M, current mem=2250.3M)
+[11/26 12:22:05     23s] % Begin load AAE data ... (date=11/26 12:22:05, mem=2293.2M)
+[11/26 12:22:06     24s] **WARN: (IMPESI-3505):	setDelayCalMode -eng_enablePrePlacedFlow false (default=false) will be obsoleted along with its sgs2set equivalent.  This parameter will continue to be supported in the current release, but will be removed in the next major release of the software.
+[11/26 12:22:06     24s] AAE DB initialization (MEM=2241.71 CPU=0:00:00.0 REAL=0:00:00.0) 
+[11/26 12:22:06     24s] % End load AAE data ... (date=11/26 12:22:06, total cpu=0:00:00.5, real=0:00:01.0, peak res=2302.8M, current mem=2302.8M)
+[11/26 12:22:06     24s] Restoring CCOpt config...
+[11/26 12:22:06     24s] 
+[11/26 12:22:06     24s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[11/26 12:22:06     24s] Summary for sequential cells identification: 
+[11/26 12:22:06     24s]   Identified SBFF number: 17
+[11/26 12:22:06     24s]   Identified MBFF number: 0
+[11/26 12:22:06     24s]   Identified SB Latch number: 6
+[11/26 12:22:06     24s]   Identified MB Latch number: 0
+[11/26 12:22:06     24s]   Not identified SBFF number: 0
+[11/26 12:22:06     24s]   Not identified MBFF number: 0
+[11/26 12:22:06     24s]   Not identified SB Latch number: 0
+[11/26 12:22:06     24s]   Not identified MB Latch number: 0
+[11/26 12:22:06     24s]   Number of sequential cells which are not FFs: 3
+[11/26 12:22:06     24s]  Visiting view : default_setup_view
+[11/26 12:22:06     24s]    : PowerDomain = none : Weighted F : unweighted  = 4.30 (1.000) with rcCorner = 0
+[11/26 12:22:06     24s]    : PowerDomain = none : Weighted F : unweighted  = 2.80 (1.000) with rcCorner = -1
+[11/26 12:22:06     24s]  Visiting view : default_hold_view
+[11/26 12:22:06     24s]    : PowerDomain = none : Weighted F : unweighted  = 4.30 (1.000) with rcCorner = 0
+[11/26 12:22:06     24s]    : PowerDomain = none : Weighted F : unweighted  = 2.80 (1.000) with rcCorner = -1
+[11/26 12:22:06     24s] 
+[11/26 12:22:06     24s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[11/26 12:22:06     24s]   Extracting original clock gating for clk...
+[11/26 12:22:06     24s]     clock_tree clk contains 7 sinks and 0 clock gates.
+[11/26 12:22:06     24s]   Extracting original clock gating for clk done.
+[11/26 12:22:06     24s]   The skew group clk/common was created. It contains 7 sinks and 1 sources.
+[11/26 12:22:06     24s]   The skew group clk/common was created. It contains 7 sinks and 1 sources.
+[11/26 12:22:06     24s] Restoring CCOpt config done.
+[11/26 12:22:06     24s] 
+[11/26 12:22:06     24s] TimeStamp Deleting Cell Server Begin ...
+[11/26 12:22:06     24s] 
+[11/26 12:22:06     24s] TimeStamp Deleting Cell Server End ...
+[11/26 12:22:06     24s] 
+[11/26 12:22:06     24s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[11/26 12:22:06     24s] Summary for sequential cells identification: 
+[11/26 12:22:06     24s]   Identified SBFF number: 17
+[11/26 12:22:06     24s]   Identified MBFF number: 0
+[11/26 12:22:06     24s]   Identified SB Latch number: 6
+[11/26 12:22:06     24s]   Identified MB Latch number: 0
+[11/26 12:22:06     24s]   Not identified SBFF number: 0
+[11/26 12:22:06     24s]   Not identified MBFF number: 0
+[11/26 12:22:06     24s]   Not identified SB Latch number: 0
+[11/26 12:22:06     24s]   Not identified MB Latch number: 0
+[11/26 12:22:06     24s]   Number of sequential cells which are not FFs: 3
+[11/26 12:22:06     24s] Total number of combinational cells: 159
+[11/26 12:22:06     24s] Total number of sequential cells: 26
+[11/26 12:22:06     24s] Total number of tristate cells: 0
+[11/26 12:22:06     24s] Total number of level shifter cells: 0
+[11/26 12:22:06     24s] Total number of power gating cells: 0
+[11/26 12:22:06     24s] Total number of isolation cells: 0
+[11/26 12:22:06     24s] Total number of power switch cells: 0
+[11/26 12:22:06     24s] Total number of pulse generator cells: 0
+[11/26 12:22:06     24s] Total number of always on buffers: 0
+[11/26 12:22:06     24s] Total number of retention cells: 0
+[11/26 12:22:06     24s] Total number of physical cells: 0
+[11/26 12:22:06     24s] List of usable buffers: BUFx10_ASAP7_75t_R BUFx12_ASAP7_75t_R BUFx12f_ASAP7_75t_R BUFx24_ASAP7_75t_R BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R BUFx4_ASAP7_75t_R BUFx5_ASAP7_75t_R BUFx4f_ASAP7_75t_R BUFx6f_ASAP7_75t_R BUFx8_ASAP7_75t_R HB1xp67_ASAP7_75t_R HB2xp67_ASAP7_75t_R
+[11/26 12:22:06     24s] Total number of usable buffers: 13
+[11/26 12:22:06     24s] List of unusable buffers: BUFx16f_ASAP7_75t_R
+[11/26 12:22:06     24s] Total number of unusable buffers: 1
+[11/26 12:22:06     24s] List of usable inverters: INVx11_ASAP7_75t_R INVx13_ASAP7_75t_R INVx1_ASAP7_75t_R INVx2_ASAP7_75t_R INVx3_ASAP7_75t_R INVx4_ASAP7_75t_R INVx5_ASAP7_75t_R INVx6_ASAP7_75t_R INVx8_ASAP7_75t_R INVxp67_ASAP7_75t_R INVxp33_ASAP7_75t_R
+[11/26 12:22:06     24s] Total number of usable inverters: 11
+[11/26 12:22:06     24s] List of unusable inverters:
+[11/26 12:22:06     24s] Total number of unusable inverters: 0
+[11/26 12:22:06     24s] List of identified usable delay cells: HB3xp67_ASAP7_75t_R HB4xp67_ASAP7_75t_R
+[11/26 12:22:06     24s] Total number of identified usable delay cells: 2
+[11/26 12:22:06     24s] List of identified unusable delay cells:
+[11/26 12:22:06     24s] Total number of identified unusable delay cells: 0
+[11/26 12:22:06     24s] 
+[11/26 12:22:06     24s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[11/26 12:22:06     24s] 
+[11/26 12:22:06     24s] TimeStamp Deleting Cell Server Begin ...
+[11/26 12:22:06     24s] 
+[11/26 12:22:06     24s] TimeStamp Deleting Cell Server End ...
+[11/26 12:22:06     24s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version (null). They will be removed in the next release. 
+[11/26 12:22:06     24s] timing_aocv_enable_gba_combine_launch_capture
+[11/26 12:22:06     24s] timing_enable_backward_compatible_latch_thru_mt_mode
+[11/26 12:22:06     24s] timing_enable_separate_device_slew_effect_sensitivities
+[11/26 12:22:06     24s] #% End load design ... (date=11/26 12:22:06, total cpu=0:00:08.4, real=0:00:11.0, peak res=2323.7M, current mem=2305.8M)
+[11/26 12:22:06     24s] 
+[11/26 12:22:06     24s] *** Summary of all messages that are not suppressed in this session:
+[11/26 12:22:06     24s] Severity  ID               Count  Summary                                  
+[11/26 12:22:06     24s] WARNING   IMPLF-45           196  Macro '%s' has no SITE statement and it ...
+[11/26 12:22:06     24s] WARNING   IMPPTN-867           2  Found use of %s. This will continue to w...
+[11/26 12:22:06     24s] WARNING   IMPESI-3505          1  setDelayCalMode -eng_%s (default=%s) wil...
+[11/26 12:22:06     24s] WARNING   IMPOPT-3602          1  The specified path group name %s is not ...
+[11/26 12:22:06     24s] ERROR     IMPTR-2101           1  Layer %s: Pitch=%dx%d is still less than...
+[11/26 12:22:06     24s] WARNING   IMPTR-2104           1  Layer %s: Pitch=%d is less than min widt...
+[11/26 12:22:06     24s] WARNING   IMPTR-2108           1  For layer M%d, the gaps of %d out of %d ...
+[11/26 12:22:06     24s] WARNING   NRDB-407             1  pitch for %s %s is defined too small, re...
+[11/26 12:22:06     24s] WARNING   NRDB-2012            3  The ENCLOSURE statement in layer %s has ...
+[11/26 12:22:06     24s] WARNING   NRIF-90              1  Option setNanoRouteMode -route_bottom_ro...
+[11/26 12:22:06     24s] WARNING   NRIF-91              1  Option setNanoRouteMode -route_top_routi...
+[11/26 12:22:06     24s] WARNING   NRIF-95              1  Option setNanoRouteMode -routeTopRouting...
+[11/26 12:22:06     24s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[11/26 12:22:06     24s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[11/26 12:22:06     24s] WARNING   IMPPSP-1003          1  Found use of '%s'. This will continue to...
+[11/26 12:22:06     24s] WARNING   TECHLIB-1277         2  The %s '%s' has been defined for %s %s '...
+[11/26 12:22:06     24s] *** Message Summary: 214 warning(s), 1 error(s)
+[11/26 12:22:06     24s] 
+[11/26 12:22:39     24s] invalid command name "reportClockTree"
+[11/26 12:22:56     24s] <CMD> report_ccopt_clock_trees
+[11/26 12:22:56     24s] Ignoring AAE DB Resetting ...
+[11/26 12:22:56     24s] Updating timing graph...
+[11/26 12:22:56     24s]   
+[11/26 12:22:56     24s]   Leaving CCOpt scope - BuildTimeGraph...
+[11/26 12:22:56     24s] AAE_INFO: opIsDesignInPostRouteState() is 1
+[11/26 12:22:56     24s] AAE_INFO: resetNetProps viewIdx 0 
+[11/26 12:22:56     24s] Starting SI iteration 1 using Infinite Timing Windows
+[11/26 12:22:56     24s] #################################################################################
+[11/26 12:22:56     24s] # Design Stage: PostRoute
+[11/26 12:22:56     24s] # Design Name: dist_sort
+[11/26 12:22:56     24s] # Design Mode: 90nm
+[11/26 12:22:56     24s] # Analysis Mode: MMMC OCV 
+[11/26 12:22:56     24s] # Parasitics Mode: No SPEF/RCDB 
+[11/26 12:22:56     24s] # Signoff Settings: SI On 
+[11/26 12:22:56     24s] #################################################################################
+[11/26 12:22:56     24s] tQuantus: Need to rerun tQuantus because the top cell's isRCExtracted() is false.
+[11/26 12:22:56     24s] #WARNING (NRDB-2012) The ENCLOSURE statement in layer V3 has the syntax for overhang values without END/SIDE keywords but contains CUTCLASS attribute and the cut defined in the CUTCLASS is rectangular. The new syntax 'END overhang1 SIDE overhang2' must be used in this case. Without the END/SIDE keywords, the larger value is assigned as end overhang and smaller value is assigned as side overhang. 
+[11/26 12:22:56     24s] #WARNING (NRDB-2012) The ENCLOSURE statement in layer V3 has the syntax for overhang values without END/SIDE keywords but contains CUTCLASS attribute and the cut defined in the CUTCLASS is rectangular. The new syntax 'END overhang1 SIDE overhang2' must be used in this case. Without the END/SIDE keywords, the larger value is assigned as end overhang and smaller value is assigned as side overhang. 
+[11/26 12:22:56     24s] #WARNING (NRDB-2012) The ENCLOSURE statement in layer V5 has the syntax for overhang values without END/SIDE keywords but contains CUTCLASS attribute and the cut defined in the CUTCLASS is rectangular. The new syntax 'END overhang1 SIDE overhang2' must be used in this case. Without the END/SIDE keywords, the larger value is assigned as end overhang and smaller value is assigned as side overhang. 
+[11/26 12:22:56     24s] #WARNING (NRDB-407) pitch for LAYER Pad is defined too small, reset to 1280
+[11/26 12:22:56     24s] #WARNING (NRDB-733) PIN A in CELL_VIEW BUFx16f_ASAP7_75t_R does not have a physical port. NanoRoute will not route to the pin. To resolve this issue, check that the pin shapes exist in the LEF abstract.
+[11/26 12:22:56     24s] ### Net info: total nets: 10610
+[11/26 12:22:56     24s] ### Net info: dirty nets: 0
+[11/26 12:22:56     24s] ### Net info: marked as disconnected nets: 0
+[11/26 12:22:56     24s] ### Net info: fully routed nets: 10608
+[11/26 12:22:56     24s] ### Net info: trivial (< 2 pins) nets: 2
+[11/26 12:22:56     24s] ### Net info: unrouted nets: 0
+[11/26 12:22:56     24s] ### Net info: re-extraction nets: 0
+[11/26 12:22:56     24s] ### Net info: ignored nets: 0
+[11/26 12:22:56     24s] ### Net info: skip routing nets: 0
+[11/26 12:22:56     24s] ### import design signature (2): route=1015868727 fixed_route=1015868727 flt_obj=0 vio=1905142130 swire=282492057 shield_wire=1 net_attr=1794367516 dirty_area=0 del_dirty_area=0 cell=781068542 placement=909928194 pin_access=1 inst_pattern=1 inst_orient=1 via=2127493176 routing_via=1 timing=1363370530 sns=1363370530 ppa_info=9532688
+[11/26 12:22:56     24s] #Extract in post route mode
+[11/26 12:22:56     24s] #Finish check_net_pin_list step Enter extract_rc_in_nr_cmd
+[11/26 12:22:56     24s] ### init rcell_view design signature (3): route=1015868727 flt_obj=0 net_attr=1794367516 dirty_area=0 del_dirty_area=0
+[11/26 12:22:57     24s] #Fast data preparation for tQuantus.
+[11/26 12:22:57     24s] #Start routing data preparation on Tue Nov 26 12:22:57 2024
+[11/26 12:22:57     24s] #
+[11/26 12:22:57     24s] #WARNING (NRDB-2040) Rule LEF_DEFAULT doesn't specify any vias that satisfy all of the area rules for layer M2 M3 M4 M5 M6 M7 M8 M9 
+[11/26 12:22:57     24s] #WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER M8 are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+[11/26 12:22:57     24s] #WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER M9 are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+[11/26 12:22:57     24s] #WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER Pad are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+[11/26 12:22:57     24s] # M1           V   Track-Pitch = 0.14400    Line-2-Via Pitch = 0.14400
+[11/26 12:22:57     24s] # M2           H   Track-Pitch = 0.14400    Line-2-Via Pitch = 0.14400
+[11/26 12:22:57     24s] # M3           V   Track-Pitch = 0.14400    Line-2-Via Pitch = 0.14400
+[11/26 12:22:57     24s] # M4           H   Track-Pitch = 0.19200    Line-2-Via Pitch = 0.19200
+[11/26 12:22:57     24s] # M5           V   Track-Pitch = 0.19200    Line-2-Via Pitch = 0.19200
+[11/26 12:22:57     24s] # M6           H   Track-Pitch = 0.25600    Line-2-Via Pitch = 0.41600
+[11/26 12:22:57     24s] #WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+[11/26 12:22:57     24s] # M7           V   Track-Pitch = 0.25600    Line-2-Via Pitch = 0.41600
+[11/26 12:22:57     24s] #WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+[11/26 12:22:57     24s] # M8           H   Track-Pitch = 0.32000    Line-2-Via Pitch = 0.32000
+[11/26 12:22:57     24s] # M9           V   Track-Pitch = 0.32000    Line-2-Via Pitch = 0.32000
+[11/26 12:22:57     24s] # Pad          H   Track-Pitch = 0.32000    Line-2-Via Pitch = 8.28000
+[11/26 12:22:57     24s] #WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+[11/26 12:22:57     24s] #Regenerating Ggrids automatically.
+[11/26 12:22:57     24s] #Auto generating G-grids with size=20 tracks, using layer M2's pitch = 0.14400.
+[11/26 12:22:57     24s] #Using automatically generated G-grids.
+[11/26 12:22:57     24s] #Done routing data preparation.
+[11/26 12:22:57     24s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2342.98 (MB), peak = 2344.29 (MB)
+[11/26 12:22:57     24s] #Start routing data preparation on Tue Nov 26 12:22:57 2024
+[11/26 12:22:57     24s] #
+[11/26 12:22:57     24s] #Bottom routing layer index=2(M2), bottom routing layer for shielding=2(M2), bottom shield layer=2(M2)
+[11/26 12:22:57     24s] #shield_bottom_stripe_layer=1(M1), shield_top_stripe_layer=3(M3)
+[11/26 12:22:57     24s] #pin_access_rlayer=2(M2)
+[11/26 12:22:57     24s] #shield_top_dpt_rlayer=-1 top_rlayer=3 top_trim_metal_rlayer=-1 rlayer_lowest=1 bottom_rlayer=2
+[11/26 12:22:57     24s] #enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
+[11/26 12:22:57     24s] #enable_dpt_layer_shield=F
+[11/26 12:22:57     24s] #has_line_end_grid=F
+[11/26 12:22:57     24s] #Regenerating Ggrids automatically.
+[11/26 12:22:57     24s] #Auto generating G-grids with size=20 tracks, using layer M2's pitch = 0.14400.
+[11/26 12:22:57     24s] #Using automatically generated G-grids.
+[11/26 12:22:57     24s] #Done routing data preparation.
+[11/26 12:22:57     24s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2357.15 (MB), peak = 2357.15 (MB)
+[11/26 12:22:57     24s] #
+[11/26 12:22:57     24s] #Start tQuantus RC extraction...
+[11/26 12:22:57     24s] #Start building rc corner(s)...
+[11/26 12:22:57     24s] #Number of RC Corner = 1
+[11/26 12:22:57     24s] #Corner RC_corner_25 /classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06 25.000000 (real) 
+[11/26 12:22:57     24s] #(i=10, n=10 4000)
+[11/26 12:22:57     24s] #LISD -> M1 (1)
+[11/26 12:22:57     24s] #M1 -> M2 (2)
+[11/26 12:22:57     24s] #M2 -> M3 (3)
+[11/26 12:22:57     24s] #M3 -> M4 (4)
+[11/26 12:22:57     24s] #M4 -> M5 (5)
+[11/26 12:22:57     24s] #M5 -> M6 (6)
+[11/26 12:22:57     24s] #M6 -> M7 (7)
+[11/26 12:22:57     24s] #M7 -> M8 (8)
+[11/26 12:22:57     24s] #M8 -> M9 (9)
+[11/26 12:22:57     24s] #M9 -> Pad (10)
+[11/26 12:22:57     24s] #SADV-On
+[11/26 12:22:57     24s] # Corner(s) : 
+[11/26 12:22:57     24s] #RC_corner_25 [25.00]
+[11/26 12:22:57     25s] # Corner id: 0
+[11/26 12:22:57     25s] # Layout Scale: 1.000000
+[11/26 12:22:57     25s] # Has Metal Fill model: yes
+[11/26 12:22:57     25s] # Temperature was set
+[11/26 12:22:57     25s] # Temperature : 25.000000
+[11/26 12:22:57     25s] # Ref. Temp   : 25.000000
+[11/26 12:22:57     25s] #SADV-Off
+[11/26 12:22:57     25s] #
+[11/26 12:22:57     25s] #layer[1] tech width 288 != ict width 400.0
+[11/26 12:22:57     25s] #
+[11/26 12:22:57     25s] #layer[1] tech spc 288 != ict spc 464.0
+[11/26 12:22:57     25s] #
+[11/26 12:22:57     25s] #layer[4] tech width 384 != ict width 288.0
+[11/26 12:22:57     25s] #
+[11/26 12:22:57     25s] #layer[4] tech spc 384 != ict spc 288.0
+[11/26 12:22:57     25s] #
+[11/26 12:22:57     25s] #layer[6] tech width 512 != ict width 384.0
+[11/26 12:22:57     25s] #
+[11/26 12:22:57     25s] #layer[6] tech spc 512 != ict spc 384.0
+[11/26 12:22:57     25s] #
+[11/26 12:22:57     25s] #layer[8] tech width 640 != ict width 512.0
+[11/26 12:22:57     25s] #
+[11/26 12:22:57     25s] #layer[8] tech spc 640 != ict spc 512.0
+[11/26 12:22:57     25s] #
+[11/26 12:22:57     25s] #layer[10] tech spc 32000 != ict spc 640.0
+[11/26 12:22:57     25s] #total pattern=220 [10, 605]
+[11/26 12:22:57     25s] #Reading previously stored rc_model file ( /home/sh2663/asap7_rundir/asic-final/apr/dist_sort.final.enc.dat/libs/misc/rc_model.bin ) ...
+[11/26 12:22:57     25s] #found CAPMODEL /classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06
+[11/26 12:22:57     25s] #found RESMODEL /classes/ece5746/asap7libs/qrc/qrcTechFile_typ03_scaled4xV06 25.000000 
+[11/26 12:22:57     25s] #CCE Version read = IQuantus/TQuantus 23.1.1-s122
+[11/26 12:22:57     25s] #number model r/c [1,1] [10,605] read
+[11/26 12:22:57     25s] #0 rcmodel(s) requires rebuild
+[11/26 12:22:57     25s] #Build RC corners: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2375.41 (MB), peak = 2382.71 (MB)
+[11/26 12:22:57     25s] #Finish check_net_pin_list step Enter extract
+[11/26 12:22:57     25s] #Start init net ripin tree building
+[11/26 12:22:57     25s] #Finish init net ripin tree building
+[11/26 12:22:57     25s] #Cpu time = 00:00:00
+[11/26 12:22:57     25s] #Elapsed time = 00:00:00
+[11/26 12:22:57     25s] #Increased memory = 0.00 (MB)
+[11/26 12:22:57     25s] #Total memory = 2375.41 (MB)
+[11/26 12:22:57     25s] #Peak memory = 2382.71 (MB)
+[11/26 12:22:57     25s] #begin processing metal fill model file
+[11/26 12:22:57     25s] #end processing metal fill model file
+[11/26 12:22:57     25s] #Length limit = 200 pitches
+[11/26 12:22:57     25s] #opt mode = 2
+[11/26 12:22:57     25s] #Finish check_net_pin_list step Fix net pin list
+[11/26 12:22:57     25s] #Start generate extraction boxes.
+[11/26 12:22:57     25s] #
+[11/26 12:22:57     25s] #Extract using 30 x 30 Hboxes
+[11/26 12:22:57     25s] #5x5 initial hboxes
+[11/26 12:22:57     25s] #Use area based hbox pruning.
+[11/26 12:22:57     25s] #0/0 hboxes pruned.
+[11/26 12:22:57     25s] #Complete generating extraction boxes.
+[11/26 12:22:57     25s] #Start step Extraction
+[11/26 12:22:57     25s] #Extract 15 hboxes with single thread on machine with  Xeon 2.30GHz 36608KB Cache 8CPU...
+[11/26 12:22:57     25s] #Process 0 special clock nets for rc extraction
+[11/26 12:22:57     25s] #Total 10608 nets were built. 1397 nodes added to break long wires. 0 net(s) have incomplete routes.
+[11/26 12:22:58     26s] #Run Statistics for Extraction:
+[11/26 12:22:58     26s] #   Cpu time = 00:00:01, elapsed time = 00:00:01 .
+[11/26 12:22:58     26s] #   Increased memory =    41.66 (MB), total memory =  2417.07 (MB), peak memory =  2417.07 (MB)
+[11/26 12:22:58     26s] #Register nets and terms for rcdb /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d
+[11/26 12:22:59     26s] #Finish registering nets and terms for rcdb.
+[11/26 12:22:59     26s] #Simplify RC tree: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2413.79 (MB), peak = 2417.33 (MB)
+[11/26 12:22:59     26s] #RC Statistics: 42180 Res, 25147 Ground Cap, 754 XCap (Edge to Edge)
+[11/26 12:22:59     26s] #RC V/H edge ratio: 0.73, Avg V/H Edge Length: 20020.54 (19868), Avg L-Edge Length: 14303.08 (10037)
+[11/26 12:22:59     26s] #Nets and terms are pre-registered for rcdb /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d.
+[11/26 12:22:59     26s] #Start writing RC data.
+[11/26 12:22:59     26s] #Finish writing RC data
+[11/26 12:22:59     26s] #Finish writing rcdb with 52830 nodes, 42222 edges, and 2328 xcaps
+[11/26 12:22:59     26s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2410.55 (MB), peak = 2417.33 (MB)
+[11/26 12:22:59     26s] Restoring parasitic data from file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d' ...
+[11/26 12:22:59     26s] Opening parasitic data file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d' for reading (mem: 2437.672M)
+[11/26 12:22:59     26s] Reading RCDB with compressed RC data.
+[11/26 12:22:59     26s] Opening parasitic data file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d' for content verification (mem: 2437.672M)
+[11/26 12:22:59     26s] Reading RCDB with compressed RC data.
+[11/26 12:22:59     26s] Closing parasitic data file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d': 0 access done (mem: 2437.672M)
+[11/26 12:22:59     26s] Closing parasitic data file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d': 0 access done (mem: 2437.672M)
+[11/26 12:22:59     26s] Begin read_parasitics... (cpu: 0:00:00.0 real: 0:00:00.0 mem: 2437.672M)
+[11/26 12:22:59     26s] Following multi-corner parasitics specified:
+[11/26 12:22:59     26s] 	/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d (rcdb)
+[11/26 12:22:59     26s] Opening parasitic data file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d' for reading (mem: 2437.672M)
+[11/26 12:22:59     26s] Reading RCDB with compressed RC data.
+[11/26 12:22:59     26s] 		Cell dist_sort has rcdb /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d specified
+[11/26 12:22:59     26s] Cell dist_sort, hinst 
+[11/26 12:22:59     26s] processing rcdb (/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d) for hinst (top) of cell (dist_sort);
+[11/26 12:22:59     27s] Closing parasitic data file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/nr1112405_FwGK9G.rcdb.d': 0 access done (mem: 2437.672M)
+[11/26 12:22:59     27s] Lumped Parasitic Loading Started (total cpu=0:00:00.0, real=0:00:00.0, current mem=2437.672M)
+[11/26 12:22:59     27s] Opening parasitic data file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/dist_sort_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_MHeM99.rcdb.d/dist_sort.rcdb.d' for reading (mem: 2437.672M)
+[11/26 12:22:59     27s] Reading RCDB with compressed RC data.
+[11/26 12:22:59     27s] Lumped Parasitic Loading Completed (total cpu=0:00:00.0, real=0:00:00.0, current mem=2437.672M)
+[11/26 12:22:59     27s] Closing parasitic data file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/dist_sort_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_MHeM99.rcdb.d/dist_sort.rcdb.d': 0 access done (mem: 2437.672M)
+[11/26 12:22:59     27s] Done read_parasitics... (cpu: 0:00:00.1 real: 0:00:00.0 mem: 2437.672M)
+[11/26 12:22:59     27s] #
+[11/26 12:22:59     27s] #Restore RCDB.
+[11/26 12:22:59     27s] #
+[11/26 12:22:59     27s] #Complete tQuantus RC extraction.
+[11/26 12:22:59     27s] #Cpu time = 00:00:02
+[11/26 12:22:59     27s] #Elapsed time = 00:00:02
+[11/26 12:22:59     27s] #Increased memory = 54.75 (MB)
+[11/26 12:22:59     27s] #Total memory = 2411.90 (MB)
+[11/26 12:22:59     27s] #Peak memory = 2421.23 (MB)
+[11/26 12:22:59     27s] #
+[11/26 12:22:59     27s] #1397 inserted nodes are removed
+[11/26 12:22:59     27s] #Restored 0 tie nets, 0 tie snets, 0 partial nets
+[11/26 12:22:59     27s] ### export design design signature (4): route=1037574277 fixed_route=1037574277 flt_obj=0 vio=1905142130 swire=282492057 shield_wire=1 net_attr=1741852350 dirty_area=0 del_dirty_area=0 cell=781068542 placement=909928194 pin_access=1 inst_pattern=1 inst_orient=1 via=2127493176 routing_via=1588071918 timing=1363370530 sns=1363370530 ppa_info=9532688
+[11/26 12:22:59     27s] #Start Design Signature (0)
+[11/26 12:22:59     27s] #Finish Inst Signature in MT(9772939)
+[11/26 12:22:59     27s] #Finish Net Signature in MT(75557168)
+[11/26 12:22:59     27s] #Finish SNet Signature in MT (132381466)
+[11/26 12:22:59     27s] #Run time and memory report for RC extraction:
+[11/26 12:22:59     27s] #RC extraction running on  Xeon 2.30GHz 36608KB Cache 8CPU.
+[11/26 12:22:59     27s] #Run Statistics for snet signature:
+[11/26 12:22:59     27s] #   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+[11/26 12:22:59     27s] #   Increased memory =     0.00 (MB), total memory =  2384.07 (MB), peak memory =  2421.23 (MB)
+[11/26 12:22:59     27s] #Run Statistics for Net Final Signature:
+[11/26 12:22:59     27s] #   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+[11/26 12:22:59     27s] #   Increased memory =     0.00 (MB), total memory =  2384.07 (MB), peak memory =  2421.23 (MB)
+[11/26 12:22:59     27s] #Run Statistics for Net launch:
+[11/26 12:22:59     27s] #   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+[11/26 12:22:59     27s] #   Increased memory =     0.06 (MB), total memory =  2384.07 (MB), peak memory =  2421.23 (MB)
+[11/26 12:22:59     27s] #Run Statistics for Net init_dbsNet_slist:
+[11/26 12:22:59     27s] #   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+[11/26 12:22:59     27s] #   Increased memory =     0.00 (MB), total memory =  2384.01 (MB), peak memory =  2421.23 (MB)
+[11/26 12:22:59     27s] #Run Statistics for net signature:
+[11/26 12:22:59     27s] #   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+[11/26 12:22:59     27s] #   Increased memory =     0.06 (MB), total memory =  2384.07 (MB), peak memory =  2421.23 (MB)
+[11/26 12:22:59     27s] #Run Statistics for inst signature:
+[11/26 12:22:59     27s] #   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+[11/26 12:22:59     27s] #   Increased memory =    -0.75 (MB), total memory =  2384.01 (MB), peak memory =  2421.23 (MB)
+[11/26 12:22:59     27s] AAE_INFO: 1 threads acquired from CTE.
+[11/26 12:22:59     27s] Setting infinite Tws ...
+[11/26 12:22:59     27s] First Iteration Infinite Tw... 
+[11/26 12:22:59     27s] Calculate early delays in OCV mode...
+[11/26 12:22:59     27s] Calculate late delays in OCV mode...
+[11/26 12:22:59     27s] Topological Sorting (REAL = 0:00:00.0, MEM = 2463.0M, InitMEM = 2461.0M)
+[11/26 12:22:59     27s] Start delay calculation (fullDC) (1 T). (MEM=2418.64)
+[11/26 12:22:59     27s] Start AAE Lib Loading. (MEM=2474.57)
+[11/26 12:22:59     27s] End AAE Lib Loading. (MEM=2694.65 CPU=0:00:00.0 Real=0:00:00.0)
+[11/26 12:22:59     27s] End AAE Lib Interpolated Model. (MEM=2694.65 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[11/26 12:22:59     27s] Opening parasitic data file '/home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/dist_sort_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_MHeM99.rcdb.d/dist_sort.rcdb.d' for reading (mem: 2741.266M)
+[11/26 12:22:59     27s] Reading RCDB with compressed RC data.
+[11/26 12:22:59     27s] RC Database In Completed (CPU Time= 0:00:00.0  Real Time=0:00:00.0  MEM= 2741.3M)
+[11/26 12:23:01     29s] Total number of fetched objects 10608
+[11/26 12:23:01     29s] AAE_INFO-618: Total number of nets in the design is 10610,  100.0 percent of the nets selected for SI analysis
+[11/26 12:23:01     29s] End Timing Check Calculation. (CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[11/26 12:23:01     29s] End delay calculation. (MEM=2470.78 CPU=0:00:01.6 REAL=0:00:01.0)
+[11/26 12:23:01     29s] End delay calculation (fullDC). (MEM=2456.07 CPU=0:00:01.9 REAL=0:00:02.0)
+[11/26 12:23:01     29s] Save waveform /home/sh2663/asap7_rundir/asic-final/apr/innovus_temp_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03_ecelinux-19.ece.cornell.edu_sh2663_07Xjfr/.AAE_gJtGDT/.AAE_1112405_6cd7d883-67df-46ca-9984-d0fd4e09ab03/waveform.data...
+[11/26 12:23:01     29s] *** CDM Built up (cpu=0:00:05.0  real=0:00:05.0  mem= 2908.6M) ***
+[11/26 12:23:02     29s] Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2900.6M)
+[11/26 12:23:02     29s] Add other clocks and setupCteToAAEClockMapping during iter 1
+[11/26 12:23:02     29s] Loading CTE timing window is completed (CPU = 0:00:00.1, REAL = 0:00:00.0, MEM = 2900.6M)
+[11/26 12:23:02     29s] Starting SI iteration 2
+[11/26 12:23:02     30s] Calculate early delays in OCV mode...
+[11/26 12:23:02     30s] Calculate late delays in OCV mode...
+[11/26 12:23:02     30s] Start delay calculation (fullDC) (1 T). (MEM=2487.6)
+[11/26 12:23:02     30s] End AAE Lib Interpolated Model. (MEM=2841.7 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[11/26 12:23:02     30s] Glitch Analysis: View default_setup_view -- Total Number of Nets Skipped = 25. 
+[11/26 12:23:02     30s] Glitch Analysis: View default_setup_view -- Total Number of Nets Analyzed = 10608. 
+[11/26 12:23:02     30s] Total number of fetched objects 10608
+[11/26 12:23:02     30s] AAE_INFO-618: Total number of nets in the design is 10610,  0.8 percent of the nets selected for SI analysis
+[11/26 12:23:02     30s] End delay calculation. (MEM=2501.35 CPU=0:00:00.1 REAL=0:00:00.0)
+[11/26 12:23:02     30s] End delay calculation (fullDC). (MEM=2501.35 CPU=0:00:00.1 REAL=0:00:00.0)
+[11/26 12:23:02     30s] *** CDM Built up (cpu=0:00:00.1  real=0:00:00.0  mem= 2779.4M) ***
+[11/26 12:23:02     30s]   Leaving CCOpt scope - BuildTimeGraph done. (took cpu=0:00:06.0 real=0:00:06.1)
+[11/26 12:23:02     30s] Updating timing graph done.
+[11/26 12:23:02     30s] Updating latch analysis...
+[11/26 12:23:02     30s]   Leaving CCOpt scope - Updating latch analysis...
+[11/26 12:23:02     30s]   Leaving CCOpt scope - Updating latch analysis done. (took cpu=0:00:00.2 real=0:00:00.2)
+[11/26 12:23:02     30s] Updating latch analysis done.
+[11/26 12:23:02     30s] Updating ideal nets and annotations...
+[11/26 12:23:02     30s] Clock tree spec update: Ideal nets, transition and delay annotations were updated to match active timing constraints.
+[11/26 12:23:02     30s] Updating ideal nets and annotations done. (took cpu=0:00:00.0 real=0:00:00.0)
+[11/26 12:23:02     30s] No differences between SDC and CTS ideal net status found.
+[11/26 12:23:02     30s] Clock tree timing engine global stage delay update for delayCorner_slow:setup.early...
+[11/26 12:23:02     30s] SIAware is enabled.
+[11/26 12:23:02     30s] End AAE Lib Interpolated Model. (MEM=2843.38 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[11/26 12:23:02     30s] Clock tree timing engine global stage delay update for delayCorner_slow:setup.early done. (took cpu=0:00:00.0 real=0:00:00.0)
+[11/26 12:23:02     30s] Clock tree timing engine global stage delay update for delayCorner_slow:setup.late...
+[11/26 12:23:02     30s] Clock tree timing engine global stage delay update for delayCorner_slow:setup.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+[11/26 12:23:02     30s] Clock tree timing engine global stage delay update for delayCorner_fast:hold.early...
+[11/26 12:23:02     30s] Clock tree timing engine global stage delay update for delayCorner_fast:hold.early done. (took cpu=0:00:00.0 real=0:00:00.0)
+[11/26 12:23:02     30s] Clock tree timing engine global stage delay update for delayCorner_fast:hold.late...
+[11/26 12:23:02     30s] Clock tree timing engine global stage delay update for delayCorner_fast:hold.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+[11/26 12:23:02     30s] Clock DAG hash : 4435013720959085797 1572753750982528955
+[11/26 12:23:02     30s] CTS services accumulated run-time stats :
+[11/26 12:23:02     30s]   delay calculator: calls=4, total_wall_time=0.000s, mean_wall_time=0.092ms
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock DAG stats:
+[11/26 12:23:02     30s] ================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] -------------------------------------------------------
+[11/26 12:23:02     30s] Cell type                 Count    Area     Capacitance
+[11/26 12:23:02     30s] -------------------------------------------------------
+[11/26 12:23:02     30s] Buffers                     0      0.000       0.000
+[11/26 12:23:02     30s] Inverters                   0      0.000       0.000
+[11/26 12:23:02     30s] Integrated Clock Gates      0      0.000       0.000
+[11/26 12:23:02     30s] Discrete Clock Gates        0      0.000       0.000
+[11/26 12:23:02     30s] Clock Logic                 0      0.000       0.000
+[11/26 12:23:02     30s] All                         0      0.000       0.000
+[11/26 12:23:02     30s] -------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock DAG miscellaneous counts:
+[11/26 12:23:02     30s] ===============================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] ------------------------------
+[11/26 12:23:02     30s] Type                     Count
+[11/26 12:23:02     30s] ------------------------------
+[11/26 12:23:02     30s] Roots                      1
+[11/26 12:23:02     30s] Preserved Ports            0
+[11/26 12:23:02     30s] Multiple Clock Inputs      0
+[11/26 12:23:02     30s] ------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock DAG sink counts:
+[11/26 12:23:02     30s] ======================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] -------------------------
+[11/26 12:23:02     30s] Sink type           Count
+[11/26 12:23:02     30s] -------------------------
+[11/26 12:23:02     30s] Regular               7
+[11/26 12:23:02     30s] Enable Latch          0
+[11/26 12:23:02     30s] Load Capacitance      0
+[11/26 12:23:02     30s] Antenna Diode         0
+[11/26 12:23:02     30s] Node Sink             0
+[11/26 12:23:02     30s] Total                 7
+[11/26 12:23:02     30s] -------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock DAG wire lengths:
+[11/26 12:23:02     30s] =======================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] --------------------
+[11/26 12:23:02     30s] Type     Wire Length
+[11/26 12:23:02     30s] --------------------
+[11/26 12:23:02     30s] Top          0.000
+[11/26 12:23:02     30s] Trunk        0.000
+[11/26 12:23:02     30s] Leaf       296.064
+[11/26 12:23:02     30s] Total      296.064
+[11/26 12:23:02     30s] --------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock DAG hp wire lengths:
+[11/26 12:23:02     30s] ==========================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] -----------------------
+[11/26 12:23:02     30s] Type     hp Wire Length
+[11/26 12:23:02     30s] -----------------------
+[11/26 12:23:02     30s] Top          0.000
+[11/26 12:23:02     30s] Trunk        0.000
+[11/26 12:23:02     30s] Leaf         0.000
+[11/26 12:23:02     30s] Total        0.000
+[11/26 12:23:02     30s] -----------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock DAG capacitances:
+[11/26 12:23:02     30s] =======================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] ---------------------------------
+[11/26 12:23:02     30s] Type     Gate     Wire     Total
+[11/26 12:23:02     30s] ---------------------------------
+[11/26 12:23:02     30s] Top      0.000    0.000     0.000
+[11/26 12:23:02     30s] Trunk    0.000    0.000     0.000
+[11/26 12:23:02     30s] Leaf     2.302    8.217    10.518
+[11/26 12:23:02     30s] Total    2.302    8.217    10.518
+[11/26 12:23:02     30s] ---------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock DAG sink capacitances:
+[11/26 12:23:02     30s] ============================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] -----------------------------------------------
+[11/26 12:23:02     30s] Total    Average    Std. Dev.    Min      Max
+[11/26 12:23:02     30s] -----------------------------------------------
+[11/26 12:23:02     30s] 2.302     0.329       0.000      0.329    0.329
+[11/26 12:23:02     30s] -----------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock DAG net violations:
+[11/26 12:23:02     30s] =========================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] None
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock DAG primary half-corner transition distribution:
+[11/26 12:23:02     30s] ======================================================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] --------------------------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Net Type    Target    Count    Average    Std. Dev.    Min     Max     Distribution                                                          Over Target
+[11/26 12:23:02     30s] --------------------------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Leaf        100.0       1       77.7         0.0       77.7    77.7    {0 <= 60.0ps, 1 <= 80.0ps, 0 <= 90.0ps, 0 <= 95.0ps, 0 <= 100.0ps}         -
+[11/26 12:23:02     30s] --------------------------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Please note that the following tables reflect only the defined clock trees, so the flop counts might not include all flops in your design.
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock Tree Summary:
+[11/26 12:23:02     30s] ===================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] ----------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Clock Tree  Clock  Bufs  Invs  Other  Max       Max     Max      Max          Standard   Wire   Gate   Clock Tree Root
+[11/26 12:23:02     30s] Name        Gates              Clock  Non-leaf  Leaf    Length   Source-sink  cell area  cap    cap    
+[11/26 12:23:02     30s]                                Cells  Fanout    Fanout  (um)     Resistance   (um^2)     (fF)   (fF)   
+[11/26 12:23:02     30s]                                                                  (Ohms)                                
+[11/26 12:23:02     30s] ----------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] clk           0     0     0      0       0        7     290.196    50235.7      0.000    8.217  2.302  clk
+[11/26 12:23:02     30s] ----------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock Sink Summary:
+[11/26 12:23:02     30s] ===================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] -------------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Clock Tree  Explicit      Implicit      Explicit     Implicit     Explicit   Implicit   Posedge  Negedge  Memory  Enable  Non enable  Other
+[11/26 12:23:02     30s] Name        exclude pins  exclude pins  ignore pins  ignore pins  stop pins  stop pins  Flops    Flops    Clock   Latch   Latch       Sinks
+[11/26 12:23:02     30s]                                                                                                           Pins    Sinks   Sinks       
+[11/26 12:23:02     30s] -------------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] clk              0             0             0            0           0          0         7        0       0       0         0         0
+[11/26 12:23:02     30s] -------------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Summary across all clock trees:
+[11/26 12:23:02     30s] ===============================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] ------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Clock  Bufs  Invs  Other  Max       Average   Max     Average  Max      Max          Standard   Wire   Gate
+[11/26 12:23:02     30s] Gates              Clock  Non-leaf  Non-leaf  Leaf    Leaf     Length   Source-sink  cell area  cap    cap
+[11/26 12:23:02     30s]                    Cells  Fanout    Fanout    Fanout  Fanout   (um)     Resistance   (um^2)     (fF)   (fF)
+[11/26 12:23:02     30s]                                                                         (Ohms)                         
+[11/26 12:23:02     30s] ------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s]   0     0     0      0       0         0        7        7     290.196   5023.566      0.000    8.217  2.302
+[11/26 12:23:02     30s] ------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock Sink Summary across all clock trees:
+[11/26 12:23:02     30s] ==========================================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] -------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Explicit      Implicit      Explicit     Implicit     Explicit   Implicit   Posedge  Negedge  Memory  Enable  Non enable  Other
+[11/26 12:23:02     30s] exclude pins  exclude pins  ignore pins  ignore pins  stop pins  stop pins  Flops    Flops    Clock   Latch   Latch       Sinks
+[11/26 12:23:02     30s]                                                                                               Pins    Sinks   Sinks       
+[11/26 12:23:02     30s] -------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s]      0             0             0            0           0          0         7        0       0       0         0         0
+[11/26 12:23:02     30s] -------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Physical metrics across all clock trees:
+[11/26 12:23:02     30s] ========================================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] --------------------------------------------------------------------------
+[11/26 12:23:02     30s] Metric                               Minimum   Average   Maximum   Std.dev
+[11/26 12:23:02     30s] --------------------------------------------------------------------------
+[11/26 12:23:02     30s] Source-sink routed net length (um)    290.196   290.196   290.196   0.000
+[11/26 12:23:02     30s] Source-sink manhattan distance (um)   289.800   289.800   289.800   0.000
+[11/26 12:23:02     30s] Source-sink resistance (Ohm)         5023.566  5023.566  5023.566   0.000
+[11/26 12:23:02     30s] --------------------------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Transition distribution for half-corner delayCorner_slow:setup.late:
+[11/26 12:23:02     30s] ====================================================================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] --------------------------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Net Type    Target    Count    Average    Std. Dev.    Min     Max     Distribution                                                          Over Target
+[11/26 12:23:02     30s] --------------------------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Leaf        100.0       1       77.7         0.0       77.7    77.7    {0 <= 60.0ps, 1 <= 80.0ps, 0 <= 90.0ps, 0 <= 95.0ps, 0 <= 100.0ps}         -
+[11/26 12:23:02     30s] --------------------------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Count of violations across all clock trees:
+[11/26 12:23:02     30s] ===========================================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] ---------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Clock Tree  # Max capacitance  # Max resistance  # Max length  # Max fanout  # Slew
+[11/26 12:23:02     30s] Name        violations         violations        violations    violations    violations
+[11/26 12:23:02     30s] ---------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] clk                 0                 0               0             0            0
+[11/26 12:23:02     30s] ---------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Total               0                 0               0             0            0
+[11/26 12:23:02     30s] ---------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Note the above table per clock tree is based on CCOpt clock tree view. The violations are counted across half corners.
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Found a total of 0 clock tree pins with max capacitance violations.
+[11/26 12:23:02     30s] Found a total of 0 clock tree nets with max resistance violations.
+[11/26 12:23:02     30s] Found a total of 0 clock tree nets with max length violations.
+[11/26 12:23:02     30s] Found a total of 0 clock tree nets with max fanout violations.
+[11/26 12:23:02     30s] Found a total of 0 clock tree pins with a slew violation.
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Report for clock tree: clk:
+[11/26 12:23:02     30s] ===========================
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock Tree Gating Structure (Logical):
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] # Full cycle clock gates   : 0
+[11/26 12:23:02     30s] Minimum clock gating depth : 0
+[11/26 12:23:02     30s] Maximum clock gating depth : 0
+[11/26 12:23:02     30s] Clock gate area (um^2)     : 0.000
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock Tree Buffering Structure (Logical):
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] # Buffers             : 0
+[11/26 12:23:02     30s] # Inverters           : 0
+[11/26 12:23:02     30s]   Total               : 0
+[11/26 12:23:02     30s] Minimum depth         : 0
+[11/26 12:23:02     30s] Maximum depth         : 0
+[11/26 12:23:02     30s] Buffering area (um^2) : 0.000
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Clock Tree Level Structure (Logical):
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] -----------------------------------------------------------------
+[11/26 12:23:02     30s] Level  Full   Posedge  Negedge  Memory  Enable  Non enable  Other
+[11/26 12:23:02     30s]        Cycle  Flops    Flops    Clock   Latch   Latch       Sinks
+[11/26 12:23:02     30s]                                 Pins    Sinks   Sinks       
+[11/26 12:23:02     30s] -----------------------------------------------------------------
+[11/26 12:23:02     30s] root     0       7        0       0       0         0         0
+[11/26 12:23:02     30s] -----------------------------------------------------------------
+[11/26 12:23:02     30s] Total    0       7        0       0       0         0         0
+[11/26 12:23:02     30s] -----------------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] Target and measured clock slews (in ps):
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] ---------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] Timing Corner                 Worst Rising  Worst Falling  Worst Rising  Worst Falling  Leaf Slew    Leaf Slew  Trunk Slew   Trunk Slew
+[11/26 12:23:02     30s]                               Leaf Slew     Leaf Slew      Trunk Slew    Trunk Slew     Target Type  Target     Target Type  Target
+[11/26 12:23:02     30s] ---------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] delayCorner_fast:hold.early       72.3          67.7            -              -        ignored          -      ignored          -
+[11/26 12:23:02     30s] delayCorner_fast:hold.late        77.7          72.9            -              -        ignored          -      ignored          -
+[11/26 12:23:02     30s] delayCorner_slow:setup.early      72.3          67.7            -              -        ignored          -      ignored          -
+[11/26 12:23:02     30s] delayCorner_slow:setup.late       77.7          72.9            -              -        explicit      100.0     explicit      100.0
+[11/26 12:23:02     30s] ---------------------------------------------------------------------------------------------------------------------------------------
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] * - indicates that target was not met.
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] auto extracted - target was extracted from SDC.
+[11/26 12:23:02     30s] auto computed - target was computed when balancing trees.
+[11/26 12:23:02     30s] 
+[11/26 12:23:02     30s] 
+[11/26 12:23:21     30s] <CMD> report_ccopt_clock_trees -clk clk -report dist_sort.ctsrpt
+[11/26 12:23:21     30s] 
+[11/26 12:23:21     30s] Usage: report_ccopt_clock_trees [-help]
+[11/26 12:23:21     30s]                                 [-clock_trees {string1 string2 ...}]
+[11/26 12:23:21     30s]                                 [-file <name>] [-histograms]
+[11/26 12:23:21     30s]                                 [-list_special_pins]
+[11/26 12:23:21     30s]                                 [-no_invalidate]
+[11/26 12:23:21     30s]                                 [-num_cap_violating_pins <num>]
+[11/26 12:23:21     30s]                                 [-num_fanout_violating_nets <num>]
+[11/26 12:23:21     30s]                                 [-num_length_violating_nets <num>]
+[11/26 12:23:21     30s]                                 [-num_resistance_violating_nets <num>]
+[11/26 12:23:21     30s]                                 [-num_slew_violating_pins <num>]
+[11/26 12:23:21     30s]                                 [-skip_timing_update]
+[11/26 12:23:21     30s]                                 [-summary] [-tcl_list] [ -delay_corners <delay_corner>+ | -views <analysis_view>+ ] [ -early | -late ]
+[11/26 12:23:21     30s] 
+[11/26 12:23:21     30s] **ERROR: (IMPTCM-48):	"-clk" is not a legal option for command "report_ccopt_clock_trees". Either the current option or an option prior to it is not specified correctly.
+
+[11/26 12:23:28     30s] <CMD> report_ccopt_clock_trees -report dist_sort.ctsrpt
+[11/26 12:23:28     30s] 
+[11/26 12:23:28     30s] Usage: report_ccopt_clock_trees [-help]
+[11/26 12:23:28     30s]                                 [-clock_trees {string1 string2 ...}]
+[11/26 12:23:28     30s]                                 [-file <name>] [-histograms]
+[11/26 12:23:28     30s]                                 [-list_special_pins]
+[11/26 12:23:28     30s]                                 [-no_invalidate]
+[11/26 12:23:28     30s]                                 [-num_cap_violating_pins <num>]
+[11/26 12:23:28     30s]                                 [-num_fanout_violating_nets <num>]
+[11/26 12:23:28     30s]                                 [-num_length_violating_nets <num>]
+[11/26 12:23:28     30s]                                 [-num_resistance_violating_nets <num>]
+[11/26 12:23:28     30s]                                 [-num_slew_violating_pins <num>]
+[11/26 12:23:28     30s]                                 [-skip_timing_update]
+[11/26 12:23:28     30s]                                 [-summary] [-tcl_list] [ -delay_corners <delay_corner>+ | -views <analysis_view>+ ] [ -early | -late ]
+[11/26 12:23:28     30s] 
+[11/26 12:23:28     30s] **ERROR: (IMPTCM-48):	"-report" is not a legal option for command "report_ccopt_clock_trees". Either the current option or an option prior to it is not specified correctly.
+

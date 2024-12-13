@@ -1,0 +1,629 @@
+
+Finished executable startup (2 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (15 seconds elapsed).
+
+***************************************************************************************
+WARNING: R&D BUILD - use only as directed by your Cadence support team.
+INFO:    The prefix [DEV] has been added to the prompt as a reminder of that situation.
+***************************************************************************************
+
+#@ Processing -execute option
+@[DEV]genus:root: 1> encrypt -tcl coeGenusHelpers.tcl > coeGenusHelpers.enc; tcl_source coeGenusInit.tcl
+  Setting attribute of root '/': 'flow_verbose' = false
+  Setting attribute of root '/': 'metric_enable' = false
+Warning : Partition Based Synthesis (PBS) is turned off. Expect very long runtime. [PBS-3]
+  Setting attribute of root '/': 'partition_based_synthesis' = false
+  Setting attribute of root '/': 'pbs_debug_level' = 0
+  Setting attribute of root '/': 'tinfo_tstamp_file' = 
+  Setting attribute of root '/': 'write_verification_files' = false
+  Setting attribute of root '/': 'write_vlog_bit_blast_bus_connections' = true
+  Setting attribute of root '/': 'write_vlog_line_wrap_limit' = 3990
+  Setting attribute of root '/': 'metric_auto_capture' = false
+  Setting attribute of root '/': 'power_unit' = nW
+  Setting attribute of root '/': 'power_format' = %.4f
+  Setting attribute of root '/': 'avoid_tied_inputs' = false
+  Setting attribute of root '/': 'joules_silent' = true
+  Setting attribute of root '/': 'read_lef_ver60' = true
+  Setting attribute of root '/': 'ifca_lef_allow_backside_layers' = true
+Warning : This attribute will be obsolete in a next major release. [TUI-32]
+        : attribute: 'exp_opt_generic_timing_area_aware', object type: 'root'
+  Setting attribute of root '/': 'exp_opt_generic_timing_area_aware' = false
+
+  According to qrc_tech_file, there are total 10 routing layers [ V(5) / H(5) ]
+
+Done reading qrc_tech_file
+
+Info: waiting for genus.go........................
+Info: 0/196 cells changed from unpreserve to preserve {}
+Info: 0/196 cells changed from preserve to unpreserve {}
+Info: 8/196 cells changed from usable to dont_use {BUFx16f_ASAP7_75t_R DFFHQNx2_ASAP7_75t_R DFFLQNx2_ASAP7_75t_R DHLx2_ASAP7_75t_R DLLx2_ASAP7_75t_R ICGx2_ASAP7_75t_R SDFHx2_ASAP7_75t_R SDFLx2_ASAP7_75t_R}
+Info: 0/196 cells changed from dont_use to usable {}
+Info: checking genus version has optional features...
+# version: 23.12-s086_1
+Started checking and loading power intent for design test...
+============================================================
+No power intent for design 'test'.
+Completed checking and loading power intent for design test (runtime:0.00s memory_usage:0.00M peak_memory:0.00M).
+=================================================================================================================
+stamp 'PBS_Generic-Start' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:21(00:02:14) |  00:00:00(00:00:00) |   0.0(  0.0) |   20:15:02 (Nov26) |  487.5 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+
+Stage: pre_early_cg
+-----------------------------------------------
+| Transform | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------
+-----------------------------------------------
+Mapping ChipWare ICG instances in test
+Found 0 unmapped ChipWare ICG instances
+Mapped 0 of 0 ChipWare ICG instances
+##Generic Timing Info: typical gate delay   16.1 ps   std_slew:    4.4 ps   std_load:  0.7 fF  for library domain _default_
+Starting mux data reorder optimization [v1.0] (stage: pre_to_gen_setup, startdef: test, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.001s)
+
+Stage: pre_to_gen_setup
+-----------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |        0.00 | 
+-----------------------------------------------------
+Running DP early constant propagation (netlist test)...
+Running DP early redundancy removal
+Completed DP early redundancy removal on test (runtime = 0.0s)
+Multi-threaded constant propagation [4|0] ...
+...done running DP early constant propagation (0 seconds CPU time, netlist test).
+qor: dump_pre_qor for test (ptr: 0x7f7d6e362080,pid: 1055139)
+Current PLE settings:
+
+Aspect ratio        : 1.000
+Shrink factor       : 1.000
+Scale of res/length : 1.000
+Scale of cap/length : 1.000
+Net derating factor : 1.000
+Thermal factor      : 1.000
+Via Resistance      : 10.000 ohm (from qrc_tech_file)
+Site size           : 1.224 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       qrc_tech_file
+------------------------------------------------
+LISD            V         0.00        0.000041  
+M1              H         1.00        0.000054  
+M2              V         1.00        0.000051  
+M3              H         1.00        0.000050  
+M4              V         1.00        0.000053  
+M5              H         1.00        0.000052  
+M6              V         1.00        0.000053  
+M7              H         1.00        0.000052  
+M8              V         1.00        0.000054  
+M9              H         1.00        0.000052  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       qrc_tech_file
+-------------------------------------------------
+LISD            V         0.00        10.000000  
+M1              H         1.00        16.955556  
+M2              V         1.00        16.955556  
+M3              H         1.00        15.011111  
+M4              V         1.00        10.791667  
+M5              H         1.00         9.712500  
+M6              V         1.00         7.021875  
+M7              H         1.00         7.021875  
+M8              V         1.00         5.115000  
+M9              H         1.00         5.115000  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+M1              V         0.00         0.072000  
+M2              H         1.00         0.072000  
+M3              V         1.00         0.072000  
+M4              H         1.00         0.096000  
+M5              V         1.00         0.096000  
+M6              H         1.00         0.128000  
+M7              V         1.00         0.128000  
+M8              H         1.00         0.160000  
+M9              V         1.00         0.160000  
+Pad             H         1.00         0.160000  
+
+Running Synthesis Turbo Flow Version 3.
+Starting mux data reorder optimization [v1.0] (stage: pre_to_gen_setup, startdef: test, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: pre_to_gen_setup
+-----------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |        0.00 | 
+-----------------------------------------------------
+Starting mux data reorder optimization [v1.0] (stage: post_to_gen_setup, startdef: test, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_to_gen_setup
+-----------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |        0.00 | 
+-----------------------------------------------------
+Current PLE settings:
+
+Aspect ratio        : 1.000
+Shrink factor       : 1.000
+Scale of res/length : 1.000
+Scale of cap/length : 1.000
+Net derating factor : 1.000
+Thermal factor      : 1.000
+Via Resistance      : 10.000 ohm (from qrc_tech_file)
+Site size           : 1.224 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       qrc_tech_file
+------------------------------------------------
+LISD            V         0.00        0.000041  
+M1              H         1.00        0.000054  
+M2              V         1.00        0.000051  
+M3              H         1.00        0.000050  
+M4              V         1.00        0.000053  
+M5              H         1.00        0.000052  
+M6              V         1.00        0.000053  
+M7              H         1.00        0.000052  
+M8              V         1.00        0.000054  
+M9              H         1.00        0.000052  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       qrc_tech_file
+-------------------------------------------------
+LISD            V         0.00        10.000000  
+M1              H         1.00        16.955556  
+M2              V         1.00        16.955556  
+M3              H         1.00        15.011111  
+M4              V         1.00        10.791667  
+M5              H         1.00         9.712500  
+M6              V         1.00         7.021875  
+M7              H         1.00         7.021875  
+M8              V         1.00         5.115000  
+M9              H         1.00         5.115000  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+M1              V         0.00         0.072000  
+M2              H         1.00         0.072000  
+M3              V         1.00         0.072000  
+M4              H         1.00         0.096000  
+M5              V         1.00         0.096000  
+M6              H         1.00         0.128000  
+M7              V         1.00         0.128000  
+M8              H         1.00         0.160000  
+M9              V         1.00         0.160000  
+Pad             H         1.00         0.160000  
+
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: pre_hlo_rtlopt
+-----------------------------------------------
+| Trick     | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------
+| ume_ssm   |       0 |       0 |        0.00 | 
+| ume_sweep |       0 |       0 |        0.00 | 
+| ume_share |       0 |       0 |        0.00 | 
+-----------------------------------------------
+Begin SDR optimization CTX_region 
+#Special hiers formed inside test = 0
+No special hier is found 
+End SDR optimization CTX_region 
+Begin SDR optimization UME_region 
+#Special hiers formed inside test = 0
+No special hier is found 
+End SDR optimization UME_region 
+Starting timing based select reordering [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed timing based select reordering (accepts: 0, rejects: 0, runtime: 0.003s)
+Starting recase case-box optimization [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed recase case-box optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting infer macro optimization [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed infer macro optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting decode mux sandwich optimization [v2.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed decode mux sandwich optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting decode mux optimization [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed decode mux optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting chop wide muxes [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed chop wide muxes (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting common data mux cascade opt [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed common data mux cascade opt (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting mux input consolidation [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed mux input consolidation (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting constant-data mux optimization [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed constant-data mux optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting chain-to-tree inequality transform [v2.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed chain-to-tree inequality transform (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting reconvergence optimization [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed reconvergence optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting logic restructure optimization [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed logic restructure optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting identity transform [v3.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed identity transform (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting reduce operator chain [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed reduce operator chain (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting common data mux cascade opt [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed common data mux cascade opt (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting mux input consolidation [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed mux input consolidation (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting optimize datapath elements [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed optimize datapath elements (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting datapath recasting [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed datapath recasting (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting word-level redundancy removal [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed word-level redundancy removal (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting basic netlist cleanup [v1.0] (stage: pre_rtlopt, startdef: test, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: pre_rtlopt
+-----------------------------------------------------------------
+| Transform                   | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------------------------
+| hlo_timing_reorder          |       0 |       0 |        0.00 | 
+| hlo_recase_casebox          |       0 |       0 |        0.00 | 
+| hlo_infer_macro             |       0 |       0 |        0.00 | 
+| hlo_decode_mux_sandwich     |       0 |       0 |        0.00 | 
+| hlo_mux_decode              |       0 |       0 |        0.00 | 
+| hlo_chop_mux                |       0 |       0 |        0.00 | 
+| hlo_mux_cascade_opt         |       0 |       0 |        0.00 | 
+| hlo_mux_consolidation       |       0 |       0 |        0.00 | 
+| hlo_constant_mux_opt        |       0 |       0 |        0.00 | 
+| hlo_inequality_transform    |       0 |       0 |        0.00 | 
+| hlo_reconv_opt              |       0 |       0 |        0.00 | 
+| hlo_restructure             |       0 |       0 |        0.00 | 
+| hlo_identity_transform      |       0 |       0 |        0.00 | 
+| hlo_reduce_operator_chain   |       0 |       0 |        0.00 | 
+| hlo_mux_cascade_opt         |       0 |       0 |        0.00 | 
+| hlo_mux_consolidation       |       0 |       0 |        0.00 | 
+| hlo_optimize_datapath       |       0 |       0 |        0.00 | 
+| hlo_datapath_recast         |       0 |       0 |        0.00 | 
+| hlo_redundancy_removal_word |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input          |       0 |       0 |        0.00 | 
+| hlo_clip                    |       0 |       0 |        0.00 | 
+| hlo_cleanup                 |       0 |       0 |        0.00 | 
+-----------------------------------------------------------------
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_hlo_rtlopt
+----------------------------------------------------------
+| Trick                | Accepts | Rejects | Runtime (s) | 
+----------------------------------------------------------
+| ume_sweep_aggressive |       0 |       0 |        0.00 | 
+| ume_runtime          |       0 |       0 |        0.00 | 
+----------------------------------------------------------
+Number of big hc bmuxes before = 0
+Number of big hc bmuxes after = 0
+Starting bit-level redundancy removal [v1.0] (stage: post_rtlopt, startdef: test, recur: true)
+Completed bit-level redundancy removal (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting logic reduction [v1.0] (stage: post_rtlopt, startdef: test, recur: true)
+Completed logic reduction (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting mux data reorder optimization [v1.0] (stage: post_rtlopt, startdef: test, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting timing based select reordering [v1.0] (stage: post_rtlopt, startdef: test, recur: true)
+Completed timing based select reordering (accepts: 0, rejects: 0, runtime: 0.001s)
+
+Stage: post_rtlopt
+----------------------------------------------------------------
+| Transform                  | Accepts | Rejects | Runtime (s) | 
+----------------------------------------------------------------
+| hlo_redundancy_removal_bit |       0 |       0 |        0.00 | 
+| hlo_logic_reduction        |       0 |       0 |        0.00 | 
+| hlo_mux_reorder            |       0 |       0 |        0.00 | 
+| hlo_timing_reorder         |       0 |       0 |        0.00 | 
+----------------------------------------------------------------
+Starting mux speculation [v1.0] (stage: post_muxopt, startdef: test, recur: true)
+Starting speculation optimization
+Completed speculation optimization (accepts:0)
+Completed mux speculation (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting timing based select reordering [v1.0] (stage: post_muxopt, startdef: test, recur: true)
+Completed timing based select reordering (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_muxopt
+--------------------------------------------------------
+| Transform          | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------
+| hlo_speculation    |       0 |       0 |        0.00 | 
+| hlo_timing_reorder |       0 |       0 |        0.00 | 
+--------------------------------------------------------
+==================================
+Stage : to_generic 
+==================================
+  =================
+   Message Summary
+  =================
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|   Id   |  Sev  |Count|                                                              Message Text                                                               |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|DPOPT-5 |Info   |    1|Skipping datapath optimization.                                                                                                          |
+|DPOPT-6 |Info   |    1|Pre-processed datapath logic.                                                                                                            |
+|LBR-43  |Warning|    4|Libcell has no area attribute.  Defaulting to 0 area.                                                                                    |
+|        |       |     |Specify a valid area value for the libcell.                                                                                              |
+|LBR-155 |Info   |    4|Mismatch in unateness between 'timing_sense' attribute and the function.                                                                 |
+|        |       |     |The 'timing_sense' attribute will be respected.                                                                                          |
+|LBR-162 |Info   |   17|Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed.                                                                  |
+|        |       |     |Setting the 'timing_sense' to non_unate.                                                                                                 |
+|LBR-412 |Info   |    5|Created nominal operating condition.                                                                                                     |
+|        |       |     |The nominal operating condition is represented, either by the nominal PVT values specified in the library source                         |
+|        |       |     | (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).                             |
+|PBS-3   |Warning|    1|Partition Based Synthesis (PBS) is turned off. Expect very long runtime.                                                                 |
+|PHYS-12 |Warning|    2|The variant range of wire parameters is too large. An example of wire parameters are, a WIDTH for layer, PITCH for layer, MINSPACING for |
+|        |       |     | layers, etc.                                                                                                                            |
+|        |       |     |Check the consistency of the parameters, and see if you can ignore this message or you're using different LEF file with wrong parameters.|
+|PHYS-13 |Warning|    1|The value of the wire parameter is too big.                                                                                              |
+|        |       |     |Check the consistency of the specified wire parameter.                                                                                   |
+|PHYS-14 |Warning|    5|The value of the wire parameter is too small.                                                                                            |
+|        |       |     |Check the consistency of the specified wire parameter.                                                                                   |
+|PHYS-15 |Warning|   30|Missing wire parameter.                                                                                                                  |
+|        |       |     |Check the wire parameter in LEF technology files.                                                                                        |
+|PHYS-25 |Warning|    4|Minimum width of layer in LEF does not match minimum width of layer in cap table.                                                        |
+|        |       |     |Compare the layer MinWidth of the cap_table_file with the MinWidth (WIDTH)                                                               |
+|        |       |     | of the corresponding layer in LEF. Set the attribute 'shrink_factor' to adjust the MinWidth layer value in the captable file            |
+|PHYS-113|Warning|    1|Pin names are not consistent in lib and LEF files.                                                                                       |
+|PHYS-129|Info   |    9|Via with no resistance will have a value of '0.0' assigned for resistance value.                                                         |
+|        |       |     |If this is the expected behavior, this message can be ignored.                                                                           |
+|PHYS-279|Warning|   11|Physical cell not defined in library.                                                                                                    |
+|        |       |     |Ensure that the proper library files are available and have been imported.                                                               |
+|PHYS-752|Info   |    1|Partition Based Synthesis execution skipped.                                                                                             |
+|SYNTH-1 |Info   |    1|Synthesizing.                                                                                                                            |
+|TUI-32  |Warning|    1|This attribute will be obsolete in a next major release.                                                                                 |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Current PLE settings:
+
+Aspect ratio        : 1.000
+Shrink factor       : 1.000
+Scale of res/length : 1.000
+Scale of cap/length : 1.000
+Net derating factor : 1.000
+Thermal factor      : 1.000
+Via Resistance      : 10.000 ohm (from qrc_tech_file)
+Site size           : 1.224 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       qrc_tech_file
+------------------------------------------------
+LISD            V         0.00        0.000041  
+M1              H         1.00        0.000054  
+M2              V         1.00        0.000051  
+M3              H         1.00        0.000050  
+M4              V         1.00        0.000053  
+M5              H         1.00        0.000052  
+M6              V         1.00        0.000053  
+M7              H         1.00        0.000052  
+M8              V         1.00        0.000054  
+M9              H         1.00        0.000052  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       qrc_tech_file
+-------------------------------------------------
+LISD            V         0.00        10.000000  
+M1              H         1.00        16.955556  
+M2              V         1.00        16.955556  
+M3              H         1.00        15.011111  
+M4              V         1.00        10.791667  
+M5              H         1.00         9.712500  
+M6              V         1.00         7.021875  
+M7              H         1.00         7.021875  
+M8              V         1.00         5.115000  
+M9              H         1.00         5.115000  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+M1              V         0.00         0.072000  
+M2              H         1.00         0.072000  
+M3              V         1.00         0.072000  
+M4              H         1.00         0.096000  
+M5              V         1.00         0.096000  
+M6              H         1.00         0.128000  
+M7              V         1.00         0.128000  
+M8              H         1.00         0.160000  
+M9              V         1.00         0.160000  
+Pad             H         1.00         0.160000  
+
+Mapper: Libraries have:
+	domain _default_: 156 combo usable cells and 17 sequential usable cells
+Multi-threaded Virtual Mapping    (8 threads, 8 of 8 CPUs usable)
+ 
+Global mapping target info
+==========================
+Cost Group 'default' target slack: Unconstrained
+
+Starting post syn_generic ultra-effort Boolean optimization
+Redundancy removal succeeded.
+Done post syn_generic ultra-effort Boolean optimization (0.00 cpu seconds) (0.00 elapsed cpu seconds)
+##>========= Cadence Confidential (Generic-Logical) =========
+##>========= Cadence Confidential (Generic-Logical) =========
+min_lib_gates: 1
+Info: checking optional command features...
+  crr_map_def: Performs mapper CRR (critical region resynthesis). Use only for 
+               debugging. 
+
+Usage: crr_map_def <design> [-spatial] [-remap_always] [-use_crr_gst]
+           [-use_crr_shell]
+
+    <design>:
+        the design 
+    [-spatial]:
+        add spatial settings for DPUL 
+    [-remap_always]:
+        remap always without checking wns before remapping 
+    [-use_crr_gst]:
+        use crr_gst in timing optimization 
+    [-use_crr_shell]:
+        groups all leaf instances in the top design in a crr shell before 
+        mapping 
+crr_map_def command: 1
+  create_lib_context: create library context 
+
+Usage: create_lib_context -type <integer>
+
+    -type <integer>:
+        context type 
+create_lib_context command: 1
+  create_slack_adjusts: Create slack adjustments on ports. The base has to be 
+                        set by the slack_adjust_base attribute 
+
+Usage: create_slack_adjusts [<design>+] [-outputs_only]
+
+    [<design>+]:
+        the name of the design(s) 
+    [-outputs_only]:
+        Adjust the output slack only (default outputs and inputs). 
+create_slack_adjusts command: 1
+Usage:
+    set_pin_activity [-pin] <pin-path> \
+        -activity_type user|default|system (default: user)
+        -duty <duty> (duty cycle is a fraction from 0 to 1)
+        -freq <freq> (activity_type user :frequency e.g. 150.0e+6
+                      activity_type default|system:absolute freq or pct of specified -clock option)
+        [-toggles <tcnt>] (specify toggle count, instead of -freq, e.g. 250)
+            [-duration <duration>] (specify duration for given toggles, applicable only for -toggles, default stim duration is used.)
+        -pin_types {primary_input|seq_out|flop_out|latch_out|memory_out|icgc_out|icgc_enable|bbox_out|comb_out|all}+ (default = all pins)
+        [-clock related|local|<clock_pin_or_net>] (default = "related" clock, local is supported only for icgc_out)
+        [-global] 
+        [-force_propagate] (Removes the asserted activity in the fanout cone of given pin)
+        [-stims  <stim_id>+]  (default = all SDB stims)
+        [-frames <frame_id>+] (applies to -pin only, default = all frames of specified stims(s))
+        [-silent]
+Note:
+        -activity_type user applies the activity on pin, nothing can override this value.
+        -activity_type default applies the activity on different pin_types. This activity 
+                               is applicable only on pins which don't have asserted activities.
+                               Activity propagation cannot override this value.
+        -activity_type system applies the activity on different pin_types. This activity will 
+                              be used as a start value, however activity propagation can 
+                              override this value.
+Examples:
+    set_pin_activity /cpu_10bit/clk -duty 0.40 -freq 200e6 -stim /stim#1
+    set_pin_activity /cpu_10bit/rst -duty 0.02 -toggles 2 -frames /stim#1/frame#7 /stim#2/frame#12
+    set_pin_activity -activity_type default -pin_types primary_input -duty 0.3 -freq 2e7 -stims /stim#1
+    set_pin_activity -activity_type system -pin_types flop_out -duty 0.5 -freq 2e6 
+    set_pin_activity -activity_type system -pin_types flop_out -duty 0.5 -freq 0.3 -clock related
+Return value: 0 = success, 1 = failure
+set_pin_activity command: 1
+
+Usage: setPowerDomainOfDelayCorner -view_name <analysis_view>
+           -power_domain <string> <module|design>
+
+    -view_name <analysis_view>:
+        View Name 
+    -power_domain <string>:
+        Name of Power Domain 
+    <module|design>:
+        top level design 
+setPowerDomainOfDelayCorner command: 1
+
+Usage: crr_set_port_location -location_x <float> -location_y <float>
+           [-placement_status <string>] [-orientation <string>] <port>
+
+    -location_x <float>:
+        X coordinate 
+    -location_y <float>:
+        Y coordinate 
+    [-placement_status <string>]:
+        placement_status 
+    [-orientation <string>]:
+        orientation 
+    <port>:
+        port 
+crr_set_port_location command: 1
+  map_def: 
+
+Usage: map_def [<design>+] [-tns_opto] [-track_dft] [-no_tns_opto] [-verbose]
+           [-effort <string>]
+
+    [<design>+]:
+        the design(s) 
+    [-tns_opto]:
+        enable TNS opto 
+    [-track_dft]:
+        use the DFT Tracker 
+    [-no_tns_opto]:
+        disable TNS opto 
+    [-verbose]:
+        enable verbose output 
+    [-effort <string>]:
+        specifies the effort to use (low|medium|high=default) 
+map_def command: 1
+  set_load_fast: internal command for set_load 
+
+Usage: set_load_fast [-min] [-max] [-pin_load] [-subtract_pin_load] [-wire_load]
+           [<float>] <string>
+
+    [-min]:
+        minimum value 
+    [-max]:
+        maximum value 
+    [-pin_load]:
+        load is pin load 
+    [-subtract_pin_load]:
+        subtracts existing pin loads 
+    [-wire_load]:
+        load is wire load 
+    [<float>]:
+        value 
+    <string>:
+        objects 
+set_load_fast -mode command_option: 1
+Info: checking optional attribute features...
+root/dft_tracking attribute: 1
+root/dft_track_scan_chain attribute: 1
+port/dft_tracking_scan_out attribute: 1
+root/lp_toggle_rate_unit attribute: 1
+root/map_avg_toggle_count_root_scale attribute: 1
+root/use_inverter_for_scan_out attribute: 1
+port/slack_adjust_base_by_mode attribute: 1
+root/map_std_gate_power_area_factor attribute: 1
+root/map_eliminate_oupin_pos_slack attribute: 1
+root/innovus_crr_design_level_unit_dynamic_power_per_area attribute: 1
+root/init_design_skip_consistency_check attribute: 1
+Info: 0/196 cells changed from unpreserve to preserve {}
+Info: 0/196 cells changed from preserve to unpreserve {}
+Info: 0/196 cells changed from usable to dont_use {}
+Info: 0/196 cells changed from dont_use to usable {}
+Info: creating specific use/dont_use cells per HInst groups...
+      Info: marking usable cells for lib_context 1.
+Info: 14/196 cells changed from usable to hi_avoid {BUFx12_ASAP7_75t_R BUFx16f_ASAP7_75t_R HB2xp67_ASAP7_75t_R INVxp33_ASAP7_75t_R INVxp67_ASAP7_75t_R DFFHQNx2_ASAP7_75t_R DFFLQNx2_ASAP7_75t_R DHLx2_ASAP7_75t_R DLLx2_ASAP7_75t_R ICGx1_ASAP7_75t_R ICGx2_ASAP7_75t_R ICGx3_ASAP7_75t_R SDFHx2_ASAP7_75t_R SDFLx2_ASAP7_75t_R}
+      (DontUseGroup 1 --> lib_context 1)
+Info: specific use/dont_use cells per HInst group {
+  1 +dont_use: {BUFx12_ASAP7_75t_R HB2xp67_ASAP7_75t_R ICGx1_ASAP7_75t_R ICGx3_ASAP7_75t_R INVxp33_ASAP7_75t_R INVxp67_ASAP7_75t_R}
+}
+Info: starting 1 workers... {
+Info: started worker #0 with pid 1056546
+}
+Info: waiting for 1 workers... {
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 309s, ST: 24s, FG: 24s, CPU: 82.1%}, MEM {curr: 1.4G, peak: 2.2G, phys curr: 0.9G, phys peak: 0.9G}, SYS {load: 3.4, cpu: 8, total: 31.1G, free: 0.4G}
+Info: worker #0 with pid 1056546 finished.
+}
+
+Lic Summary:
+[20:17:58.338986] Cdslmd servers:5280@flex.ece.cornell.edu
+[20:17:58.863288] Feature usage summary:
+
