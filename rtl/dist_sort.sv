@@ -99,49 +99,29 @@ module dist_sort (
                 dist_7 = dist_7 + (diff_7 * diff_7);
             end
                      
-            // do a simple bubble sort implementation here instead
-            // Initialize addresses
+            // Initialize variables
             sort_addr_1 = 3'b0;
-            sort_addr_2 = 3'b1;
+            data_addr_1 = dist_0;
 
-            // Array to hold distances and their corresponding addresses
-            logic [63:0] distances[7:0];
-            logic [2:0] addresses[7:0];
-
-            // Assign distances and addresses
-            distances[0] = dist_0; addresses[0] = 3'b000;
-            distances[1] = dist_1; addresses[1] = 3'b001;
-            distances[2] = dist_2; addresses[2] = 3'b010;
-            distances[3] = dist_3; addresses[3] = 3'b011;
-            distances[4] = dist_4; addresses[4] = 3'b100;
-            distances[5] = dist_5; addresses[5] = 3'b101;
-            distances[6] = dist_6; addresses[6] = 3'b110;
-            distances[7] = dist_7; addresses[7] = 3'b111;
-
-            // Bubble sort to find the two smallest distances
-            // Declare temporary variables outside the loop
-            logic [63:0] temp_dist;
-            logic [2:0] temp_addr;
-
-            for (int i = 0; i < 7; i++) begin
-                for (int j = 0; j < 7 - i; j++) begin
-                    if (distances[j] > distances[j + 1]) begin
-                        // Swap distances
-                        temp_dist = distances[j];
-                        distances[j] = distances[j + 1];
-                        distances[j + 1] = temp_dist;
-
-                        // Swap addresses
-                        temp_addr = addresses[j];
-                        addresses[j] = addresses[j + 1];
-                        addresses[j + 1] = temp_addr;
-                    end
+            // Find first smallest distance
+            for (int i = 1; i < 8; i++) begin
+                if (dist[i] < data_addr_1) begin
+                    sort_addr_1 = i[2:0];
+                    data_addr_1 = dist[i];
                 end
             end
 
-            // Assign the two smallest addresses
-            sort_addr_1 = addresses[0];
-            sort_addr_2 = addresses[1];
+            // Find second smallest distance
+            sort_addr_2 = 3'b0;
+            data_addr_2 = '1;  // Initialize to max value
+
+            for (int i = 0; i < 8; i++) begin
+                if ((dist[i] < data_addr_2) && (i[2:0] != sort_addr_1)) begin
+                    sort_addr_2 = i[2:0];
+                    data_addr_2 = dist[i];
+                end
+            end
+
 
             //if (sort_addr_1 == 3'b0 && (sort_addr_2 == 3'b0)) begin sort_addr_2 = 3'b001; end 
             // if everything is equal then we just put it as the first and second addresses
