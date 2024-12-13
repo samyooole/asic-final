@@ -80,14 +80,14 @@ module dist_sort (
 
             // Calculate distances
             for (int i = 0; i < 16; i++) begin
-                diff_0 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_0_reg[i*4 +: 4]});
-                diff_1 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_1_reg[i*4 +: 4]});
-                diff_2 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_2_reg[i*4 +: 4]});
-                diff_3 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_3_reg[i*4 +: 4]});
-                diff_4 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_4_reg[i*4 +: 4]});
-                diff_5 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_5_reg[i*4 +: 4]});
-                diff_6 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_6_reg[i*4 +: 4]});
-                diff_7 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_7_reg[i*4 +: 4]});
+                diff_0 = $signed({query_reg[i*4 +: 4]}) - $signed({search_0_reg[i*4 +: 4]});
+                diff_1 = $signed({query_reg[i*4 +: 4]}) - $signed({search_1_reg[i*4 +: 4]});
+                diff_2 = $signed({query_reg[i*4 +: 4]}) - $signed({search_2_reg[i*4 +: 4]});
+                diff_3 = $signed({query_reg[i*4 +: 4]}) - $signed({search_3_reg[i*4 +: 4]});
+                diff_4 = $signed({query_reg[i*4 +: 4]}) - $signed({search_4_reg[i*4 +: 4]});
+                diff_5 = $signed({query_reg[i*4 +: 4]}) - $signed({search_5_reg[i*4 +: 4]});
+                diff_6 = $signed({query_reg[i*4 +: 4]}) - $signed({search_6_reg[i*4 +: 4]});
+                diff_7 = $signed({query_reg[i*4 +: 4]}) - $signed({search_7_reg[i*4 +: 4]});
 
                 dist_0 = dist_0 + (diff_0 * diff_0);
                 dist_1 = dist_1 + (diff_1 * diff_1);
@@ -101,78 +101,29 @@ module dist_sort (
                      
             // Find first smallest distance
 
-            // Initialize first smallest distance
+
             sort_addr_1 = 3'b0;
             data_addr_1 = dist_0;
+            
+            if (dist_1 < data_addr_1) begin sort_addr_1 = 3'b001; data_addr_1 = dist_1; end
+            if (dist_2 < data_addr_1) begin sort_addr_1 = 3'b010; data_addr_1 = dist_2; end
+            if (dist_3 < data_addr_1) begin sort_addr_1 = 3'b011; data_addr_1 = dist_3; end
+            if (dist_4 < data_addr_1) begin sort_addr_1 = 3'b100; data_addr_1 = dist_4; end
+            if (dist_5 < data_addr_1) begin sort_addr_1 = 3'b101; data_addr_1 = dist_5; end
+            if (dist_6 < data_addr_1) begin sort_addr_1 = 3'b110; data_addr_1 = dist_6; end
+            if (dist_7 < data_addr_1) begin sort_addr_1 = 3'b111; data_addr_1 = dist_7; end
 
-            if (dist_1 < data_addr_1) begin 
-                sort_addr_1 = 3'b001; 
-                data_addr_1 = dist_1; 
-            end
-            if (dist_2 < data_addr_1) begin 
-                sort_addr_1 = 3'b010; 
-                data_addr_1 = dist_2; 
-            end
-            if (dist_3 < data_addr_1) begin 
-                sort_addr_1 = 3'b011; 
-                data_addr_1 = dist_3; 
-            end
-            if (dist_4 < data_addr_1) begin 
-                sort_addr_1 = 3'b100; 
-                data_addr_1 = dist_4; 
-            end
-            if (dist_5 < data_addr_1) begin 
-                sort_addr_1 = 3'b101; 
-                data_addr_1 = dist_5; 
-            end
-            if (dist_6 < data_addr_1) begin 
-                sort_addr_1 = 3'b110; 
-                data_addr_1 = dist_6; 
-            end
-            if (dist_7 < data_addr_1) begin 
-                sort_addr_1 = 3'b111; 
-                data_addr_1 = dist_7; 
-            end
-
-            // Initialize second smallest distance with a default value
-            sort_addr_2 = (sort_addr_1 == 3'b0) ? 3'b001 : 3'b000;
+            // Find second smallest distance
+            sort_addr_2 =  (sort_addr_1 == 3'b0) ? 3'b001 : 3'b000;
             data_addr_2 = (sort_addr_1 == 3'b0) ? dist_1 : dist_0;
 
-            // Compare each distance, skipping the first smallest
-            if ((dist_0 < data_addr_2) && (sort_addr_1 != 3'b000)) begin 
-                sort_addr_2 = 3'b000; 
-                data_addr_2 = dist_0; 
-            end
-            if ((dist_1 < data_addr_2) && (sort_addr_1 != 3'b001)) begin 
-                sort_addr_2 = 3'b001; 
-                data_addr_2 = dist_1; 
-            end
-            if ((dist_2 < data_addr_2) && (sort_addr_1 != 3'b010)) begin 
-                sort_addr_2 = 3'b010; 
-                data_addr_2 = dist_2; 
-            end
-            if ((dist_3 < data_addr_2) && (sort_addr_1 != 3'b011)) begin 
-                sort_addr_2 = 3'b011; 
-                data_addr_2 = dist_3; 
-            end
-            if ((dist_4 < data_addr_2) && (sort_addr_1 != 3'b100)) begin 
-                sort_addr_2 = 3'b100; 
-                data_addr_2 = dist_4; 
-            end
-            if ((dist_5 < data_addr_2) && (sort_addr_1 != 3'b101)) begin 
-                sort_addr_2 = 3'b101; 
-                data_addr_2 = dist_5; 
-            end
-            if ((dist_6 < data_addr_2) && (sort_addr_1 != 3'b110)) begin 
-                sort_addr_2 = 3'b110; 
-                data_addr_2 = dist_6; 
-            end
-            if ((dist_7 < data_addr_2) && (sort_addr_1 != 3'b111)) begin 
-                sort_addr_2 = 3'b111; 
-                data_addr_2 = dist_7; 
-            end
-
-
+            if ((dist_1 < data_addr_2) && (sort_addr_1 != 3'b001)) begin sort_addr_2 = 3'b001; data_addr_2 = dist_1; end
+            if ((dist_2 < data_addr_2) && (sort_addr_1 != 3'b010)) begin sort_addr_2 = 3'b010; data_addr_2 = dist_2; end
+            if ((dist_3 < data_addr_2) && (sort_addr_1 != 3'b011)) begin sort_addr_2 = 3'b011; data_addr_2 = dist_3; end
+            if ((dist_4 < data_addr_2) && (sort_addr_1 != 3'b100)) begin sort_addr_2 = 3'b100; data_addr_2 = dist_4; end
+            if ((dist_5 < data_addr_2) && (sort_addr_1 != 3'b101)) begin sort_addr_2 = 3'b101; data_addr_2 = dist_5; end
+            if ((dist_6 < data_addr_2) && (sort_addr_1 != 3'b110)) begin sort_addr_2 = 3'b110; data_addr_2 = dist_6; end
+            if ((dist_7 < data_addr_2) && (sort_addr_1 != 3'b111)) begin sort_addr_2 = 3'b111; data_addr_2 = dist_7; end
 
             //if (sort_addr_1 == 3'b0 && (sort_addr_2 == 3'b0)) begin sort_addr_2 = 3'b001; end 
             // if everything is equal then we just put it as the first and second addresses
