@@ -26,27 +26,27 @@ module dist_sort (
 
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
-            query_reg <= '0;
-            search_0_reg <= '0;
-            search_1_reg <= '0;
-            search_2_reg <= '0;
-            search_3_reg <= '0;
-            search_4_reg <= '0;
-            search_5_reg <= '0;
-            search_6_reg <= '0;
-            search_7_reg <= '0;
-            in_valid_reg <= 1'b0;
+            query_reg = '0;
+            search_0_reg = '0;
+            search_1_reg = '0;
+            search_2_reg = '0;
+            search_3_reg = '0;
+            search_4_reg = '0;
+            search_5_reg = '0;
+            search_6_reg = '0;
+            search_7_reg = '0;
+            in_valid_reg = 1'b0;
         end else begin
-            query_reg <= query;
-            search_0_reg <= search_0;
-            search_1_reg <= search_1;
-            search_2_reg <= search_2;
-            search_3_reg <= search_3;
-            search_4_reg <= search_4;
-            search_5_reg <= search_5;
-            search_6_reg <= search_6;
-            search_7_reg <= search_7;
-            in_valid_reg <= in_valid;
+            query_reg = query;
+            search_0_reg = search_0;
+            search_1_reg = search_1;
+            search_2_reg = search_2;
+            search_3_reg = search_3;
+            search_4_reg = search_4;
+            search_5_reg = search_5;
+            search_6_reg = search_6;
+            search_7_reg = search_7;
+            in_valid_reg = in_valid;
         end
     end
 
@@ -80,14 +80,14 @@ module dist_sort (
 
             // Calculate distances
             for (int i = 0; i < 16; i++) begin
-                diff_0 = $signed({query_reg[i*4 +: 4]}) - $signed({search_0_reg[i*4 +: 4]});
-                diff_1 = $signed({query_reg[i*4 +: 4]}) - $signed({search_1_reg[i*4 +: 4]});
-                diff_2 = $signed({query_reg[i*4 +: 4]}) - $signed({search_2_reg[i*4 +: 4]});
-                diff_3 = $signed({query_reg[i*4 +: 4]}) - $signed({search_3_reg[i*4 +: 4]});
-                diff_4 = $signed({query_reg[i*4 +: 4]}) - $signed({search_4_reg[i*4 +: 4]});
-                diff_5 = $signed({query_reg[i*4 +: 4]}) - $signed({search_5_reg[i*4 +: 4]});
-                diff_6 = $signed({query_reg[i*4 +: 4]}) - $signed({search_6_reg[i*4 +: 4]});
-                diff_7 = $signed({query_reg[i*4 +: 4]}) - $signed({search_7_reg[i*4 +: 4]});
+                diff_0 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_0_reg[i*4 +: 4]});
+                diff_1 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_1_reg[i*4 +: 4]});
+                diff_2 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_2_reg[i*4 +: 4]});
+                diff_3 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_3_reg[i*4 +: 4]});
+                diff_4 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_4_reg[i*4 +: 4]});
+                diff_5 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_5_reg[i*4 +: 4]});
+                diff_6 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_6_reg[i*4 +: 4]});
+                diff_7 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_7_reg[i*4 +: 4]});
 
                 dist_0 = dist_0 + (diff_0 * diff_0);
                 dist_1 = dist_1 + (diff_1 * diff_1);
@@ -147,13 +147,13 @@ module dist_sort (
 
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
-            addr_1st <= 3'b0;
-            addr_2nd <= 3'b0;
-            out_valid <= 1'b0;
+            addr_1st = 3'b0;
+            addr_2nd = 3'b0;
+            out_valid = 1'b0;
         end else begin
-            addr_1st <= addr_1st_reg;
-            addr_2nd <= addr_2nd_reg;
-            out_valid <= out_valid_reg;
+            addr_1st = addr_1st_reg;
+            addr_2nd = addr_2nd_reg;
+            out_valid = out_valid_reg;
         end
     end
 
