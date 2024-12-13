@@ -15,6 +15,41 @@ module dist_sort (
     output logic out_valid        // indicates valid output
 );
 
+    // Input FF
+
+    logic [63:0] query_reg, search_0_reg, search_1_reg, search_2_reg, search_3_reg;
+    logic [63:0] search_4_reg, search_5_reg, search_6_reg, search_7_reg;
+    logic in_valid_reg;
+
+    logic [2:0] addr_1st_reg, addr_2nd_reg;
+    logic out_valid_reg;
+
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            query_reg <= '0;
+            search_0_reg <= '0;
+            search_1_reg <= '0;
+            search_2_reg <= '0;
+            search_3_reg <= '0;
+            search_4_reg <= '0;
+            search_5_reg <= '0;
+            search_6_reg <= '0;
+            search_7_reg <= '0;
+            in_valid_reg <= 1'b0;
+        end else begin
+            query_reg <= query;
+            search_0_reg <= search_0;
+            search_1_reg <= search_1;
+            search_2_reg <= search_2;
+            search_3_reg <= search_3;
+            search_4_reg <= search_4;
+            search_5_reg <= search_5;
+            search_6_reg <= search_6;
+            search_7_reg <= search_7;
+            in_valid_reg <= in_valid;
+        end
+    end
+
     // Register declarations for input signals
     logic [63:0] dist_0, dist_1, dist_2, dist_3, dist_4, dist_5, dist_6, dist_7;
     logic signed [63:0] diff_0, diff_1, diff_2, diff_3, diff_4, diff_5, diff_6, diff_7;
@@ -28,12 +63,12 @@ module dist_sort (
 
         if (rst) begin 
             // Default assignments
-            addr_1st= 3'b0;
-            addr_2nd = 3'b0;
-            out_valid= 1'b0;
+            addr_1st_reg= 3'b0;
+            addr_2nd_reg = 3'b0;
+            out_valid_reg= 1'b0;
         
 
-        end else if (in_valid) begin
+        end else if (in_valid_reg) begin
             // do the distance calculations explicitly
 
 
@@ -45,14 +80,14 @@ module dist_sort (
 
             // Calculate distances
             for (int i = 0; i < 16; i++) begin
-                diff_0 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_0[i*4 +: 4]});
-                diff_1 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_1[i*4 +: 4]});
-                diff_2 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_2[i*4 +: 4]});
-                diff_3 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_3[i*4 +: 4]});
-                diff_4 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_4[i*4 +: 4]});
-                diff_5 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_5[i*4 +: 4]});
-                diff_6 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_6[i*4 +: 4]});
-                diff_7 = $signed({1'b0, query[i*4 +: 4]}) - $signed({1'b0, search_7[i*4 +: 4]});
+                diff_0 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_0_reg[i*4 +: 4]});
+                diff_1 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_1_reg[i*4 +: 4]});
+                diff_2 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_2_reg[i*4 +: 4]});
+                diff_3 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_3_reg[i*4 +: 4]});
+                diff_4 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_4_reg[i*4 +: 4]});
+                diff_5 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_5_reg[i*4 +: 4]});
+                diff_6 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_6_reg[i*4 +: 4]});
+                diff_7 = $signed({1'b0, query_reg[i*4 +: 4]}) - $signed({1'b0, search_7_reg[i*4 +: 4]});
 
                 dist_0 = dist_0 + (diff_0 * diff_0);
                 dist_1 = dist_1 + (diff_1 * diff_1);
@@ -95,19 +130,31 @@ module dist_sort (
 
 
 
-            addr_1st = sort_addr_1;
-            addr_2nd = sort_addr_2;
-            out_valid = 1'b1;
+            addr_1st_reg = sort_addr_1;
+            addr_2nd_reg = sort_addr_2;
+            out_valid_reg = 1'b1;
         end else begin
             // Default assignments
-            addr_1st= 3'b0;
-            addr_2nd = 3'b0;
-            out_valid= 1'b0;
+            addr_1st_reg= 3'b0;
+            addr_2nd_reg = 3'b0;
+            out_valid_reg= 1'b0;
         end
 
     end
 
+    //Output FF
+    
+
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            addr_1st <= 3'b0;
+            addr_2nd <= 3'b0;
+            out_valid <= 1'b0;
+        end else begin
+            addr_1st <= addr_1st_reg;
+            addr_2nd <= addr_2nd_reg;
+            out_valid <= out_valid_reg;
+        end
+    end
+
 endmodule
-
-
-
