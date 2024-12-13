@@ -79,7 +79,6 @@ module dist_sort (
             if (dist_7 < data_addr_1) begin sort_addr_1 = 3'b111; data_addr_1 = dist_7; end
 
             // Find second smallest distance
-            // If sort_addr_1 is 0, default sort_addr_2 to 1
             sort_addr_2 =  (sort_addr_1 == 3'b0) ? 3'b001 : 3'b000;
             data_addr_2 = (sort_addr_1 == 3'b0) ? dist_1 : dist_0;
 
@@ -109,3 +108,6 @@ module dist_sort (
     end
 
 endmodule
+
+
+
