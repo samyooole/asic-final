@@ -51,7 +51,7 @@ module dist_sort (
     end
 
     // Register declarations for input signals
-    logic signed [63:0] dist_0, dist_1, dist_2, dist_3, dist_4, dist_5, dist_6, dist_7;
+    logic [63:0] dist_0, dist_1, dist_2, dist_3, dist_4, dist_5, dist_6, dist_7;
     logic signed [63:0] diff_0, diff_1, diff_2, diff_3, diff_4, diff_5, diff_6, diff_7;
     //logic [2:0] sort_addr_1, sort_addr_2;
     //logic [63:0] data_addr_1, data_addr_2;
@@ -59,7 +59,7 @@ module dist_sort (
 
 
     // Main combinational logic
-    always_ff @(posedge clk or posedge rst) begin
+    always_comb @(posedge clk or posedge rst) begin
 
         if (rst) begin 
             // Default assignments
