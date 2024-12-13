@@ -53,8 +53,8 @@ module dist_sort (
     // Register declarations for input signals
     logic [63:0] dist_0, dist_1, dist_2, dist_3, dist_4, dist_5, dist_6, dist_7;
     logic signed [63:0] diff_0, diff_1, diff_2, diff_3, diff_4, diff_5, diff_6, diff_7;
-    logic [2:0] sort_addr_1, sort_addr_2;
-    logic [63:0] data_addr_1, data_addr_2;
+    //logic [2:0] sort_addr_1, sort_addr_2;
+    //logic [63:0] data_addr_1, data_addr_2;
 
 
 
@@ -141,19 +141,13 @@ module dist_sort (
             end
 
 
-            //if (sort_addr_1 == 3'b0 && (sort_addr_2 == 3'b0)) begin sort_addr_2 = 3'b001; end 
+            if (smallest_addr == 3'b0 && (second_smallest_addr == 3'b0)) begin second_smallest_addr = 3'b001; end 
             // if everything is equal then we just put it as the first and second addresses
 
             addr_1st_reg = smallest_addr;
             addr_2nd_reg = second_smallest_addr;
             out_valid_reg = 1'b1;
 
-
-
-
-            addr_1st_reg = sort_addr_1;
-            addr_2nd_reg = sort_addr_2;
-            out_valid_reg = 1'b1;
         end else begin
             // Default assignments
             addr_1st_reg= 3'b0;
