@@ -141,7 +141,7 @@ module dist_sort (
             end
 
 
-            if (sort_addr_1 == 3'b0 && (sort_addr_2 == 3'b0)) begin sort_addr_2 = 3'b001; end 
+            //if (sort_addr_1 == 3'b0 && (sort_addr_2 == 3'b0)) begin sort_addr_2 = 3'b001; end 
             // if everything is equal then we just put it as the first and second addresses
 
             addr_1st_reg = smallest_addr;
