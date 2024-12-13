@@ -119,16 +119,20 @@ module dist_sort (
             distances[7] = dist_7; addresses[7] = 3'b111;
 
             // Bubble sort to find the two smallest distances
+            // Declare temporary variables outside the loop
+            logic [63:0] temp_dist;
+            logic [2:0] temp_addr;
+
             for (int i = 0; i < 7; i++) begin
                 for (int j = 0; j < 7 - i; j++) begin
                     if (distances[j] > distances[j + 1]) begin
                         // Swap distances
-                        logic [63:0] temp_dist = distances[j];
+                        temp_dist = distances[j];
                         distances[j] = distances[j + 1];
                         distances[j + 1] = temp_dist;
 
                         // Swap addresses
-                        logic [2:0] temp_addr = addresses[j];
+                        temp_addr = addresses[j];
                         addresses[j] = addresses[j + 1];
                         addresses[j + 1] = temp_addr;
                     end
